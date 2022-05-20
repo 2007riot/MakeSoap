@@ -15,7 +15,6 @@
 		5C0100F027E3A55A00973561 /* OilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0100EF27E3A55A00973561 /* OilView.swift */; };
 		5C0100F227E4637400973561 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0100F127E4637400973561 /* Modifiers.swift */; };
 		5C02445527ECF1A000D5BC76 /* CalculatedOilRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02445427ECF1A000D5BC76 /* CalculatedOilRow.swift */; };
-		5C02449927F3143300D5BC76 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02449827F3143300D5BC76 /* PDFCreator.swift */; };
 		5C0244A127F3602A00D5BC76 /* RecipePDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0244A027F3602A00D5BC76 /* RecipePDFView.swift */; };
 		5C03FAA82823B6E6006E6479 /* EssentialOilRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C03FAA72823B6E6006E6479 /* EssentialOilRow.swift */; };
 		5C03FAB128242769006E6479 /* SheetPresentationForSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C03FAB028242769006E6479 /* SheetPresentationForSwiftUI.swift */; };
@@ -69,7 +68,6 @@
 		5C0100EF27E3A55A00973561 /* OilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilView.swift; sourceTree = "<group>"; };
 		5C0100F127E4637400973561 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		5C02445427ECF1A000D5BC76 /* CalculatedOilRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatedOilRow.swift; sourceTree = "<group>"; };
-		5C02449827F3143300D5BC76 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PDFCreator.swift; path = OilCalc/View/MainViews/PDFCreator.swift; sourceTree = SOURCE_ROOT; };
 		5C0244A027F3602A00D5BC76 /* RecipePDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePDFView.swift; sourceTree = "<group>"; };
 		5C03FAA72823B6E6006E6479 /* EssentialOilRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialOilRow.swift; sourceTree = "<group>"; };
 		5C03FAB028242769006E6479 /* SheetPresentationForSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationForSwiftUI.swift; sourceTree = "<group>"; };
@@ -193,7 +191,7 @@
 		5CCC95F327D0E0E200DD26C6 = {
 			isa = PBXGroup;
 			children = (
-				5CCC95FE27D0E0E200DD26C6 /* OilCalc */,
+				5CCC95FE27D0E0E200DD26C6 /* MakeSoap */,
 				5CCC95FD27D0E0E200DD26C6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -206,7 +204,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5CCC95FE27D0E0E200DD26C6 /* OilCalc */ = {
+		5CCC95FE27D0E0E200DD26C6 /* MakeSoap */ = {
 			isa = PBXGroup;
 			children = (
 				5CCC95FF27D0E0E200DD26C6 /* OilCalcApp.swift */,
@@ -218,7 +216,7 @@
 				5CCC960D27D0E17000DD26C6 /* oilsData.json */,
 				5CCC960527D0E0E300DD26C6 /* Preview Content */,
 			);
-			path = OilCalc;
+			path = MakeSoap;
 			sourceTree = "<group>";
 		};
 		5CCC960527D0E0E300DD26C6 /* Preview Content */ = {
@@ -233,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				5CDB09E72822980000ACD3CB /* Constants.swift */,
-				5C02449827F3143300D5BC76 /* PDFCreator.swift */,
 				5CCC960F27D0E18A00DD26C6 /* Oil.swift */,
 				5CCC961227D0E76E00DD26C6 /* DataManager.swift */,
 				5CDB09DF282282C500ACD3CB /* EssentialOil.swift */,
@@ -390,7 +387,6 @@
 				5C0100EA27E232B200973561 /* CalculatorGroupBoxStyle.swift in Sources */,
 				5CCC960027D0E0E200DD26C6 /* OilCalcApp.swift in Sources */,
 				5C13D4382833BCA800C066AC /* SoapProperty.swift in Sources */,
-				5C02449927F3143300D5BC76 /* PDFCreator.swift in Sources */,
 				5CCC961327D0E76E00DD26C6 /* DataManager.swift in Sources */,
 				5C13D43A2833BCB200C066AC /* SoapPropertyRow1.swift in Sources */,
 				5C0100F027E3A55A00973561 /* OilView.swift in Sources */,
@@ -540,7 +536,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"OilCalc/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MakeSoap/Preview Content\"";
 				DEVELOPMENT_TEAM = 6N777LA6M4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -570,7 +566,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"OilCalc/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MakeSoap/Preview Content\"";
 				DEVELOPMENT_TEAM = 6N777LA6M4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
