@@ -1,0 +1,407 @@
+[
+ {
+  "name": "Amyris Essential Oil",
+  "latinName": "Amyris balsamifera",
+  "scent": "soft, woody, warming, musty",
+  "blendsWith": "Cedarwood, Geranium, Lavender, Rose, Sandalwood",
+  "rate": 3,
+  "isChosen": false,
+  "id": 0
+ },
+ {
+  "name": "Basil (Sweet) Essential Oil",
+  "latinName": "Ocimum basilicum",
+  "scent": "sweet, spicy, mint",
+  "blendsWith": "peppermint, spearmint, lavender, Pepper Black, Lemongrass, Melissa, Mandarin",
+  "rate": 1.5,
+  "isChosen": false,
+  "id": 1
+ },
+ {
+  "name": "Bay Essential Oil",
+  "latinName": "Laurus Nobilis L",
+  "scent": "strong, spicy",
+  "blendsWith": "vetiver, clove, cinnamon",
+  "rate": 0.9,
+  "isChosen": false,
+  "id": 2
+ },
+ {
+  "name": "Bergamot Essential Oil",
+  "latinName": "Citrus bergamia",
+  "scent": "citrus,\nfloral, spicy, sweet",
+  "blendsWith": "rosemary, grapefruit, lavender, litsea, Pepper Black, Cardamom, Chamomile, Marjoram, Jasmine, Thyme",
+  "rate": 4,
+  "isChosen": false,
+  "id": 3
+ },
+ {
+  "name": "Cardamom Essential Oil",
+  "latinName": "Elettaria cardamomum",
+  "scent": "sweet, spicy, balsamic",
+  "blendsWith": "Bergamot, Cedarwood, Cinnamon, Orange, Ylang Ylang",
+  "rate": 3,
+  "isChosen": false,
+  "id": 4
+ },
+ {
+  "name": "Cedarwood Essential Oil",
+  "latinName": "Cedrus deodara",
+  "scent": "woody, sweet",
+  "blendsWith": "lavender, clove, vetiver, Pepper Black, Cardamom, Petitgrain, pine Scotch, Thyme",
+  "rate": 4,
+  "isChosen": false,
+  "id": 5
+ },
+ {
+  "name": "Chamomile German (Nepal) Essential Oil",
+  "latinName": "Matricaria chamomilla L",
+  "scent": "floral, sweet",
+  "blendsWith": "Bergamot, Clary Sage, Lavender, Geranium, Jasmine, Neroli, Patchouli, Tea Tree, Rose, Lemon, Ylang-ylang, grapefruit, Thyme, Melissa",
+  "rate": 3,
+  "isChosen": false,
+  "id": 6
+ },
+ {
+  "name": "Cinnamon Leaf Essential Oil",
+  "latinName": "Cinnamomum zeylanicum",
+  "scent": "spicy, warm",
+  "blendsWith": "clove, citrus, patchouli, cardamom",
+  "rate": 0.6,
+  "isChosen": false,
+  "id": 7
+ },
+ {
+  "name": "Clary Sage Essential Oil",
+  "latinName": "Salvia sclarea",
+  "scent": "fruity, earthy,\nfloral",
+  "blendsWith": "litsea, lavender, cedarwood, Pepper Black, Chamomile, sandalwood, lime, Lemongrass, Rose",
+  "rate": 3,
+  "isChosen": false,
+  "id": 8
+ },
+ {
+  "name": "Clove Essential Oil",
+  "latinName": "Syzygium aromaticum",
+  "scent": "spicy, woody",
+  "blendsWith": "cinnamon, vetiver, citrus",
+  "rate": 0.6,
+  "isChosen": false,
+  "id": 9
+ },
+ {
+  "name": "Cypress Essential Oil",
+  "latinName": "Cupressus sempervirens",
+  "scent": "herbaceous, warming, woodsy, spicy",
+  "blendsWith": "fir needle, cedarwood, lavender",
+  "rate": 4,
+  "isChosen": false,
+  "id": 10
+ },
+ {
+  "name": "Eucalyptus Essential Oil",
+  "latinName": "Eucalyptus globulus",
+  "scent": "fresh",
+  "blendsWith": "peppermint, lavender, rosemary, ginger root, pine Scotch",
+  "rate": 3,
+  "isChosen": false,
+  "id": 11
+ },
+ {
+  "name": "Geranium Essential Oil",
+  "latinName": "Pelargonium graveolens",
+  "scent": "floral, fresh",
+  "blendsWith": "lavender, clary sage, litsea, chamomile, ginger root, grapefruit, neroli, Petitgrain, Rose, Sandalwood, Jasmine, Melissa",
+  "rate": 4,
+  "isChosen": false,
+  "id": 12
+ },
+ {
+  "name": "Ginger Root Essential Oil",
+  "latinName": "Zingiber officinalis",
+  "scent": "warming, spicy, woody",
+  "blendsWith": "Eucalyptus, Geranium, Rosemary, Vetiver",
+  "rate": 3,
+  "isChosen": false,
+  "id": 13
+ },
+ {
+  "name": "Grapefruit Essential Oil",
+  "latinName": "Citrus racemosa",
+  "scent": "citrus,\nfresh",
+  "blendsWith": "litsea (May Chang,), lemongrass, orange, bergamot, chamomile, geranium, lavender",
+  "rate": 5,
+  "isChosen": false,
+  "id": 14
+ },
+ {
+  "name": "Jasmine Essential Oil",
+  "latinName": "Jasminum grandiflorum",
+  "scent": "fruity, floral",
+  "blendsWith": "sandalwood, geranium, bergamot, patchouli, lemongrass, orange, Chamomile",
+  "rate": 3,
+  "isChosen": false,
+  "id": 15
+ },
+ {
+  "name": "Juniper Berry Essential Oil",
+  "latinName": "Juniperus communis",
+  "scent": "warm, woodsy, fresh, balsamic",
+  "blendsWith": "orange, cedarwood, fir needle, Bergamot, Thyme",
+  "rate": 4,
+  "isChosen": false,
+  "id": 16
+ },
+ {
+  "name": "Lavender Essential Oil",
+  "latinName": "Lavandula angustifolia",
+  "scent": "floral, herbal, fresh",
+  "blendsWith": "litsea, cedarwood, geranium, tea tree, vetiver, Pepper Black, Chamomile, grapefruit, neroli, Petitgrain, Rose, Sandalwood, Melissa, Mandarin",
+  "rate": 5,
+  "isChosen": true,
+  "id": 17
+ },
+ {
+  "name": "Lemon Essential Oil",
+  "latinName": "Citrus limonum",
+  "scent": "citrus, fresh",
+  "blendsWith": "orange, rosemary, lime, Chamomile, Sandalwood, thyme",
+  "rate": 5,
+  "isChosen": false,
+  "id": 18
+ },
+ {
+  "name": "Lemongrass Essential Oil",
+  "latinName": "Cymbopogon flexuosus",
+  "scent": "citrus, fresh",
+  "blendsWith": "grapefruit, orange, lime, Basil, Black Pepper, Clary Sage, Lavender, Patchouli, Thyme*, pine Scotch, Jasmine",
+  "rate": 4,
+  "isChosen": false,
+  "id": 19
+ },
+ {
+  "name": "Lime Essential Oil",
+  "latinName": "Citrus aurantifolia",
+  "scent": "citrus, fresh, fruity",
+  "blendsWith": "lemon, litsea, lemongrass, neroli",
+  "rate": 5,
+  "isChosen": false,
+  "id": 20
+ },
+ {
+  "name": "Litsea Cubeba (May Chang) Essential Oil",
+  "latinName": "Litsae cubeba",
+  "scent": "sweet, citrus, fresh",
+  "blendsWith": "lavender, orange, grapefruit",
+  "rate": 4,
+  "isChosen": false,
+  "id": 21
+ },
+ {
+  "name": "Mandarin Essential Oil",
+  "latinName": "Citrus reticulata",
+  "scent": "sweet, fresh, citrus",
+  "blendsWith": "Basil, Sandalwood, Lavender, Spearmint",
+  "rate": 5,
+  "isChosen": false,
+  "id": 22
+ },
+ {
+  "name": "Marjoram (Sweet) Essential Oil",
+  "latinName": "Origanum marjorana",
+  "scent": "warming, spicy",
+  "blendsWith": "Bergamot, Chamomile, Rosemary, Vetiver, Ylang Ylang",
+  "rate": 3,
+  "isChosen": false,
+  "id": 23
+ },
+ {
+  "name": "Melissa Essential Oil",
+  "latinName": "Melissa officinalis",
+  "scent": "warming, citrus",
+  "blendsWith": "Basil, Chamomile, Rose, Geranium,  Lavender, Ylang Ylang",
+  "rate": 3,
+  "isChosen": false,
+  "id": 24
+ },
+ {
+  "name": "Neroli Essential Oil",
+  "latinName": "Citrus aurantium amara",
+  "scent": "sweet, floral ,citrus",
+  "blendsWith": "Geranium, Lavender, Lime, Palmarosa, Rose, Ylang Ylang",
+  "rate": 3,
+  "isChosen": false,
+  "id": 25
+ },
+ {
+  "name": "Orange Essential Oil",
+  "latinName": "Citrus sinensis",
+  "scent": "citrus, fruity",
+  "blendsWith": "grapefruit, litsea, lemon, cardamom, Petitgrain, Jasmine",
+  "rate": 5,
+  "isChosen": false,
+  "id": 26
+ },
+ {
+  "name": "Palmarosa Essential Oil",
+  "latinName": "Cymbopogon martinii var motia",
+  "scent": "earthy, floral",
+  "blendsWith": "lavender, litsea, bergamot, neroli, Petitgrain, Sandalwood ",
+  "rate": 3,
+  "isChosen": false,
+  "id": 27
+ },
+ {
+  "name": "Patchouli Essential Oil ",
+  "latinName": "Pogostemon Cablin",
+  "scent": "warming, earthy, fresh, fruity, exotic",
+  "blendsWith": "cedarwood, lavender, orange, Chamomile, Lemongrass, neroli, Rose, Jasmine",
+  "rate": 4,
+  "isChosen": false,
+  "id": 28
+ },
+ {
+  "name": "Pepper Black Essential Oil",
+  "latinName": "Piper nigrum",
+  "scent": "sharp, spicy",
+  "blendsWith": "Basil, Bergamot, Cedarwood, Clary Sage, Lavender, Peppermint",
+  "rate": 3,
+  "isChosen": false,
+  "id": 29
+ },
+ {
+  "name": "Peppermint Essential Oil",
+  "latinName": "Mentha piperita",
+  "scent": "minty, herbal, fresh",
+  "blendsWith": "lavender, rosemary, tea tree, Pepper Black",
+  "rate": 3,
+  "isChosen": false,
+  "id": 30
+ },
+ {
+  "name": "Peru Balsam Essential Oil",
+  "latinName": "Myroxylon pereira",
+  "scent": "balsamic, vanilla",
+  "blendsWith": "patchouli, lavender, orange",
+  "rate": 0.9,
+  "isChosen": false,
+  "id": 31
+ },
+ {
+  "name": "Petitgrain Essential Oil",
+  "latinName": "Petitgrain bigarde",
+  "scent": "floral, citrus, herbaceous",
+  "blendsWith": "Cedarwood, Geranium, Lavender, Orange, Palmarosa, Ylang Ylang",
+  "rate": 3,
+  "isChosen": false,
+  "id": 32
+ },
+ {
+  "name": "Pine Scotch Essential Oil",
+  "latinName": "Pinus Sylvestris",
+  "scent": "fresh, sweet, forest, earthy",
+  "blendsWith": "Cedarwood, Eucalyptus, Lemongrass, Rosemary, Tea Tree",
+  "rate": 3,
+  "isChosen": false,
+  "id": 33
+ },
+ {
+  "name": "Pure Coffee Essential Oil",
+  "latinName": "Coffea arabica",
+  "scent": "fresh, warming",
+  "blendsWith": "peppermint, clove, cinnamon",
+  "rate": 3,
+  "isChosen": false,
+  "id": 34
+ },
+ {
+  "name": "Rose Essential Oil Absolute",
+  "latinName": "Rosa damascene",
+  "scent": "sweet, floral",
+  "blendsWith": "Clary Sage, Geranium, Lavender, Neroli, Patchouli, Sandalwood, Melissa",
+  "rate": 0.1,
+  "isChosen": false,
+  "id": 35
+ },
+ {
+  "name": "Rosemary Essential Oil",
+  "latinName": "Rosmarinus Officinalis",
+  "scent": "herbaceous, camphor ",
+  "blendsWith": "peppermint, lavender, bergamot, ginger root, pine Scotch, Marjoram",
+  "rate": 3,
+  "isChosen": false,
+  "id": 36
+ },
+ {
+  "name": "Sandalwood Essential Oil",
+  "latinName": "Santalum album",
+  "scent": "rich, sweet, woody, exotic",
+  "blendsWith": "Geranium, Lavender, Lemon, Palmarosa, Rose, Ylang Ylang, Jasmine, Mandarin",
+  "rate": 3,
+  "isChosen": false,
+  "id": 37
+ },
+ {
+  "name": "Siberian (needle) fir Essential Oil",
+  "latinName": "Abies sibirica",
+  "scent": "woody,\nfresh, warming, earthy, sweet ",
+  "blendsWith": "cedarwood, peppermint, clove",
+  "rate": 3,
+  "isChosen": false,
+  "id": 38
+ },
+ {
+  "name": "Spearmint Essential Oil",
+  "latinName": "Mentha spicata",
+  "scent": "fresh, minty, sweet",
+  "blendsWith": "peppermint, rosemary, lavender, Mandarin",
+  "rate": 3,
+  "isChosen": false,
+  "id": 39
+ },
+ {
+  "name": "Spruce, Black Essential Oil",
+  "latinName": "Picea mariana",
+  "scent": "woody, warming, fresh, sweet, earthy",
+  "blendsWith": "cedarwood, fir, peppermint",
+  "rate": 4,
+  "isChosen": false,
+  "id": 40
+ },
+ {
+  "name": "Tea Tree Essential Oil",
+  "latinName": "Melaleuca alternifolia",
+  "scent": "fresh, antiseptic, mint, spicy, camphorous",
+  "blendsWith": "lavender, peppermint, clary sage, pine Scotch, thyme",
+  "rate": 3,
+  "isChosen": false,
+  "id": 41
+ },
+ {
+  "name": "Thyme Essential Oil",
+  "latinName": "Thymus vulgaris",
+  "scent": "fresh, herbaceous",
+  "blendsWith": "Bergamot, Cedarwood, Chamomile, Juniper, Lemon, Mandarin, Melissa, Rosemary, Tea Tree",
+  "rate": 3,
+  "isChosen": false,
+  "id": 42
+ },
+ {
+  "name": "Vetiver Essential Oil",
+  "latinName": "Vetiveria Zizanoides",
+  "scent": "earthy, rich, woody, sweet",
+  "blendsWith": "lavender, cedarwood, clove, ginger root, Marjoram",
+  "rate": 1.5,
+  "isChosen": false,
+  "id": 43
+ },
+ {
+  "name": "Ylang Ylang  Essential Oil",
+  "latinName": "Cananga odorata",
+  "scent": "floral, exotic",
+  "blendsWith": "geranium, lavender, citrus, cardamom, chamomile, neroli, Petitgrain, Sandalwood, Marjoram, Melissa",
+  "rate": 2,
+  "isChosen": false,
+  "id": 44
+ }
+]
