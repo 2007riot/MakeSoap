@@ -34,17 +34,17 @@ struct ProcessView: View {
             .contentShape(Rectangle())
             .onTapGesture {
                 withAnimation {
-                    let CP = "false"
-                    let url = getDocumentsDirectory().appendingPathComponent("CP")
+//                    let CP = "false"
+//                    let url = getDocumentsDirectory().appendingPathComponent("CP")
                     oilVM.isColdProcess.toggle()
                     oilVM.isHotProcess = false
-                    do {
-                        try CP.write(to: url, atomically: true, encoding: .utf8)
-                        let input = try String(contentsOf: url)
-                        print(input)
-                    } catch {
-                        print(error.localizedDescription)
-                    }
+//                    do {
+//                        try CP.write(to: url, atomically: true, encoding: .utf8)
+//                        let input = try String(contentsOf: url)
+//                        print(input)
+//                    } catch {
+//                        print(error.localizedDescription)
+//                    }
                 }
             }
             Divider()

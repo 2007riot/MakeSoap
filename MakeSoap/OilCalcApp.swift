@@ -10,7 +10,6 @@ import SwiftUI
 @main
 struct OilCalcApp: App {
     @StateObject private var oilVM: OilViewModel
-    @StateObject private var dataController = DataController()
     
     init() {
         _oilVM = StateObject(wrappedValue: OilViewModel())

@@ -29,7 +29,6 @@
 		5C14BC712832819F003E1F9C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C14BC702832819F003E1F9C /* Recipe.swift */; };
 		5C14BC9728336749003E1F9C /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C14BC9628336748003E1F9C /* RecipeManager.swift */; };
 		5C14BC9928336A9A003E1F9C /* RecipePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C14BC9828336A9A003E1F9C /* RecipePreviewView.swift */; };
-		5C319F4727EA743D00AA14A1 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C319F4627EA743D00AA14A1 /* DataController.swift */; };
 		5C319F8727EBA96B00AA14A1 /* OilStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C319F8627EBA96B00AA14A1 /* OilStore.swift */; };
 		5C319F8927ECC24C00AA14A1 /* AlertAddRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C319F8827ECC24C00AA14A1 /* AlertAddRecipe.swift */; };
 		5C4B472927F4B03E003584E5 /* InfoPropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B472827F4B03E003584E5 /* InfoPropertiesView.swift */; };
@@ -82,7 +81,6 @@
 		5C14BC702832819F003E1F9C /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		5C14BC9628336748003E1F9C /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
 		5C14BC9828336A9A003E1F9C /* RecipePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePreviewView.swift; sourceTree = "<group>"; };
-		5C319F4627EA743D00AA14A1 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		5C319F8627EBA96B00AA14A1 /* OilStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilStore.swift; sourceTree = "<group>"; };
 		5C319F8827ECC24C00AA14A1 /* AlertAddRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAddRecipe.swift; sourceTree = "<group>"; };
 		5C4B472827F4B03E003584E5 /* InfoPropertiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPropertiesView.swift; sourceTree = "<group>"; };
@@ -234,7 +232,6 @@
 				5CCC960F27D0E18A00DD26C6 /* Oil.swift */,
 				5CCC961227D0E76E00DD26C6 /* DataManager.swift */,
 				5CDB09DF282282C500ACD3CB /* EssentialOil.swift */,
-				5C319F4627EA743D00AA14A1 /* DataController.swift */,
 				5C13D4372833BCA800C066AC /* SoapProperty.swift */,
 				5C13D4332833A4AD00C066AC /* SoapPropertiesStore.swift */,
 				5C14BC702832819F003E1F9C /* Recipe.swift */,
@@ -381,7 +378,6 @@
 				5CCC962127D0FA8300DD26C6 /* SoapTypeView.swift in Sources */,
 				5CCC961A27D0E83800DD26C6 /* RecipesView.swift in Sources */,
 				5CCC962327D200BB00DD26C6 /* WaterParametersView.swift in Sources */,
-				5C319F4727EA743D00AA14A1 /* DataController.swift in Sources */,
 				5CDB09E4282284C200ACD3CB /* EssentialOilsStore.swift in Sources */,
 				5CB4ED69281980EF00EEA349 /* GreenButton.swift in Sources */,
 				5C0100EA27E232B200973561 /* CalculatorGroupBoxStyle.swift in Sources */,
