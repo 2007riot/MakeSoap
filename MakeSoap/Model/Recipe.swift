@@ -25,6 +25,7 @@ struct Recipe: Codable, Identifiable {
     let sfValue: Double
     let extraSFValue: Double
     let esOils: [EssentialOil]?
+    let date: Date
     
     
     

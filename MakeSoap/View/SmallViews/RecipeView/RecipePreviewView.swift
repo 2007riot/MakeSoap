@@ -11,12 +11,15 @@ struct RecipePreviewView: View {
     var recipe: Recipe
     var body: some View {
         VStack {
-            RoundedRectangle(cornerRadius: 30)
-                .fill()
-                .foregroundColor(.accentColor)
+//            RoundedRectangle(cornerRadius: 30)
+//                .fill()
+//                .foregroundColor(.accentColor)
             HStack {
             Text(recipe.title)
                 Spacer()
+            }
+            HStack {
+                
             }
             
         }
@@ -24,4 +27,9 @@ struct RecipePreviewView: View {
     }
 }
 
+struct RecipePreviewView_Previews: PreviewProvider {
+    static var previews: some View {
+       RecipePreviewView(recipe: recipe)
+    }
+}
 

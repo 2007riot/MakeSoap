@@ -46,8 +46,8 @@ class RecipeManager: ObservableObject {
         saveRecipes()
     }
     
-    func delete(recipe: Recipe) {
-        //need to think about it
+    func addRecipeName(_ name: String) -> String {
+        return name
     }
     
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EssentialOilsStore: ObservableObject {
+class EssentialOilStore: ObservableObject {
     
     @Published var essentialOils: [EssentialOil] = []
     

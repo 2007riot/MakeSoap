@@ -14,7 +14,7 @@ struct SearchView: View {
    @State var verticalOffset: CGFloat
    @State var horizontalOffset: CGFloat
    @StateObject var oilStoreDefaultData = OilStore(defaultData: true)
-   @StateObject var essentialOilStore = EssentialOilsStore()
+   @StateObject var essentialOilStore = EssentialOilStore()
    
     var searchFor: String
 

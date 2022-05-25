@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-// 1 - Create a UISheetPresentationController that can be used in a SwiftUI interface
 struct SheetPresentationForSwiftUI<Content>: UIViewRepresentable where Content: View {
     
     @Binding var isPresented: Bool
@@ -35,17 +34,14 @@ struct SheetPresentationForSwiftUI<Content>: UIViewRepresentable where Content: 
     
     func updateUIView(_ uiView: UIView, context: Context) {
         
-        // Create the UIViewController that will be presented by the UIButton
+       
         let viewController = UIViewController()
         
-        // Create the UIHostingController that will embed the SwiftUI View
         let hostingController = UIHostingController(rootView: content)
         
-        // Add the UIHostingController to the UIViewController
         viewController.addChild(hostingController)
         viewController.view.addSubview(hostingController.view)
         
-        // Set constraints
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         hostingController.view.leftAnchor.constraint(equalTo: viewController.view.leftAnchor).isActive = true
         hostingController.view.topAnchor.constraint(equalTo: viewController.view.topAnchor).isActive = true
@@ -53,23 +49,18 @@ struct SheetPresentationForSwiftUI<Content>: UIViewRepresentable where Content: 
         hostingController.view.bottomAnchor.constraint(equalTo: viewController.view.bottomAnchor).isActive = true
         hostingController.didMove(toParent: viewController)
         
-        // Set the presentationController as a UISheetPresentationController
         if let sheetController = viewController.presentationController as? UISheetPresentationController {
             sheetController.detents = detents
             sheetController.prefersGrabberVisible = true
             
         }
         
-        // Set the coordinator (delegate)
-        // We need the delegate to use the presentationControllerDidDismiss function
         viewController.presentationController?.delegate = context.coordinator
         
         
         if isPresented {
-            // Present the viewController
             uiView.window?.rootViewController?.present(viewController, animated: true)
         } else {
-            // Dismiss the viewController
             uiView.window?.rootViewController?.dismiss(animated: true)
         }
         

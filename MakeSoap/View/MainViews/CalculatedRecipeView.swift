@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CalculatedRecipeView: View {
     @EnvironmentObject var oilVM: OilViewModel
+    @State var isAlertShowing = false
         
     var body: some View {
         ScrollView {
@@ -18,7 +19,9 @@ struct CalculatedRecipeView: View {
             SoapIngredientsView()
                 .padding()
             Button (action: {
-                RecipeManager.shared.create(recipe: Recipe(title: "smth", oils: oilVM.chosenOils, bubblyValue: oilVM.bubblyInd, cleaningValue: oilVM.cleaningInd, conditionValue: oilVM.conditionInd, hardnessValue: oilVM.hardnessInd, longevityValue: oilVM.longevityInd, stabilityValue: oilVM.stabilityInd, unit: oilVM.si, NaOHvalue: oilVM.totalAmountNaOH, KOHValue: oilVM.totalAmountKOH, soapWeight: oilVM.totalSoapWeight, waterValue: oilVM.totalWaterAmount, extraWater: oilVM.extraWaterAmount, sfValue: oilVM.sfValue, extraSFValue: oilVM.extraSFValue, esOils: oilVM.chosenEsOils))
+                isAlertShowing.toggle()
+                
+                
             }, label: {
                GreenButton(title: "Save Recipe")
             })
@@ -29,6 +32,31 @@ struct CalculatedRecipeView: View {
             oilVM.deleteCalculation()
         })
         .navigationBarTitle("Recipe", displayMode: .inline)
+        .textFieldAlert(isPresented: $isAlertShowing) {
+            TextFieldAlert(title: "Enter a recipe name", message: "", recipeName: $oilVM.recipeTitle) { textFieldTitle in
+                RecipeManager.shared.create(
+                    recipe: Recipe(title: textFieldTitle,
+                                   oils: oilVM.chosenOils,
+                                   bubblyValue: oilVM.bubblyInd,
+                                   cleaningValue: oilVM.cleaningInd,
+                                   conditionValue: oilVM.conditionInd,
+                                   hardnessValue: oilVM.hardnessInd,
+                                   longevityValue: oilVM.longevityInd,
+                                   stabilityValue: oilVM.stabilityInd,
+                                   unit: oilVM.si,
+                                   NaOHvalue: oilVM.totalAmountNaOH,
+                                   KOHValue: oilVM.totalAmountKOH,
+                                   soapWeight: oilVM.totalSoapWeight,
+                                   waterValue: oilVM.totalWaterAmount,
+                                   extraWater: oilVM.extraWaterAmount,
+                                   sfValue: oilVM.sfValue,
+                                   extraSFValue: oilVM.extraSFValue,
+                                   esOils: oilVM.chosenEsOils,
+                                   date: .now)
+                )
+            }
+        }
+        
 }
 }
 

@@ -13,7 +13,7 @@ import Combine
  class OilViewModel: ObservableObject {
     
     let oilStore = OilStore(defaultData: false)
-    let essentialOilStore = EssentialOilsStore()
+    let essentialOilStore = EssentialOilStore()
      
      
     
@@ -76,6 +76,7 @@ import Combine
         }
     }
     @Published var sfValue = 0.0
+//     @AppStorage(extraSFKey) var extraSFPercent: Double?
     @Published var extraSFPercent: Double? {
         didSet {
             UserDefaults.standard.set(extraSFPercent, forKey: extraSFKey)
@@ -155,6 +156,7 @@ import Combine
      @Published var percText = "Remains"
      var percSum: Double = 0
      
+     @Published var recipeTitle = ""
     
     var searchedOils: [Oil] {
         oilStore.oils.filter({ $0.name.contains(inputTextOil) })

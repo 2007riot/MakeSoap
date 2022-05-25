@@ -11,20 +11,32 @@ struct RecipesView: View {
     @ObservedObject var recipeManager = RecipeManager.shared
     var body: some View {
         NavigationView {
-            ScrollView {
-        VStack {
-            ForEach(recipeManager.recipes) { recipe in
-                NavigationLink {
-                    RecipeDetailView(recipe: recipe)
-                } label: {
-                    RecipePreviewView(recipe: recipe).frame(width: 160, height: 200, alignment: .leading)
+           
+                List {
+                    ForEach(recipeManager.recipes) { r in
+                        NavigationLink {
+                            RecipeDetailView(recipe: r)
+                        } label: {
+                            VStack (alignment: .leading) {
+                                Text(r.title)
+                                    .modifier(TitleModifier())
+                                Text(r.date, format: .dateTime.day().month().year().hour().minute().second())
+                            }
+                        }
+                        
+                        
+                        
+                    }
+                    .onDelete(perform: recipeManager.delete(_:))
                 }
-                .navigationTitle("Recipes")
-                
-                
-            }
-        }
-        }
+        
+        
+            .navigationTitle("Recipes")
+//            .toolbar {
+//                ToolbarItem (placement: .navigationBarTrailing){
+//                    <#code#>
+//                }
+//            }
         }
     }
 }

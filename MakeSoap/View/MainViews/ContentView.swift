@@ -9,19 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack (alignment: .bottom) {
-        TabView {
-            CalculatorScreen()
-                .tabItem {
-                    Label("Calculator", systemImage: "percent")
-                }
-            RecipesView()
-                .tabItem {
-                    Label("Recipies", systemImage: "archivebox.fill") // archivebox.circle.fill // wand.and.rays.inverse //circle.grid.cross //circle.grid.cross.fill //rectangle.roundedtop.fill //rectangle.roundedbottom.fill //light.min
-                }
-        }
+        //ZStack (alignment: .bottom) {
+            TabView {
+                CalculatorScreen()
+                    .tabItem {
+                        Label("Calculator", systemImage: "percent")
+                    }
+                RecipesView()
+                    .tabItem {
+                        Label("Recipies", systemImage: "archivebox.fill") // archivebox.circle.fill // wand.and.rays.inverse //circle.grid.cross //circle.grid.cross.fill //rectangle.roundedtop.fill //rectangle.roundedbottom.fill //light.min
+                    }
+            }
             
-        }
+        //}
         
     }
 }
