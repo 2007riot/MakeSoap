@@ -44,10 +44,13 @@ struct CalculatorScreen: View {
                 .simultaneousGesture(gesture)
                 .navigationTitle("Calculator")
                 
+                
             }
+            
             .background(Color(UIColor.systemGray6))//
             
         }
+        .navigationViewStyle(.stack)
         .environmentObject(oilVM)
     }
     

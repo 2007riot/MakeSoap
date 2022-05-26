@@ -32,12 +32,14 @@ struct RecipesView: View {
         
         
             .navigationTitle("Recipes")
+            .navigationViewStyle(.columns)
 //            .toolbar {
 //                ToolbarItem (placement: .navigationBarTrailing){
 //                    <#code#>
 //                }
 //            }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

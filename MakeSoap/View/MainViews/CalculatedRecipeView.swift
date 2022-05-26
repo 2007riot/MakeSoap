@@ -18,13 +18,13 @@ struct CalculatedRecipeView: View {
             .padding()
             SoapIngredientsView()
                 .padding()
-            Button (action: {
+            Button  {
                 isAlertShowing.toggle()
                 
                 
-            }, label: {
+            } label: {
                GreenButton(title: "Save Recipe")
-            })
+            }
               
         }
         .environmentObject(oilVM)
