@@ -80,6 +80,7 @@
 		5C14BC9628336748003E1F9C /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
 		5C14BC9828336A9A003E1F9C /* RecipePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePreviewView.swift; sourceTree = "<group>"; };
 		5C319F8627EBA96B00AA14A1 /* OilStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilStore.swift; sourceTree = "<group>"; };
+		5C413D752847AAB6008DE91D /* Make-Soap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Make-Soap-Info.plist"; sourceTree = "<group>"; };
 		5C4B472827F4B03E003584E5 /* InfoPropertiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPropertiesView.swift; sourceTree = "<group>"; };
 		5C4ED1D927D66A8B007112A6 /* OilRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilRow.swift; sourceTree = "<group>"; };
 		5C517C862829B36B00CABE03 /* OilPropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilPropertyView.swift; sourceTree = "<group>"; };
@@ -186,6 +187,7 @@
 		5CCC95F327D0E0E200DD26C6 = {
 			isa = PBXGroup;
 			children = (
+				5C413D752847AAB6008DE91D /* Make-Soap-Info.plist */,
 				5CCC95FE27D0E0E200DD26C6 /* MakeSoap */,
 				5CCC95FD27D0E0E200DD26C6 /* Products */,
 			);
@@ -532,6 +534,7 @@
 				DEVELOPMENT_TEAM = 6N777LA6M4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Make-Soap-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -562,6 +565,7 @@
 				DEVELOPMENT_TEAM = 6N777LA6M4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Make-Soap-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
