@@ -29,7 +29,7 @@ struct RecipePreviewView: View {
 
 struct RecipePreviewView_Previews: PreviewProvider {
     static var previews: some View {
-       RecipePreviewView(recipe: recipe)
+        RecipePreviewView(recipe: Recipe.example())
     }
 }
 

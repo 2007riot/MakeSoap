@@ -18,23 +18,18 @@ struct SoapPropertyRow: View {
     var body: some View {
         HStack {
             Text(name)
-                .modifier(Title2Modifier())
+                .font(.title3)
+               //.modifier(Title2Modifier())
             Button {
                 showInfoSheet.toggle()
             } label: {
                 Image(systemName: "questionmark.circle.fill")
                     .foregroundColor(.accentColor)
-                    .font(.callout)
+                    .font(.caption2)
             }
             Spacer()
             Text("\(value, specifier: "%.0f") %")
-                .bold()
-                .font(.title3)
-                .foregroundColor(color)
-                .frame(maxWidth: 100, alignment: .leading)
-            Text("\(recomendedValue) %")
-                .font(.title3)
-                .frame(maxWidth: 100, alignment: .trailing)
+                .modifier(TextStyleModifier())
         }
         .halfSheet(isPresented: $showInfoSheet, onDismiss: {
             //nothing

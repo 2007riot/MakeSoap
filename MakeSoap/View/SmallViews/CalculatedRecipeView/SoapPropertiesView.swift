@@ -12,20 +12,13 @@ struct SoapPropertiesView: View {
     
     
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 15) {
             HStack  {
                 Text("Soap Properties")
                     .modifier(TitleModifier())
                 Spacer()
-                Text("Good")
-                    .font(.title2)
             }
-            Spacer()
-                .frame(height: 7)
-            
-            
-
-
+            VStack(spacing: 10) {
             //bubbly
             SoapPropertyRow(name: "Bubbly", recomendedValue: "15-30", value: oilVM.bubblyInd, color: oilVM.bubblyColor, recomendationText: oilVM.bubblySuggestion)
             //cleaning
@@ -40,7 +33,7 @@ struct SoapPropertiesView: View {
             SoapPropertyRow(name: "Stability", recomendedValue: "15-50", value: oilVM.stabilityInd, color: oilVM.stabilityColor, recomendationText: oilVM.stabilitySuggestion)
             //iodine, for now don't need
 //            SoapPropertyRow(name: "Iodine", recomendedValue: "up to 50", value: oilVM.iodineInd, color: oilVM.iodineColor, recomendationText: oilVM.iodineSuggestion)
-            
+            }
         }
     }
 }

@@ -13,7 +13,9 @@ struct CalculatedRecipeView: View {
     @State var isAlertShowing = false
         
     var body: some View {
+        
         ScrollView {
+            
             SoapPropertiesView()
             .padding()
             SoapIngredientsView()

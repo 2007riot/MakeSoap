@@ -20,7 +20,7 @@ struct RecipeDetailView: View {
             if let oils = recipe.oils {
                 VStack (spacing: 20) {
             ForEach(oils, id: \.id) { o in
-                CalculatedOilRow(oil: o, unit: recipe.unit)
+                //CalculatedOilRow(oil: o, unit: recipe.unit)
                 
             }
                 }
@@ -41,6 +41,6 @@ struct RecipeDetailView: View {
 
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeDetailView(recipe: recipe)
+        RecipeDetailView(recipe: Recipe.example())
     }
 }

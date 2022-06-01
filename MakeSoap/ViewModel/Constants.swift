@@ -11,6 +11,33 @@ let oilSearch = "Search oils"
 let essentialOilSearch = "Search Essential oils"
 
 //keys for oilModel
+enum CodingKeys: String, CodingKey {
+    
+    
+    case searchOil = "searchOil"
+    case isSolid = "isSolid"
+    case isLiquid = "isLiquid"
+    case isHybrid = "isHybrid"
+    case isHotProcess = "isHP"
+    case isColdProcess = "isCP"
+    case unit = "unit"
+    case si = "si"
+    case totalOilAmount = "totalOilWeight"
+    case naohHybridPercent = "naohHybrid%"
+    case kohHybridPercent = "kohHybrid%"
+    case waterPercent = "water%"
+    case extraWaterPercent = "extraWater%"
+    case sf = "SF%"
+    case extraSF = "extraSF%"
+    case perc = "isPerc"
+    case percText = "percText"
+    case percSum = "percSum"
+    
+    //oilStore key
+    case oilData = "SavedOilData"
+    
+}
+
 let searchOilKey = "searchOil"
 let isSolidKey = "isSolid"
 let isLiquidKey = "isLiquid"
@@ -29,8 +56,4 @@ let extraSFKey = "extraSF%"
 let percKey = "isPerc"
 let percTextKey = "percText"
 let percSumKey = "percSum"
-
-//oilStore key
 let oilDataKey = "SavedOilData"
-
-let recipe = Recipe(title: "Galina", oils: OilStore(defaultData: true).oils, bubblyValue: 50, cleaningValue: 50, conditionValue: 50, hardnessValue: 50, longevityValue: 50, stabilityValue: 50, unit: "gr", NaOHvalue: 10, KOHValue: 10, soapWeight: 10, waterValue: 10, extraWater: 10, sfValue: 10, extraSFValue: 10, esOils: EssentialOilStore().essentialOils, date: Date.now)

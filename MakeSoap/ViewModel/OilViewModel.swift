@@ -18,50 +18,41 @@ import Combine
      
     
     //process
-    @Published var isHotProcess: Bool {
-        didSet {
-            UserDefaults.standard.set(isHotProcess, forKey: isHotProcessKey)
-        }
-        }
-    @Published var isColdProcess: Bool {
-        didSet {
-            UserDefaults.standard.set(isColdProcess, forKey: isColdProcessKey)
-        }
-    }
+     @AppStorage(CodingKeys.isHotProcess.rawValue) var isHotProcess: Bool = false
+     
+     @AppStorage(CodingKeys.isColdProcess.rawValue) var isColdProcess: Bool = false
+    
     
     //soap type
-    @Published var isHybrid: Bool = false {
+    @AppStorage(CodingKeys) var isHybrid: Bool = false {
         didSet {
             UserDefaults.standard.set(isHybrid, forKey: isHybridKey)
     }
     }
-    @Published var isSolid: Bool = false {
+    @AppStorage(CodingKeys) var isSolid: Bool = false {
         didSet {
             UserDefaults.standard.set(isSolid, forKey: isSolidKey)
     }
     }
-    @Published var isLiquid: Bool {
+    @AppStorage(CodingKeys) var isLiquid: Bool {
         didSet {
             UserDefaults.standard.set(isLiquid, forKey: isLiquidKey)
     }
     }
-    @Published var hybridNaOHPercent: Double {
+    @AppStorage(CodingKeys) var hybridNaOHPercent: Double {
         didSet {
             UserDefaults.standard.set(hybridNaOHPercent, forKey: naohHybridPercentKey)
         }
     }
-    @Published var hybridKOHPercent: Double {
+    @AppStorage(CodingKeys) var hybridKOHPercent: Double {
         didSet {
             UserDefaults.standard.set(hybridKOHPercent, forKey: kohHybridPercentKey)
         }
     }
     
     //water
-    @Published var waterPercent: Double? {
-        didSet {
-            UserDefaults.standard.set(waterPercent, forKey: waterPercentKey)
-        }
-    }
+     @AppStorage(CodingKeys.waterPercent.rawValue) var waterPercent: Double?
+     
     @Published var extraWaterPercent: Double {
         didSet {
             UserDefaults.standard.set(extraWaterPercent, forKey: extraWaterPercentKey)

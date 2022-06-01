@@ -21,7 +21,21 @@ struct Title2Modifier: ViewModifier {
     @ScaledMetric var size: CGFloat = 1
     func body(content: Content) -> some View {
         content
-            .font(.system(size: size * 20, weight: .medium, design: .rounded))
+            .font(.title3)
+            //.font(.system(size: size * 20, weight: .medium, design: .rounded))
+//            .font(.system(.title3, design: .rounded))
+////            .font(.title3)
+//            .medium()
+    }
+}
+
+struct Title2ModifierSemibold: ViewModifier {
+    @ScaledMetric var size: CGFloat = 1
+    func body(content: Content) -> some View {
+        content
+          //  .font(.system(Font.title3.weight(.semibold)))
+            .font(.title3.weight(.semibold))
+            //.font(.system(size: size * 20, weight: .medium, design: .rounded))
 //            .font(.system(.title3, design: .rounded))
 ////            .font(.title3)
 //            .medium()
@@ -31,8 +45,9 @@ struct Title2Modifier: ViewModifier {
 struct TextStyleModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.title3) .frame(maxWidth: 100, alignment: .trailing)
-            .multilineTextAlignment(.leading)
+            .font(.title3)
+            .multilineTextAlignment(.trailing)
+            
     }
 }
 
@@ -55,12 +70,11 @@ struct BodyTextSemiboldModifier: ViewModifier {
 struct TextFieldStyle: ViewModifier {
     @FocusState var isInputActive: Bool
     func body(content: Content) -> some View {
-       // NavigationView {
         content
             .textFieldStyle(.roundedBorder)
             .keyboardType(.numbersAndPunctuation)
             .multilineTextAlignment(.trailing)
-            .frame(maxWidth:100)
+            .frame(maxWidth: 100)
             .disableAutocorrection(true)
     }
 }
