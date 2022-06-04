@@ -13,8 +13,10 @@ struct SoapPropertyRecipeRow: View {
     var body: some View {
         HStack {
             Text(name)
+                .modifier(Title2Modifier())
             Spacer()
-            Text("\(value, specifier: "%.0f")")
+            Text("\(value, specifier: "%.0f") %")
+                .modifier(TextStyleModifier())
         }
     }
 }

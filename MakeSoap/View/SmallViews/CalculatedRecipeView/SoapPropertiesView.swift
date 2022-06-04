@@ -10,15 +10,15 @@ import SwiftUI
 struct SoapPropertiesView: View {
     @EnvironmentObject var oilVM: OilViewModel
     
-    
     var body: some View {
-        VStack(spacing: 15) {
+        VStack(spacing: 10) {
             HStack  {
                 Text("Soap Properties")
                     .modifier(TitleModifier())
                 Spacer()
             }
-            VStack(spacing: 10) {
+            Spacer()
+                .frame(height: 15)
             //bubbly
             SoapPropertyRow(name: "Bubbly", recomendedValue: "15-30", value: oilVM.bubblyInd, color: oilVM.bubblyColor, recomendationText: oilVM.bubblySuggestion)
             //cleaning
@@ -35,7 +35,7 @@ struct SoapPropertiesView: View {
 //            SoapPropertyRow(name: "Iodine", recomendedValue: "up to 50", value: oilVM.iodineInd, color: oilVM.iodineColor, recomendationText: oilVM.iodineSuggestion)
             }
         }
-    }
+    
 }
 
 struct soapPropertiesView_Previews: PreviewProvider {

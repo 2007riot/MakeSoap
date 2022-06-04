@@ -10,91 +10,51 @@ import Combine
 
 
 
- class OilViewModel: ObservableObject {
+class OilViewModel: ObservableObject {
     
-    let oilStore = OilStore(defaultData: false)
+    
+    let oilStore = OilStore(isDefaultData: false)
     let essentialOilStore = EssentialOilStore()
-     
-     
-    
-    //process
-     @AppStorage(CodingKeys.isHotProcess.rawValue) var isHotProcess: Bool = false
-     
-     @AppStorage(CodingKeys.isColdProcess.rawValue) var isColdProcess: Bool = false
     
     
-    //soap type
-    @AppStorage(CodingKeys) var isHybrid: Bool = false {
-        didSet {
-            UserDefaults.standard.set(isHybrid, forKey: isHybridKey)
-    }
-    }
-    @AppStorage(CodingKeys) var isSolid: Bool = false {
-        didSet {
-            UserDefaults.standard.set(isSolid, forKey: isSolidKey)
-    }
-    }
-    @AppStorage(CodingKeys) var isLiquid: Bool {
-        didSet {
-            UserDefaults.standard.set(isLiquid, forKey: isLiquidKey)
-    }
-    }
-    @AppStorage(CodingKeys) var hybridNaOHPercent: Double {
-        didSet {
-            UserDefaults.standard.set(hybridNaOHPercent, forKey: naohHybridPercentKey)
-        }
-    }
-    @AppStorage(CodingKeys) var hybridKOHPercent: Double {
-        didSet {
-            UserDefaults.standard.set(hybridKOHPercent, forKey: kohHybridPercentKey)
-        }
-    }
+    
+    // process
+    @AppStorage(Keys.isHotProcess) var isHotProcess: Bool = false
+    @AppStorage(Keys.isColdProcess) var isColdProcess: Bool = false
+    @Published var soapMakingProcess = ""
+    
+    // soap type
+    @AppStorage(Keys.isHybrid) var isHybrid: Bool = false
+    @AppStorage(Keys.isSolid) var isSolid: Bool = false
+    @AppStorage(Keys.isLiquid) var isLiquid: Bool = false
+    @AppStorage(Keys.naohHybridPercent) var hybridNaOHPercent: Double?
+    @AppStorage(Keys.kohHybridPercent) var hybridKOHPercent: Double?
+    @Published var soapType = ""
     
     //water
-     @AppStorage(CodingKeys.waterPercent.rawValue) var waterPercent: Double?
-     
-    @Published var extraWaterPercent: Double {
-        didSet {
-            UserDefaults.standard.set(extraWaterPercent, forKey: extraWaterPercentKey)
-        }
-    }
-    
+    @AppStorage(Keys.waterPercent) var waterPercent: Double?
+    @AppStorage(Keys.extraWaterPercent) var extraWaterPercent: Double?
     
     //superfat
-    @Published var sfPercent: Double {
-        didSet {
-            UserDefaults.standard.set(sfPercent, forKey: sfKey)
-        }
-    }
+    @AppStorage(Keys.sf) var sfPercent: Double?
     @Published var sfValue = 0.0
-//     @AppStorage(extraSFKey) var extraSFPercent: Double?
-    @Published var extraSFPercent: Double? {
-        didSet {
-            UserDefaults.standard.set(extraSFPercent, forKey: extraSFKey)
-        }
-    }
+    @AppStorage(Keys.extraSF) var extraSFPercent: Double?
     @Published var extraSFValue = 0.0
-   
-    
     @Published var sfValueIsEditing = false
-
+    
     
     //calculation screen
     @Published var calculationSheetShow = false
     
     @Published var totalAmountNaOH = 0.0
     @Published var totalAmountKOH = 0.0
-    @Published var totalOilAmount: Double {
-        didSet {
-            UserDefaults.standard.set(totalOilAmount, forKey: totalOilAmountKey)
-        }
-    }
+    @AppStorage(Keys.totalOilAmount) var totalOilAmount: Double = 0
     @Published var totalEsOilAmount = 0.0
     @Published var totalSoapWeight = 0.0
     @Published var totalWaterAmount = 0.0
     @Published var extraWaterAmount = 0.0
     
-     //MARK: - soap properties
+    //MARK: - soap properties
     var bubblyInd = 0.0
     var cleaningInd = 0.0
     var conditionInd = 0.0
@@ -125,115 +85,101 @@ import Combine
     @Published var inputTextEsOil: String = ""
     //units
     @Published var units = ["Grams", "Kilograms", "Pounds", "Ounces"]
-    @Published var unit: String {
-        didSet {
-            UserDefaults.standard.set(unit, forKey: unitKey)
-        }
-    }
-    @Published var si: String {
-        didSet {
-            UserDefaults.standard.set(si, forKey: siKey)
-        }
-    }
-     
-     //percentage
-     @Published var isPerc: Bool = false {
-         didSet {
-             UserDefaults.standard.set(isPerc, forKey: percKey)
-     }
-     }
-     @Published var isNot100Perc: Bool = false
-     @Published var percLeft: Double = 100
-     @Published var percText = "Remains"
-     var percSum: Double = 0
-     
-     @Published var recipeTitle = ""
+    @AppStorage(Keys.unit) var unit: String = "Grams"//need to think about initialization
+    @AppStorage(Keys.si) var si: String = "Grams"//need to think about initialization
+    
+    //percentage
+    @AppStorage(Keys.isPerc) var isPerc: Bool = false
+    @Published var isNot100Perc: Bool = false
+    @Published var percLeft: Double = 100
+    @Published var percText = "Remains"
+    var percSum: Double = 0
+    
+    @Published var recipeTitle = ""
     
     var searchedOils: [Oil] {
         oilStore.oils.filter({ $0.name.contains(inputTextOil) })
     }
-     var searchedEsOils: [EssentialOil] {
-         essentialOilStore.essentialOils.filter({
-             $0.name.contains(inputTextEsOil)
-         })
-     }
-
+    var searchedEsOils: [EssentialOil] {
+        essentialOilStore.essentialOils.filter({
+            $0.name.contains(inputTextEsOil)
+        })
+    }
+    
     var chosenOils: [Oil] {
         oilStore.oils.filter { oil in
             oil.isChosen
         }
     }
-     var chosenEsOils: [EssentialOil] {
-         essentialOilStore.essentialOils.filter { esOil in
-             esOil.isChosen
-         }
-     }
-     
-     func saveData() {
-         if let encoded = try? JSONEncoder().encode(chosenOils) {
-                 UserDefaults.standard.set(encoded, forKey: oilDataKey)
-             }
-     }
-     
+    var chosenEsOils: [EssentialOil] {
+        essentialOilStore.essentialOils.filter { esOil in
+            esOil.isChosen
+        }
+    }
+    
+    func saveData() {
+        if let encoded = try? JSONEncoder().encode(chosenOils) {
+            UserDefaults.standard.set(encoded, forKey: Keys.oilData)
+        }
+    }
+    
     func changeUnits() {
         switch unit {
-    case units[0]:
-        si = "g"
-    case units[1]:
-        si = "kg"
-    case units[2]:
-        si = "lb"
-    case units[3]:
-        si = "oz"
-    default:
-        si = ""
+            case units[0]:
+                si = "g"
+            case units[1]:
+                si = "kg"
+            case units[2]:
+                si = "lb"
+            case units[3]:
+                si = "oz"
+            default:
+                si = ""
+        }
+    }
+    
+    func calculateEsOilWeight () {
+        var weights: [Double] = []
+        for esOil in chosenEsOils {
+            if let userPerc = esOil.userPercent  {
+                esOil.calculatedWeight = totalOilAmount * userPerc / 100
+                if let weight = esOil.calculatedWeight {
+                    weights.append(weight)
+                }
+            }
+        }
+        totalEsOilAmount = weights.reduce(0, +)
+    }
+    
+    func calculateTotalOilWeight() {
+        var weights: [Double] = []
+        for oil in chosenOils {
+            if let userWeight = oil.userWeightValue {
+                weights.append(userWeight)
+            }
+        }
+        totalOilAmount = weights.reduce(0, +)
+        
+    }
+    
+    func calculateOneOilWeightIfPerc () {
+        for oil in chosenOils {
+            if let userPerc = oil.userPercent {
+                oil.userWeightValue = totalOilAmount * userPerc / 100
+            }
+        }
+    }
+    
+    func calculateOneOilPerc () {
+        for oil in chosenOils {
+            if let oilWeight = oil.userWeightValue {
+                oil.userPercent = oilWeight * 100 / (totalOilAmount)
+            }
         }
     }
     
     
-     
-     func calculateEsOilWeight () {
-         var weights: [Double] = []
-         for esOil in chosenEsOils {
-             if let userPerc = esOil.userPercent  {
-                 esOil.calculatedWeight = totalOilAmount * userPerc / 100
-                 if let weight = esOil.calculatedWeight {
-                     weights.append(weight)
-                 }
-             }
-         }
-         totalEsOilAmount = weights.reduce(0, +)
-     }
-     
-     func calculateTotalOilWeight() {
-         var weights: [Double] = []
-         for oil in chosenOils {
-             if let userWeight = oil.userWeightValue {
-                 weights.append(userWeight)
-             }
-         }
-         totalOilAmount = weights.reduce(0, +)
-         
-     }
-     
-     func calculateOneOilWeightIfPerc () {
-         for oil in chosenOils {
-             if let userPerc = oil.userPercent {
-                 oil.userWeightValue = totalOilAmount * userPerc / 100
-             }
-         }
-     }
-     
-     func calculateOneOilPerc () {
-         for oil in chosenOils {
-             if let oilWeight = oil.userWeightValue {
-                 oil.userPercent = oilWeight * 100 / totalOilAmount
-             }
-         }
-     }
-     
-     
-     
+    
     func calculate() {
         
         
@@ -245,134 +191,148 @@ import Combine
         
         
         calculateEsOilWeight()
-      
+        
         for oil in chosenOils {
-           
+            
             var weightWithSFDiscount: Double {
                 var value: Double = 0
                 if isColdProcess {
                     if let userWeight = oil.userWeightValue {
-                        value = userWeight - userWeight * sfPercent / 100
+                        value = userWeight - userWeight * (sfPercent ?? 0) / 100 //for now nil-coalescing need to think later about unwrapping
                     }
+                    soapMakingProcess = "cold process soap"
                     return value
                 } else {
                     if let userWeight = oil.userWeightValue {
                         if let extraSFperc = extraSFPercent {
-                        value = userWeight - userWeight * extraSFperc / 100
+                            value = userWeight - userWeight * extraSFperc / 100
+                        }
                     }
                 }
-                }
+                soapMakingProcess = "hot process soap"
                 return value
             }
-
             
             if isSolid {
                 let NaOHPerOil = weightWithSFDiscount * oil.saponificationNaOH
-
                 totalAmountNaOH += NaOHPerOil
-                } else if isLiquid {
+                soapType = "Solid"
+            } else if isLiquid {
                 let KOHPerOil = weightWithSFDiscount * oil.saponificationKOH
                 totalAmountKOH += KOHPerOil
-            } else if isHybrid {
-                let NaOHPerOil = weightWithSFDiscount * hybridNaOHPercent / 100 * oil.saponificationNaOH
-                let KOHPerOil = weightWithSFDiscount * hybridKOHPercent / 100 * oil.saponificationKOH
+                soapType = "Liquid"
+            } else {
+                let NaOHPerOil = weightWithSFDiscount * (hybridNaOHPercent ?? 0) / 100 * oil.saponificationNaOH//for now nil-coalescing need to think later about unwrapping
+                let KOHPerOil = weightWithSFDiscount * (hybridKOHPercent ?? 0) / 100 * oil.saponificationKOH//for now nil-coalescing need to think later about unwrapping
                 totalAmountNaOH += NaOHPerOil
                 totalAmountKOH += KOHPerOil
+                soapType = "Hybrid"
             }
             
         }
         
-
-        if let waterPerc = waterPercent {
-        totalWaterAmount = totalOilAmount * waterPerc / 100
+        
+//        if let waterPerc = waterPercent {
+        if waterPercent != nil {
+            totalWaterAmount = totalOilAmount * (waterPercent!) / 100
         }
-        //extraWaterAmount = totalOilAmount * extraWaterPercent / 100
-        sfValue = totalOilAmount * sfPercent / 100
+//        }
+        if extraWaterPercent != nil {
+        extraWaterAmount = totalOilAmount * extraWaterPercent! / 100
+        }
+//        if let sfPercent = sfPercent {
+            sfValue = totalOilAmount * (sfPercent ?? 0) / 100
+//        }
+        if extraSFPercent != nil {
+            extraSFValue = totalOilAmount * extraSFPercent! / 100
+        }
         totalSoapWeight = totalOilAmount + totalEsOilAmount + totalWaterAmount +   totalAmountNaOH + totalAmountKOH
         changeUnits()
-       
+        
         calculateProperties()
+        
+        
     }
-     func calculateProperties() {
-       
-         for oil in chosenOils {
-             if let percent = oil.userPercent {
+    func calculateProperties() {
+        
+        for oil in chosenOils {
+            if let percent = oil.userPercent {
                 
-                 bubblyInd += oil.bubbly * percent / 100
-                 
-                 print("bubly: \(bubblyInd)")
-                 print(oil.name)
-                 print(percent)
-                 cleaningInd += oil.cleaning * percent / 100
-                 conditionInd += oil.condition * percent / 100
-                 hardnessInd += oil.hardness * percent / 100
-                 longevityInd += oil.longevity * percent / 100
-                 stabilityInd += oil.stability * percent / 100
-                 //iodineInd += oil.bubbly * perc / 100
-             }
-         }
-         
-         //set colors and suggestions
+                bubblyInd += oil.bubbly * percent / 100
+                
+                print("bubly: \(bubblyInd)")
+                print(oil.name)
+                print(percent)
+                cleaningInd += oil.cleaning * percent / 100
+                conditionInd += oil.condition * percent / 100
+                hardnessInd += oil.hardness * percent / 100
+                longevityInd += oil.longevity * percent / 100
+                stabilityInd += oil.stability * percent / 100
+                //iodineInd += oil.bubbly * perc / 100
+            }
+        }
+        
+        //set colors and suggestions
         print( bubblyInd)
-         
-         switch bubblyInd {
-         case 0..<10:
-             bubblyColor = .red
-             bubblySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
-         case 10..<15:
-             bubblyColor = .yellow
-             bubblySuggestion = "almost perfect"
-         case 15...30:
-             bubblyColor = .accentColor
-             bubblySuggestion = "perfect"
-         case 30...40:
-             bubblyColor = .yellow
-             bubblySuggestion = "almost perfect"
-         case 40..<100:
-             bubblyColor = .red
-             bubblySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
-         default:
-             bubblyColor = .accentColor
-         }
-         switch cleaningInd {
-         case 0..<10:
-             cleaningColor = .red
-             cleaningSuggestion = ""
-         default:
-             cleaningColor = .gray
-         }
-         
-     }
-
-     func check100perc () {
-         var arrayOfPerc: [Double] = []
-         for oil in chosenOils {
-             if let userPerc = oil.userPercent {
-                 arrayOfPerc.append(userPerc)
-                 
-             }
-         }
-         percSum = arrayOfPerc.reduce(0, +)
-         switch percSum {
-         
-         case 0..<100:
-             isNot100Perc = true
-             percLeft = 100 - percSum
-             
-         case 100:
-             percLeft = 0
-             isNot100Perc = false
-             percText = "Everything's great"
-         case 100...:
-             percLeft = percSum - 100
-             isNot100Perc = true
-             percText = "Overadded:"
-         default:
-             percLeft = 0
-         }
-         
-     }
-     
+        
+        switch bubblyInd {
+            case 0..<10:
+                bubblyColor = .red
+                bubblySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
+            case 10..<15:
+                bubblyColor = .yellow
+                bubblySuggestion = "almost perfect"
+            case 15...30:
+                bubblyColor = .accentColor
+                bubblySuggestion = "perfect"
+            case 30...40:
+                bubblyColor = .yellow
+                bubblySuggestion = "almost perfect"
+            case 40..<100:
+                bubblyColor = .red
+                bubblySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
+            default:
+                bubblyColor = .accentColor
+        }
+        switch cleaningInd {
+            case 0..<10:
+                cleaningColor = .red
+                cleaningSuggestion = ""
+            default:
+                cleaningColor = .gray
+        }
+        
+    }
+    
+    func check100perc () {
+        var arrayOfPerc: [Double] = []
+        for oil in chosenOils {
+            if let userPerc = oil.userPercent {
+                arrayOfPerc.append(userPerc)
+                
+            }
+        }
+        percSum = arrayOfPerc.reduce(0, +)
+        switch percSum {
+                
+            case 0..<100:
+                isNot100Perc = true
+                percLeft = 100 - percSum
+                
+            case 100:
+                percLeft = 0
+                isNot100Perc = false
+                percText = "Everything's great"
+            case 100...:
+                percLeft = percSum - 100
+                isNot100Perc = true
+                percText = "Overadded:"
+            default:
+                percLeft = 0
+        }
+        
+    }
+    
     func changeFavorite(oil: Oil) {
         let index = oilStore.oils.firstIndex { o in
             return o.id == oil.id
@@ -383,17 +343,17 @@ import Combine
         oilStore.oils[index!].userWeightValue = nil
         
         oilStore.saveData()
-       
-    }
-     func changeFavorite(esOil: EssentialOil) {
-         let index = essentialOilStore.essentialOils.firstIndex { o in
-             return o.id == esOil.id
-         }
-         essentialOilStore.essentialOils[index!].isChosen.toggle()
-         essentialOilStore.essentialOils[index!].calculatedWeight = nil
-         essentialOilStore.essentialOils[index!].userPercent = nil
         
-     }
+    }
+    func changeFavorite(esOil: EssentialOil) {
+        let index = essentialOilStore.essentialOils.firstIndex { o in
+            return o.id == esOil.id
+        }
+        essentialOilStore.essentialOils[index!].isChosen.toggle()
+        essentialOilStore.essentialOils[index!].calculatedWeight = nil
+        essentialOilStore.essentialOils[index!].userPercent = nil
+        
+    }
     func deleteCalculation() {
         
         
@@ -410,26 +370,26 @@ import Combine
         
     }
     
-     
-     init() {
-         
-        self.isLiquid = UserDefaults.standard.object(forKey: isLiquidKey) as? Bool ?? true
-        self.isSolid = UserDefaults.standard.object(forKey: isSolidKey) as? Bool ?? false
-        self.isHybrid = UserDefaults.standard.object(forKey: isHybridKey) as? Bool ?? false
-        self.isColdProcess = UserDefaults.standard.object(forKey: isColdProcessKey) as? Bool ?? false
-        self.hybridNaOHPercent = UserDefaults.standard.object(forKey: naohHybridPercentKey) as? Double ?? 0.0
-        self.hybridKOHPercent = UserDefaults.standard.object(forKey: kohHybridPercentKey) as? Double ?? 0.0
-        self.isHotProcess = UserDefaults.standard.object(forKey: isHotProcessKey) as? Bool ?? false
-        self.unit = UserDefaults.standard.object(forKey: unitKey) as? String ?? "Grams"
-        self.si = UserDefaults.standard.object(forKey: siKey) as? String ?? "g"
-        self.totalOilAmount = UserDefaults.standard.object(forKey: totalOilAmountKey) as? Double ?? 0.0
-        self.sfPercent = UserDefaults.standard.object(forKey: sfKey) as? Double ?? 0.0
-        self.extraSFPercent = UserDefaults.standard.object(forKey: extraSFKey) as? Double //?? 0.0
-        self.waterPercent = UserDefaults.standard.object(forKey: waterPercentKey) as? Double //?? 0.0
-        self.extraWaterPercent = UserDefaults.standard.object(forKey: extraWaterPercentKey) as? Double ?? 0.0
-        self.isPerc = UserDefaults.standard.object(forKey: percKey) as? Bool ?? false
-        
-    }
+    
+    //     init() {
+    
+    //        self.isLiquid = UserDefaults.standard.object(forKey: isLiquidKey) as? Bool ?? true
+    //        self.isSolid = UserDefaults.standard.object(forKey: isSolidKey) as? Bool ?? false
+    //        self.isHybrid = UserDefaults.standard.object(forKey: isHybridKey) as? Bool ?? false
+    //        self.isColdProcess = UserDefaults.standard.object(forKey: isColdProcessKey) as? Bool ?? false
+    //        self.hybridNaOHPercent = UserDefaults.standard.object(forKey: naohHybridPercentKey) as? Double ?? 0.0
+    //        self.hybridKOHPercent = UserDefaults.standard.object(forKey: kohHybridPercentKey) as? Double ?? 0.0
+    //        self.isHotProcess = UserDefaults.standard.object(forKey: isHotProcessKey) as? Bool ?? false
+    //        self.unit = UserDefaults.standard.object(forKey: unitKey) as? String ?? "Grams"
+    //        self.si = UserDefaults.standard.object(forKey: siKey) as? String ?? "g"
+    //        self.totalOilAmount = UserDefaults.standard.object(forKey: totalOilAmountKey) as? Double ?? 0.0
+    //        self.sfPercent = UserDefaults.standard.object(forKey: sfKey) as? Double ?? 0.0
+    //        self.extraSFPercent = UserDefaults.standard.object(forKey: extraSFKey) as? Double //?? 0.0
+    //        self.waterPercent = UserDefaults.standard.object(forKey: waterPercentKey) as? Double //?? 0.0
+    //        self.extraWaterPercent = UserDefaults.standard.object(forKey: extraWaterPercentKey) as? Double ?? 0.0
+    //        self.isPerc = UserDefaults.standard.object(forKey: percKey) as? Bool ?? false
+    
+    //    }
 }
 
 

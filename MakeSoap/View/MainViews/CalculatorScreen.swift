@@ -10,15 +10,15 @@ import SwiftUI
 
 struct CalculatorScreen: View {
     @State var selection: Int? = nil
-    @StateObject var oilVM:  OilViewModel
+    @StateObject var oilVM =  OilViewModel()
     
     var gesture: _EndedGesture<TapGesture> {  TapGesture().onEnded {
         oilVM.calculate()
     }
     }
-    init() {
-        _oilVM = StateObject(wrappedValue: OilViewModel())
-    }
+//    init() {
+//        _oilVM = StateObject(wrappedValue: OilViewModel())
+//    }
     var body: some View {
         
         NavigationView {

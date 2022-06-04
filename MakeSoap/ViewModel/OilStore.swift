@@ -17,8 +17,8 @@ class OilStore: ObservableObject {
     }
     
     
-    init (defaultData: Bool) {
-        if defaultData {
+    init (isDefaultData: Bool) {
+        if isDefaultData {
             self.oils = DataManager.shared.load("oilsData.json")
         } else {
             if let data = UserDefaults.standard.data(forKey: oilDataKey) {

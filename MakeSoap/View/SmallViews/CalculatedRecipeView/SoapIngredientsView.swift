@@ -9,17 +9,19 @@ import SwiftUI
 
 
 struct SoapIngredientsView: View {
+    
     @EnvironmentObject var oilVM: OilViewModel
     
     var body: some View {
-        VStack(spacing: 15) {
-            
+        
+        VStack(spacing: 10) {
             HStack  {
                 Text("Ingredients")
                     .modifier(TitleModifier())
                 Spacer()
             }
-            VStack(spacing: 10) {
+            Spacer()
+                .frame(height: 15)
                 HStack(alignment: .top) {
                     Text("Total soap weight")
                         .modifier(Title2ModifierSemibold())
@@ -32,115 +34,34 @@ struct SoapIngredientsView: View {
                 
                 
                 if oilVM.isSolid || oilVM.isHybrid {
-                    HStack {
-                        Text("NaOH")
-                            .modifier(Title2Modifier())
-                        Spacer()
-                        Text("\(oilVM.totalAmountNaOH, specifier: "%.2f") \(oilVM.si)")
-                            .modifier(TextStyleModifier())
-                        
-                    }
-                    
+                    LyeView(lye: "NaOH", lyeAmount: oilVM.totalAmountNaOH, unit: oilVM.si)
                 }
                 if oilVM.isLiquid || oilVM.isHybrid {
-                    HStack {
-                        Text("KOH")
-                            .modifier(Title2Modifier())
-                        Spacer()
-                        Text("\(oilVM.totalAmountKOH, specifier: "%.2f") \(oilVM.si)")
-                            .modifier(TextStyleModifier())
-                        
-                    }
+                    LyeView(lye: "KOH", lyeAmount: oilVM.totalAmountKOH, unit: oilVM.si)
                 }
                 
-                HStack(alignment: .top) {
-                    Text("Water")
-                        .modifier(Title2Modifier())
-                    Spacer()
-                    VStack (alignment: .trailing, spacing: 2) {
-                        Text("\(oilVM.totalWaterAmount, specifier: "%.2f") \(oilVM.si)")
-                            .modifier(TextStyleModifier())
-                        Text("\(oilVM.waterPercent ?? 0, specifier: "%.1f") %")
-                            .modifier(TextStyleModifier())
-                            .foregroundColor(.gray)
-                    }
+            if oilVM.waterPercent != nil {
+            ParameterValuePercView(parameterName: "Water", value: oilVM.totalWaterAmount, perc: oilVM.waterPercent!, unit: oilVM.si)
+            }
+            if oilVM.isHotProcess && oilVM.extraWaterPercent != nil {
+                ParameterValuePercView(parameterName: "Extra water", value: oilVM.extraWaterAmount, perc: oilVM.extraWaterPercent!, unit: oilVM.si)
                 }
-                if oilVM.isHotProcess {
-                    HStack(alignment: .top) {
-                        Text("Extra water")
-                            .modifier(Title2Modifier())
-                        Spacer()
-                        VStack (alignment: .trailing, spacing: 2) {
-                            Text("\(oilVM.extraWaterAmount, specifier: "%.2f") \(oilVM.si)")
-                                .modifier(TextStyleModifier())
-                            Text("\(oilVM.extraWaterPercent, specifier: "%.1f") %")
-                                .modifier(TextStyleModifier())
-                                .foregroundColor(.gray)
-                        }
-                    }
+            if oilVM.sfPercent != nil {
+                ParameterValuePercView(parameterName: "Superfat", value: oilVM.sfValue, perc: oilVM.sfPercent!, unit: oilVM.si)
+            }
+            
+            if oilVM.isHotProcess && oilVM.extraSFPercent != nil {
+                ParameterValuePercView(parameterName: "Extra superfat", value: oilVM.sfValue, perc: oilVM.sfPercent!, unit: oilVM.si)
                 }
-                HStack(alignment: .top) {
-                    Text("Superfat")
-                        .modifier(Title2Modifier())
-                    Spacer()
-                    VStack (alignment: .trailing, spacing: 2) {
-                        Text("\(oilVM.sfValue, specifier: "%.2f") \(oilVM.si)")
-                            .modifier(TextStyleModifier())
-                        Text("\(oilVM.sfPercent, specifier: "%.1f") %")
-                            .modifier(TextStyleModifier())
-                            .foregroundColor(.gray)
-                    }
-                }
-                if oilVM.isHotProcess {
-                    HStack(alignment: .top) {
-                        Text("Extra superfat")
-                            .modifier(Title2Modifier())
-                        Spacer()
-                        VStack (alignment: .trailing, spacing: 2) {
-                            Text("\(oilVM.extraSFValue, specifier: "%.2f") \(oilVM.si)")
-                                .modifier(TextStyleModifier())
-                            Text("\(oilVM.extraSFPercent ?? 0, specifier: "%.1f") %")
-                                .modifier(TextStyleModifier())
-                                .foregroundColor(.gray)
-                        }
-                    }
-                }
+            Group {
                 ForEach(oilVM.chosenOils, id: \.id) { oil in
                     
-                    HStack(alignment: .top) {
-                        Text(oil.name)
-                            .modifier(Title2Modifier())
-                        Spacer()
-                        
-                        VStack (alignment: .trailing, spacing: 2) {
-                            Text("\(oil.userWeightValue ?? 0, specifier: "%.2f") \(oilVM.si)")
-                                .modifier(TextStyleModifier())
-                            
-                            
-                            Text("\(oil.userPercent ?? 0, specifier: "%.2f") %")
-                                .modifier(TextStyleModifier())
-                                .foregroundColor(.gray)
-                            
-                        }
-                    }
+                    OilRecipeRow(oil: oil, unit: oilVM.si)
                 }
                 ForEach(oilVM.chosenEsOils, id: \.id) { esOil in
-                    HStack(alignment: .top) {
-                        Text(esOil.name)
-                            .modifier(Title2Modifier())
-                        Spacer()
-                        VStack (alignment: .trailing, spacing: 2) {
-                            Text("\(esOil.calculatedWeight ?? 0, specifier: "%.2f") \(oilVM.si)")
-                                .modifier(TextStyleModifier())
-                            
-                            Text("\(esOil.userPercent ?? 0, specifier: "%.1f") %")
-                                .modifier(TextStyleModifier())
-                                .foregroundColor(.gray)
-                        }
-                    }
+                    EsOilRecipeRow(esOil: esOil, unit: oilVM.si)
                 }
             }
         }
     }
-    
 }

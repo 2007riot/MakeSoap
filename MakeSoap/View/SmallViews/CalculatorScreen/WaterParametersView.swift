@@ -36,7 +36,7 @@ struct WaterParametersView: View {
                 HStack {
                     Text("Extra water")
                     Spacer()
-                    TextField("Value, %", value: $oilVM.extraWaterPercent, format: .number)
+                    TextField("Value", value: $oilVM.extraWaterPercent, format: .number)
                         .modifier(TextFieldStyle())
                 Text("%")
                 }//.environmentObject(oilVM)

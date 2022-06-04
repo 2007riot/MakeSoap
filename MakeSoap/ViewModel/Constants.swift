@@ -11,30 +11,30 @@ let oilSearch = "Search oils"
 let essentialOilSearch = "Search Essential oils"
 
 //keys for oilModel
-enum CodingKeys: String, CodingKey {
+struct Keys {
     
     
-    case searchOil = "searchOil"
-    case isSolid = "isSolid"
-    case isLiquid = "isLiquid"
-    case isHybrid = "isHybrid"
-    case isHotProcess = "isHP"
-    case isColdProcess = "isCP"
-    case unit = "unit"
-    case si = "si"
-    case totalOilAmount = "totalOilWeight"
-    case naohHybridPercent = "naohHybrid%"
-    case kohHybridPercent = "kohHybrid%"
-    case waterPercent = "water%"
-    case extraWaterPercent = "extraWater%"
-    case sf = "SF%"
-    case extraSF = "extraSF%"
-    case perc = "isPerc"
-    case percText = "percText"
-    case percSum = "percSum"
+    static let searchOil = "searchOil"
+    static let isSolid = "isSolid"
+    static let isLiquid = "isLiquid"
+    static let isHybrid = "isHybrid"
+    static let isHotProcess = "isHP"
+    static let isColdProcess = "isCP"
+    static let unit = "unit"
+    static let si = "si"
+    static let totalOilAmount = "totalOilWeight"
+    static let naohHybridPercent = "naohHybrid%"
+    static let kohHybridPercent = "kohHybrid%"
+    static let waterPercent = "water%"
+    static let extraWaterPercent = "extraWater%"
+    static let sf = "SF%"
+    static let extraSF = "extraSF%"
+    static let isPerc = "isPerc"
+    static let percText = "percText"
+    static let percSum = "percSum"
     
     //oilStore key
-    case oilData = "SavedOilData"
+    static let oilData = "SavedOilData"
     
 }
 

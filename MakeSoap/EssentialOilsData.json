@@ -158,7 +158,7 @@
   "scent": "floral, herbal, fresh",
   "blendsWith": "litsea, cedarwood, geranium, tea tree, vetiver, Pepper Black, Chamomile, grapefruit, neroli, Petitgrain, Rose, Sandalwood, Melissa, Mandarin",
   "rate": 5,
-  "isChosen": true,
+  "isChosen": false,
   "id": 17
  },
  {

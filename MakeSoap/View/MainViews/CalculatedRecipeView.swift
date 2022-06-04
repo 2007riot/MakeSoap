@@ -9,25 +9,24 @@ import SwiftUI
 
 
 struct CalculatedRecipeView: View {
+    
     @EnvironmentObject var oilVM: OilViewModel
     @State var isAlertShowing = false
-        
+    @EnvironmentObject var recipeManager: RecipeManager
     var body: some View {
         
         ScrollView {
             
             SoapPropertiesView()
-            .padding()
+                .padding()
             SoapIngredientsView()
                 .padding()
             Button  {
                 isAlertShowing.toggle()
                 
-                
             } label: {
-               GreenButton(title: "Save Recipe")
+                GreenButton(title: "Save Recipe")
             }
-              
         }
         .environmentObject(oilVM)
         .onDisappear(perform: {
@@ -36,8 +35,15 @@ struct CalculatedRecipeView: View {
         .navigationBarTitle("Recipe", displayMode: .inline)
         .textFieldAlert(isPresented: $isAlertShowing) {
             TextFieldAlert(title: "Enter a recipe name", message: "", recipeName: $oilVM.recipeTitle) { textFieldTitle in
-                RecipeManager.shared.create(
+                recipeManager.create(
                     recipe: Recipe(title: textFieldTitle,
+                                   soapMakingProcess: oilVM.soapMakingProcess,
+                                   soapType: oilVM.soapType,
+                                   isColdProcess: oilVM.isColdProcess,
+                                   isHotProcess: oilVM.isHotProcess,
+                                   isSolidSoap: oilVM.isSolid,
+                                   isLiquidSoap: oilVM.isLiquid,
+                                   isHybridSoap: oilVM.isHybrid,
                                    oils: oilVM.chosenOils,
                                    bubblyValue: oilVM.bubblyInd,
                                    cleaningValue: oilVM.cleaningInd,
@@ -50,15 +56,19 @@ struct CalculatedRecipeView: View {
                                    KOHValue: oilVM.totalAmountKOH,
                                    soapWeight: oilVM.totalSoapWeight,
                                    waterValue: oilVM.totalWaterAmount,
+                                   waterPerc: oilVM.waterPercent,
                                    extraWater: oilVM.extraWaterAmount,
+                                   extraWaterPerc: oilVM.extraWaterPercent,
                                    sfValue: oilVM.sfValue,
+                                   sfPerc: oilVM.sfPercent,
                                    extraSFValue: oilVM.extraSFValue,
+                                   extraSFPerc: oilVM.extraSFPercent,
                                    esOils: oilVM.chosenEsOils,
                                    date: .now)
                 )
             }
         }
         
-}
+    }
 }
 

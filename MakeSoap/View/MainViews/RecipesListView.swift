@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct RecipesView: View {
-    @ObservedObject var recipeManager = RecipeManager.shared
+struct RecipesListView: View {
+    @EnvironmentObject var recipeManager: RecipeManager
     var body: some View {
+        
         NavigationView {
            
                 List {
@@ -24,13 +25,11 @@ struct RecipesView: View {
                             }
                         }
                         
-                        
-                        
                     }
                     .onDelete(perform: recipeManager.delete(_:))
                 }
         
-        
+                
             .navigationTitle("Recipes")
             .navigationViewStyle(.columns)
             
@@ -39,8 +38,8 @@ struct RecipesView: View {
     }
 }
 
-struct RecipeScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        RecipesView()
-    }
-}
+//struct RecipeScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecipesView(recipeManager: <#RecipeManager#>)
+//    }
+//}

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct SoapProperty: Codable, Identifiable {
+    
     var id = UUID()
     var name: String
 //    var recomendedValue: String

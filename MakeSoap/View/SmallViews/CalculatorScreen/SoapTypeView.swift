@@ -68,7 +68,7 @@ struct SoapTypeView: View {
                     HStack {
                         Text("NaOH")
                         Spacer()
-                        TextField("No value", value: $oilVM.hybridNaOHPercent, format: .number, prompt: Text("No value"))
+                        TextField("Value", value: $oilVM.hybridNaOHPercent, format: .number, prompt: Text("Value"))
                             .modifier(TextFieldStyle())
                         Text("%")
                     }
@@ -76,7 +76,7 @@ struct SoapTypeView: View {
                     HStack {
                         Text("KOH")
                         Spacer()
-                        TextField("No value", value: $oilVM.hybridKOHPercent, format: .number, prompt: Text("No value"))
+                        TextField("Value", value: $oilVM.hybridKOHPercent, format: .number, prompt: Text("Value"))
                             .modifier(TextFieldStyle())
                         Text("%")
                     }

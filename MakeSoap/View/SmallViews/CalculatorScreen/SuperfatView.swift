@@ -26,7 +26,7 @@ struct SuperfatView: View {
                 Text("Superfat")
                 Spacer()
                 
-                TextField("Value, %", value: $oilVM.sfPercent, format: .number)
+                TextField("Value", value: $oilVM.sfPercent, format: .number)
                     .modifier(TextFieldStyle())
                 Text("%")
                 

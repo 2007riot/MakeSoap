@@ -18,8 +18,7 @@ struct SoapPropertyRow: View {
     var body: some View {
         HStack {
             Text(name)
-                .font(.title3)
-               //.modifier(Title2Modifier())
+               .modifier(Title2Modifier())
             Button {
                 showInfoSheet.toggle()
             } label: {

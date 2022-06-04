@@ -10,6 +10,31 @@ import SwiftUI
 
 class Oil: Identifiable, Codable, Hashable, ObservableObject {
     
+    internal init(id: Int, name: String, saponificationKOH: Double, saponificationNaOH: Double, bubbly: Double, cleaning: Double, condition: Double, hardness: Double, longevity: Double, isChosen: Bool, userWeightValue: Double? = nil, userPercent: Double? = nil, stability: Double, Lauric: Double, Linoleic: Double, Linolenic: Double, Myristic: Double, Oleic: Double, Palmitic: Double, Ricinoleic: Double, Stearic: Double) {
+        self.id = id
+        self.name = name
+        self.saponificationKOH = saponificationKOH
+        self.saponificationNaOH = saponificationNaOH
+        self.bubbly = bubbly
+        self.cleaning = cleaning
+        self.condition = condition
+        self.hardness = hardness
+        self.longevity = longevity
+        self.isChosen = isChosen
+        self.userWeightValue = userWeightValue
+        self.userPercent = userPercent
+        self.stability = stability
+        self.Lauric = Lauric
+        self.Linoleic = Linoleic
+        self.Linolenic = Linolenic
+        self.Myristic = Myristic
+        self.Oleic = Oleic
+        self.Palmitic = Palmitic
+        self.Ricinoleic = Ricinoleic
+        self.Stearic = Stearic
+    }
+    
+    
     
     var id: Int
     var name: String
@@ -42,5 +67,11 @@ class Oil: Identifiable, Codable, Hashable, ObservableObject {
 
     static func == (lhs: Oil, rhs: Oil) -> Bool {
          lhs.userWeightValue == rhs.userWeightValue
+    }
+    
+    static func example() -> Oil {
+        
+        Oil(id: 23, name: "Canola Oil, high oleic", saponificationKOH: 0.186, saponificationNaOH: 0.133, bubbly: 0, cleaning: 0, condition: 90, hardness: 6, longevity: 6, isChosen: false, stability: 6, Lauric: 0, Linoleic: 12, Linolenic: 4, Myristic: 0, Oleic: 74, Palmitic: 4, Ricinoleic: 0, Stearic: 2)
+        
     }
 }

@@ -11,29 +11,20 @@ struct RecipeDetailView: View {
     var recipe: Recipe
     var body: some View {
         ScrollView {
-            VStack (spacing: 25)  {
-            HStack  {
-        Text("Ingredients")
-                    .modifier(TitleModifier())
-                Spacer()
-            }
-            if let oils = recipe.oils {
-                VStack (spacing: 20) {
-            ForEach(oils, id: \.id) { o in
-                //CalculatedOilRow(oil: o, unit: recipe.unit)
-                
-            }
+            if let soapType = recipe.soapType, let soapMakingProcess = recipe.soapMakingProcess {
+                VStack {
+                    Text("\(soapType), \(soapMakingProcess)")
+                    Text("from \(recipe.date, format: .dateTime.day().month().year())")
+                    
                 }
             }
-            Text("Soap Properties")
-            SoapPropertyRecipeRow(name: "Bubbly", value: recipe.bubblyValue ?? 0)
-            SoapPropertyRecipeRow(name: "Cleaning", value: recipe.conditionValue ?? 0)
-            SoapPropertyRecipeRow(name: "Condition", value: recipe.conditionValue ?? 0)
-            SoapPropertyRecipeRow(name: "Hardness", value: recipe.hardnessValue ?? 0)
-            SoapPropertyRecipeRow(name: "Longevity", value: recipe.longevityValue ?? 0)
-            SoapPropertyRecipeRow(name: "Stability", value: recipe.stabilityValue ?? 0)
-        }
-        .padding()
+            
+            RecipeSoapIngredientsView(recipe: recipe)
+                .padding()
+            
+            RecipeSoapPropertiesView(recipe: recipe)
+                .padding()
+            
         }
         .navigationBarTitle(recipe.title, displayMode: .inline)
     }
@@ -44,3 +35,4 @@ struct RecipeDetailView_Previews: PreviewProvider {
         RecipeDetailView(recipe: Recipe.example())
     }
 }
+

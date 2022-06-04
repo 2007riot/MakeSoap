@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct SearchView: View {
-   @EnvironmentObject var oilVM: OilViewModel
-   @Binding var editing: Bool
-   @Binding var inputText: String
-   @State var verticalOffset: CGFloat
-   @State var horizontalOffset: CGFloat
-   @StateObject var oilStoreDefaultData = OilStore(defaultData: true)
-   @StateObject var essentialOilStore = EssentialOilStore()
-   
+    
+    @EnvironmentObject var oilVM: OilViewModel
+    @Binding var editing: Bool
+    @Binding var inputText: String
+    @State var verticalOffset: CGFloat
+    @State var horizontalOffset: CGFloat
+    
+    @StateObject var oilStoreDefaultData = OilStore(isDefaultData: true)
+    @StateObject var essentialOilStore = EssentialOilStore()
+    
     var searchFor: String
-
+    
     public init(editing: Binding<Bool>, inputText: Binding<String>, searchFor: String) {
         self._editing = editing
         self._inputText = inputText
@@ -25,76 +27,76 @@ struct SearchView: View {
         self.horizontalOffset = 0
         self.searchFor = searchFor
     }
-
+    
     public init(editing: Binding<Bool>, text: Binding<String>, verticalOffset: CGFloat, horizontalOffset: CGFloat, searchFor: String) {
         self._editing = editing
         self._inputText = text
         self.verticalOffset = verticalOffset
         self.horizontalOffset = horizontalOffset
         self.searchFor = searchFor
-       
+        
     }
     
     
     var body: some View {
         
-            ScrollView {
+        ScrollView {
+            
+            LazyVStack(spacing: 0) {
+                //                 switch searchFor {
+                //                 case oilSearch:
+                //                     oilSearchView
+                //                 case essentialOilSearch:
+                //                     essentialOilsearchView
+                //                 default:
+                //                     Text("Nothing to search")
+                //                 }
+                //  searchFor == oilSearch ? oilSearchView : essentialOilsearchView
+                if searchFor == oilSearch {
+                    oilSearchView
+                } else {
+                    essentialOilsearchView
+                }
                 
-             LazyVStack(spacing: 0) {
-//                 switch searchFor {
-//                 case oilSearch:
-//                     oilSearchView
-//                 case essentialOilSearch:
-//                     essentialOilsearchView
-//                 default:
-//                     Text("Nothing to search")
-//                 }
-               //  searchFor == oilSearch ? oilSearchView : essentialOilsearchView
-                 if searchFor == oilSearch {
-                     oilSearchView
-                 } else {
-                     essentialOilsearchView
-                 }
-                 
             }
-             .background(.ultraThinMaterial)
-             .clipShape(RoundedRectangle(cornerRadius: 8))
-             .isHidden(!editing, remove: !editing)
+            .background(.ultraThinMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .isHidden(!editing, remove: !editing)
         }
     }
     
     var oilSearchView: some View {
         ForEach(oilVM.searchedOils, id: \.id) { oil in
-         
-//            oilVM.searchedOils.isEmpty ? Text("No oils found") : Text(oil.name)
+            
+            //            oilVM.searchedOils.isEmpty ? Text("No oils found") : Text(oil.name)
             HStack {
                 oil.isChosen ? Text(oil.name).foregroundColor(.accentColor) : Text(oil.name)
                 Spacer()
                 oil.isChosen ? Image(systemName: "checkmark").foregroundColor(.accentColor) : nil
                 
             }
-                .padding()
-                .padding(.vertical, 25)
-                .frame(minWidth: 0,
-                       maxWidth: .infinity,
-                       minHeight: 0,
-                       maxHeight: 50,
-                       alignment: .leading)
-                .contentShape(Rectangle())
-                .onTapGesture(perform:  {
-                    withAnimation(.easeIn) {
-                        editing = false
-                        self.endTextEditing()
-                        oilVM.changeFavorite(oil: oil)
-                        oilVM.isPerc ? oilVM.check100perc() : oilVM.calculateTotalOilWeight()
-                        
-                    }
-                    
+            .padding()
+            .padding(.vertical, 25)
+            .frame(minWidth: 0,
+                   maxWidth: .infinity,
+                   minHeight: 0,
+                   maxHeight: 50,
+                   alignment: .leading)
+            .contentShape(Rectangle())
+            .onTapGesture(perform:  {
+                withAnimation(.easeIn) {
+                    editing = false
+                    self.endTextEditing()
+                    oilVM.changeFavorite(oil: oil)
+                    oilVM.isPerc ? oilVM.check100perc() : oilVM.calculateTotalOilWeight()
                     
                 }
-                              )
+                
+                
+            }
+            )
             Divider()
-
+            
         }
     }
     var essentialOilsearchView: some View {
@@ -121,46 +123,11 @@ struct SearchView: View {
                     oilVM.changeFavorite(esOil: esOil)
                     oilVM.calculateEsOilWeight()
                 }
-        }
+            }
             )
             Divider()
+        }
+        
     }
-    
 }
-//        Menu(oilVM.searchText) {
-//            ForEach(oilVM.searchedOils, id: \.id) { oil in
-//                Button(oil.name) {
-//                    oilVM.changeFavorite(oil: oil)
-//                }
-//            }
-//            Button("Duplicate", action: printH)
-//            Button("Rename", action: printH)
-//            Button("Delete…", action: printH)
-//            Menu("Copy") {
-//                Button("Copy", action: copy)
-//                Button("Copy Formatted", action: copyFormatted)
-//                Button("Copy Library Path", action: copyPath)
-//            }
-        
-        // Button, that when tapped shows 3 options
-                      
-                          
-                      // showMenu.toggle()
-       //                if edit == false {
-       //                    showMenu = false
-       //                }
-                       
-                       
-       //                if oilVM.searchText == "" {
-       //                    showMenu.toggle()
-       //                }
-               }
-        
-//    }
-//}
-//}
-//struct SearchOilMenu_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchOilMenu()
-//    }
-//}
+

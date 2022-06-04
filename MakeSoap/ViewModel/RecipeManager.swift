@@ -10,10 +10,10 @@ import Foundation
 class RecipeManager: ObservableObject {
     
     @Published var recipes: [Recipe] = []
-    private let dataSourceURL: URL
-    static let shared = RecipeManager()
     
-    private func getAllRecipes() -> [Recipe] {
+    private let dataSourceURL: URL
+    
+    func getAllRecipes() -> [Recipe] {
         do {
             let decoder = PropertyListDecoder()
             let data = try Data(contentsOf: dataSourceURL)
