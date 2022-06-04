@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct SuperfatView: View {
+    
     @EnvironmentObject var oilVM: OilViewModel
     @State var showInfoSheet = false
+    
     var body: some View {
         GroupBox(label:
                     HStack {
@@ -47,10 +49,10 @@ struct SuperfatView: View {
         }
         .groupBoxStyle(CalculatorGroupBoxStyle())
         .halfSheet(isPresented: $showInfoSheet, onDismiss: {
-                //nothing
-            }, content: {
-                SuperfatInfoView()
-            })
+            //nothing
+        }, content: {
+            SuperfatInfoView()
+        })
         
         
         
@@ -58,15 +60,13 @@ struct SuperfatView: View {
 }
 
 struct SuperfatView_Previews: PreviewProvider {
+    
+    static let oilVM = OilViewModel()
+    
     static var previews: some View {
         SuperfatView()
+            .environmentObject(oilVM)
     }
 }
 
-struct SuperfatInfoView: View {
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("superfat is important")
-        }
-    }
-}
+

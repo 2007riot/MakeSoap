@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftUI
+
 class DataManager {
     
     static let shared = DataManager()

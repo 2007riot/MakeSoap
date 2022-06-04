@@ -8,8 +8,10 @@ import Combine
 import SwiftUI
 
 struct WaterParametersView: View {
+    
     @EnvironmentObject var oilVM: OilViewModel
     @State var showInfoSheet = false
+    
     var body: some View {
         GroupBox(label:
                     HStack {
@@ -61,8 +63,12 @@ struct WaterParametersView: View {
 }
 
 struct WaterParametersView_Previews: PreviewProvider {
+    
+    static let oilVM = OilViewModel()
+    
     static var previews: some View {
         WaterParametersView()
+            .environmentObject(oilVM)
     }
 }
 

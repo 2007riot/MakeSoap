@@ -71,7 +71,25 @@ class Oil: Identifiable, Codable, Hashable, ObservableObject {
     
     static func example() -> Oil {
         
-        Oil(id: 23, name: "Canola Oil, high oleic", saponificationKOH: 0.186, saponificationNaOH: 0.133, bubbly: 0, cleaning: 0, condition: 90, hardness: 6, longevity: 6, isChosen: false, stability: 6, Lauric: 0, Linoleic: 12, Linolenic: 4, Myristic: 0, Oleic: 74, Palmitic: 4, Ricinoleic: 0, Stearic: 2)
+        Oil(id: 23,
+            name: "Canola Oil, high oleic",
+            saponificationKOH: 0.186,
+            saponificationNaOH: 0.133,
+            bubbly: 0,
+            cleaning: 0,
+            condition: 90,
+            hardness: 6,
+            longevity: 6,
+            isChosen: false,
+            stability: 6,
+            Lauric: 0,
+            Linoleic: 12,
+            Linolenic: 4,
+            Myristic: 0,
+            Oleic: 74,
+            Palmitic: 4,
+            Ricinoleic: 0,
+            Stearic: 2)
         
     }
 }

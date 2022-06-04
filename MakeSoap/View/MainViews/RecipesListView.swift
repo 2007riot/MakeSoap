@@ -38,8 +38,12 @@ struct RecipesListView: View {
     }
 }
 
-//struct RecipeScreen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RecipesView(recipeManager: <#RecipeManager#>)
-//    }
-//}
+struct RecipesListView_Previews: PreviewProvider {
+    
+    static let recipeManager = RecipeManager()
+    
+    static var previews: some View {
+        RecipesListView()
+            .environmentObject(recipeManager)
+    }
+}

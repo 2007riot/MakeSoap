@@ -40,6 +40,7 @@ struct Recipe: Codable, Identifiable {
     let date: Date
     
     static func example() -> Recipe {
+        
         Recipe(title: "Galina",
                soapMakingProcess: "Cold process",
                soapType: "Hybrid soap",

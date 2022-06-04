@@ -9,11 +9,9 @@ import SwiftUI
 
 @main
 struct OilCalcApp: App {
-    @StateObject private var oilVM: OilViewModel
     
-    init() {
-        _oilVM = StateObject(wrappedValue: OilViewModel())
-    }
+    @StateObject private var oilVM = OilViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

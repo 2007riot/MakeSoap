@@ -30,6 +30,9 @@ class OilViewModel: ObservableObject {
     @AppStorage(Keys.naohHybridPercent) var hybridNaOHPercent: Double?
     @AppStorage(Keys.kohHybridPercent) var hybridKOHPercent: Double?
     @Published var soapType = ""
+    var sumOfLyes: Double = 0
+    var excessLye: Double = 0
+    @AppStorage(Keys.sumOfLyeErrorMessage) var sumOfLyesErroMessage: String?
     
     //water
     @AppStorage(Keys.waterPercent) var waterPercent: Double?
@@ -162,6 +165,32 @@ class OilViewModel: ObservableObject {
         
     }
     
+    func calculateLyeSum () {
+        guard let koh = hybridKOHPercent, let naoh =  hybridNaOHPercent else {
+            return
+        }
+        
+        sumOfLyes = koh + naoh
+        
+        switch sumOfLyes {
+                
+            case ...0:
+                sumOfLyesErroMessage = "The sum of NaOH and KOH can't be a negative number."
+            case 0..<100:
+                excessLye = 100 - sumOfLyes
+                sumOfLyesErroMessage = "The sum of NaOh and KOH should be 100 %, add \(excessLye) %."
+            case 100:
+                sumOfLyesErroMessage = nil
+            case 100...:
+                
+                excessLye = sumOfLyes - 100
+                sumOfLyesErroMessage = "The sum of NaOH and KOH can't exceed 100%, reduce the amount of lye by \(excessLye) %."
+                
+                
+            default:
+                sumOfLyesErroMessage = nil
+        }
+    }
     func calculateOneOilWeightIfPerc () {
         for oil in chosenOils {
             if let userPerc = oil.userPercent {
@@ -273,7 +302,6 @@ class OilViewModel: ObservableObject {
         }
         
         //set colors and suggestions
-        print( bubblyInd)
         
         switch bubblyInd {
             case 0..<10:
@@ -326,7 +354,7 @@ class OilViewModel: ObservableObject {
             case 100...:
                 percLeft = percSum - 100
                 isNot100Perc = true
-                percText = "Overadded:"
+                percText = "Excess:"
             default:
                 percLeft = 0
         }

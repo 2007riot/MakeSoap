@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ProcessView: View {
+    
     @EnvironmentObject var oilVM: OilViewModel
     @State var showInfoSheet = false
+    
     var body: some View {
         GroupBox(label:
                     HStack {
@@ -34,17 +36,8 @@ struct ProcessView: View {
             .contentShape(Rectangle())
             .onTapGesture {
                 withAnimation {
-//                    let CP = "false"
-//                    let url = getDocumentsDirectory().appendingPathComponent("CP")
                     oilVM.isColdProcess.toggle()
                     oilVM.isHotProcess = false
-//                    do {
-//                        try CP.write(to: url, atomically: true, encoding: .utf8)
-//                        let input = try String(contentsOf: url)
-//                        print(input)
-//                    } catch {
-//                        print(error.localizedDescription)
-//                    }
                 }
             }
             Divider()
@@ -73,8 +66,11 @@ struct ProcessView: View {
 }
 
 struct ProcessView_Previews: PreviewProvider {
+    
+    static let oilVM = OilViewModel()
+    
     static var previews: some View {
-        ProcessView()
+        ProcessView()            .environmentObject(oilVM)
     }
 }
 

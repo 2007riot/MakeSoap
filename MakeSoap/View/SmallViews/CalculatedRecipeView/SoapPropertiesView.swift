@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SoapPropertiesView: View {
+    
     @EnvironmentObject var oilVM: OilViewModel
     
     var body: some View {
@@ -39,7 +40,12 @@ struct SoapPropertiesView: View {
 }
 
 struct soapPropertiesView_Previews: PreviewProvider {
+    
+    static let oilVM = OilViewModel()
+    
     static var previews: some View {
         SoapPropertiesView()
+            .environmentObject(oilVM)
+            .padding()
     }
 }

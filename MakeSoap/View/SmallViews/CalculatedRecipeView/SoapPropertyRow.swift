@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SoapPropertyRow: View {
+    
     @State var showInfoSheet = false
     
     let name: String
@@ -18,7 +19,7 @@ struct SoapPropertyRow: View {
     var body: some View {
         HStack {
             Text(name)
-               .modifier(Title2Modifier())
+                .modifier(Title2Modifier())
             Button {
                 showInfoSheet.toggle()
             } label: {
@@ -36,6 +37,17 @@ struct SoapPropertyRow: View {
             Text(recomendationText)
                 .padding()
         })
+    }
+}
+
+struct SoapPropertyRow_Previews: PreviewProvider {
+    
+    static let oilVM = OilViewModel()
+    
+    static var previews: some View {
+        SoapPropertyRow(name: "Hardness", recomendedValue: "35-45", value: oilVM.hardnessInd, color: oilVM.hardnessColor, recomendationText: oilVM.hardnessSuggestion)
+            .padding()
+            
     }
 }
 

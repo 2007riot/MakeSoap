@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct OilRow: View {
+    
     @EnvironmentObject var oil: Oil
     @EnvironmentObject var oilVM: OilViewModel
     @State var showInfoSheet = false
+    
     var body: some View {
         
         HStack {
@@ -24,6 +26,7 @@ struct OilRow: View {
             }
                 
             Spacer()
+            
             TextField("Value", value: oilVM.isPerc ? $oil.userPercent : $oil.userWeightValue, format: .number)
                 .modifier(TextFieldStyle())
                     .onChange(of: oilVM.isPerc ? oil.userPercent : oil.userWeightValue, perform: { _ in
@@ -61,3 +64,16 @@ struct OilRow: View {
     }
 }
 
+
+struct OilRow_Previews: PreviewProvider {
+    
+    static let oilVM = OilViewModel()
+    static let oil = Oil.example()
+    
+    static var previews: some View {
+        OilRow()
+            .environmentObject(oilVM)
+            .environmentObject(oil)
+            .padding()
+    }
+}

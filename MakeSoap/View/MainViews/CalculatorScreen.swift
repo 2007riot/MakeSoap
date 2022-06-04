@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct CalculatorScreen: View {
+    
     @State var selection: Int? = nil
     @StateObject var oilVM =  OilViewModel()
     
@@ -16,9 +17,7 @@ struct CalculatorScreen: View {
         oilVM.calculate()
     }
     }
-//    init() {
-//        _oilVM = StateObject(wrappedValue: OilViewModel())
-//    }
+    
     var body: some View {
         
         NavigationView {
@@ -59,6 +58,7 @@ struct CalculatorScreen: View {
 }
 
 struct CalculatorScreen_Previews: PreviewProvider {
+    
     static var previews: some View {
         CalculatorScreen()
     }

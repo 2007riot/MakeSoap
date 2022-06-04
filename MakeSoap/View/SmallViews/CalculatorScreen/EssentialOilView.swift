@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct EssentialOilView: View {
+    
     @EnvironmentObject var oilVM: OilViewModel
     @State var editing: Bool = false
+    
     var body: some View {
         GroupBox(label:
                     Text("Essential Oils")) {
@@ -35,3 +37,12 @@ struct EssentialOilView: View {
 }
 
 
+struct EssentialOilView_Previews: PreviewProvider {
+    
+    static let oilVM = OilViewModel()
+    
+    static var previews: some View {
+        EssentialOilView()
+            .environmentObject(oilVM)
+    }
+}

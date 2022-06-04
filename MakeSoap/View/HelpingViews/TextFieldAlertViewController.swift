@@ -44,6 +44,7 @@ class TextFieldAlertViewController: UIViewController {
         
         ac.addTextField()
         ac.textFields![0].placeholder = "Enter soap recipe name"
+        ac.view.tintColor = UIColor(red: 75/255, green: 122/255, blue: 113/255, alpha: 1)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
             self?.isPresented?.wrappedValue = false
@@ -52,9 +53,6 @@ class TextFieldAlertViewController: UIViewController {
         let saveAlertAction = UIAlertAction(title: "Create", style: .default) { [weak self] _ in
             self?.saveAction(ac.textFields![0].text ?? "No name")
             self?.isPresented?.wrappedValue = false
-           // recipeName?.wrappedValue = ac.textFields![0].text!
-           // self.recipeName?.wrappedValue = ac.textFields![0].text!
-           
         }
         
         ac.addAction(cancelAction)

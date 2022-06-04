@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct OilView: View {
+    
     @EnvironmentObject var oilVM: OilViewModel
     @State var editing: Bool = false
     
     var body: some View {
-        //        VStack(spacing: 1) {
+        
         GroupBox(label:
                     Text("Oils")) {
             Picker("Choose unit", selection: $oilVM.unit) {
@@ -80,7 +81,11 @@ struct OilView: View {
 }
 
 struct OilView_Previews: PreviewProvider {
+    
+    static let oilVM = OilViewModel()
+    
     static var previews: some View {
         OilView()
+            .environmentObject(oilVM)
     }
 }

@@ -12,12 +12,12 @@ struct RecipeSoapIngredientsView: View {
     var body: some View {
         
         VStack(spacing: 10) {
-        HStack  {
-            Text("Ingredients")
-                .modifier(TitleModifier())
+            HStack  {
+                Text("Ingredients")
+                    .modifier(TitleModifier())
+                Spacer()
+            }
             Spacer()
-        }
-        Spacer()
                 .frame(height: 15)
             if recipe.soapWeight != nil {
                 HStack(alignment: .top) {
@@ -44,29 +44,28 @@ struct RecipeSoapIngredientsView: View {
             }
             if  recipe.isHotProcess ?? false && recipe.extraWater != nil && recipe.extraWaterPerc != nil {
                 ParameterValuePercView(parameterName: "Extra water", value: recipe.extraWater!, perc: recipe.extraWaterPerc!, unit: recipe.unit ?? "")
-                    
+                
             }
             if recipe.sfValue != nil && recipe.sfPerc != nil {
-               
+                
                 ParameterValuePercView(parameterName: "Superfat", value: recipe.sfValue!, perc: recipe.sfPerc!, unit: recipe.unit ?? "")
-            
+                
             }
             if recipe.isHotProcess ?? false && recipe.extraSFValue != nil && recipe.extraSFPerc != nil {
                 
                 ParameterValuePercView(parameterName: "Extra superfat", value: recipe.extraSFValue!, perc: recipe.extraSFPerc!, unit: recipe.unit ?? "")
                 
-
-
+                
+                
             }
             if recipe.oils != nil {
                 ForEach(recipe.oils!, id: \.id) { oil in
-                    
-                    OilRecipeRow(oil: oil, unit: recipe.unit ?? "")
+                    ParameterValuePercView(parameterName: oil.name, value: oil.userWeightValue ?? 0, perc: oil.userPercent ?? 0, unit: recipe.unit ?? "")
                 }
             }
             if recipe.esOils != nil {
                 ForEach(recipe.esOils!, id: \.id) { esOil in
-                    EsOilRecipeRow(esOil: esOil, unit: recipe.unit ?? "")
+                    ParameterValuePercView(parameterName: esOil.name, value: esOil.calculatedWeight ?? 0, perc: esOil.userPercent ?? 0, unit: recipe.unit ?? "")
                 }
             }
         }
@@ -80,19 +79,4 @@ struct RecipeSoapIngredientsView_Previews: PreviewProvider {
     }
 }
 
-struct LyeView: View {
-    let lye: String
-    let lyeAmount: Double
-    let unit: String
-    var body: some View {
-        
-        HStack {
-            Text(lye)
-                .modifier(Title2Modifier())
-            Spacer()
-            Text("\(lyeAmount, specifier: "%.2f") \(unit)")
-                .modifier(TextStyleModifier())
 
-        }
-    }
-}

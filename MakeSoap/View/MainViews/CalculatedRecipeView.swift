@@ -34,7 +34,7 @@ struct CalculatedRecipeView: View {
         })
         .navigationBarTitle("Recipe", displayMode: .inline)
         .textFieldAlert(isPresented: $isAlertShowing) {
-            TextFieldAlert(title: "Enter a recipe name", message: "", recipeName: $oilVM.recipeTitle) { textFieldTitle in
+            TextFieldAlert(title: "Recipe name", message: "", recipeName: $oilVM.recipeTitle) { textFieldTitle in
                 recipeManager.create(
                     recipe: Recipe(title: textFieldTitle,
                                    soapMakingProcess: oilVM.soapMakingProcess,
@@ -69,6 +69,19 @@ struct CalculatedRecipeView: View {
             }
         }
         
+    }
+}
+
+struct CalculatedRecipeView_Previews: PreviewProvider {
+    
+    static let recipeManager = RecipeManager()
+
+    static let oilVM = OilViewModel()
+
+    static var previews: some View {
+        CalculatedRecipeView()
+            .environmentObject(recipeManager)
+            .environmentObject(oilVM)
     }
 }
 

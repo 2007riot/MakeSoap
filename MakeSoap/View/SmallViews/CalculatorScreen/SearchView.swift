@@ -43,15 +43,7 @@ struct SearchView: View {
         ScrollView {
             
             LazyVStack(spacing: 0) {
-                //                 switch searchFor {
-                //                 case oilSearch:
-                //                     oilSearchView
-                //                 case essentialOilSearch:
-                //                     essentialOilsearchView
-                //                 default:
-                //                     Text("Nothing to search")
-                //                 }
-                //  searchFor == oilSearch ? oilSearchView : essentialOilsearchView
+                
                 if searchFor == oilSearch {
                     oilSearchView
                 } else {
@@ -131,3 +123,14 @@ struct SearchView: View {
     }
 }
 
+struct SearchView_Previews: PreviewProvider {
+    
+    static let oilVM = OilViewModel()
+    
+    static var previews: some View {
+        SearchView(editing: .constant(false), inputText: .constant("o"), searchFor: "o")
+            .environmentObject(oilVM)
+            .padding()
+            
+    }
+}

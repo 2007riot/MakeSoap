@@ -70,6 +70,9 @@ struct SoapTypeView: View {
                         Spacer()
                         TextField("Value", value: $oilVM.hybridNaOHPercent, format: .number, prompt: Text("Value"))
                             .modifier(TextFieldStyle())
+                            .onSubmit {
+                                oilVM.calculateLyeSum()
+                            }
                         Text("%")
                     }
                     Divider()
@@ -78,7 +81,14 @@ struct SoapTypeView: View {
                         Spacer()
                         TextField("Value", value: $oilVM.hybridKOHPercent, format: .number, prompt: Text("Value"))
                             .modifier(TextFieldStyle())
+                            .onSubmit {
+                                oilVM.calculateLyeSum()
+                            }
                         Text("%")
+                    }
+                    if oilVM.sumOfLyesErroMessage != nil {
+                        Text(oilVM.sumOfLyesErroMessage!)
+                            .foregroundColor(.red)
                     }
                 }
             ) : nil
@@ -96,15 +106,13 @@ struct SoapTypeView: View {
 
 
 struct SoapTypeView_Previews: PreviewProvider {
+    
+    static let oilVM = OilViewModel()
+    
     static var previews: some View {
         SoapTypeView()
+            .environmentObject(oilVM)
     }
 }
 
-struct SoapTypeInfoView: View {
-    var body: some View {
-        VStack (alignment: .leading, spacing: 10) {
-            Text("Soap Type")
-        }
-    }
-}
+
