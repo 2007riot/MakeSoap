@@ -68,7 +68,7 @@ struct Recipe: Codable, Identifiable {
                sfPerc: 7,
                extraSFValue: 10,
                extraSFPerc: 2,
-               esOils:EssentialOilStore().essentialOils,
+               esOils:EssentialOilStore().esOils,
                date: .now)
     }
     

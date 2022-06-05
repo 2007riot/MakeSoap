@@ -13,7 +13,6 @@ let essentialOilSearch = "Search Essential oils"
 //keys for oilModel
 struct Keys {
     
-    
     static let searchOil = "searchOil"
     static let isSolid = "isSolid"
     static let isLiquid = "isLiquid"
@@ -36,25 +35,5 @@ struct Keys {
     
     //oilStore key
     static let oilData = "SavedOilData"
-    static let oilDataKey = "SavedOilData"
+    static let esOilData = "SavedEsOilData"
 }
-//
-//let searchOilKey = "searchOil"
-//let isSolidKey = "isSolid"
-//let isLiquidKey = "isLiquid"
-//let isHybridKey = "isHybrid"
-//let isHotProcessKey = "isHP"
-//let isColdProcessKey = "isCP"
-//let unitKey = "unit"
-//let siKey = "si"
-//let totalOilAmountKey = "totalOilWeight"
-//let naohHybridPercentKey = "naohHybrid%"
-//let kohHybridPercentKey = "kohHybrid%"
-//let waterPercentKey = "water%"
-//let extraWaterPercentKey = "extraWater%"
-//let sfKey = "SF%"
-//let extraSFKey = "extraSF%"
-//let percKey = "isPerc"
-//let percTextKey = "percText"
-//let percSumKey = "percSum"
-//let oilDataKey = "SavedOilData"

@@ -24,5 +24,6 @@ struct SoapPropertyRecipeRow: View {
 struct SoapPropertyRecipeRow_Previews: PreviewProvider {
     static var previews: some View {
         SoapPropertyRecipeRow(name: "Bubbly property", value: 90)
+            .padding()
     }
 }

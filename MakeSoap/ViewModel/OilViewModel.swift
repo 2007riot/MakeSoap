@@ -104,7 +104,7 @@ class OilViewModel: ObservableObject {
         oilStore.oils.filter({ $0.name.contains(inputTextOil) })
     }
     var searchedEsOils: [EssentialOil] {
-        essentialOilStore.essentialOils.filter({
+        essentialOilStore.esOils.filter({
             $0.name.contains(inputTextEsOil)
         })
     }
@@ -115,16 +115,16 @@ class OilViewModel: ObservableObject {
         }
     }
     var chosenEsOils: [EssentialOil] {
-        essentialOilStore.essentialOils.filter { esOil in
+        essentialOilStore.esOils.filter { esOil in
             esOil.isChosen
         }
     }
     
-    func saveData() {
-        if let encoded = try? JSONEncoder().encode(chosenOils) {
-            UserDefaults.standard.set(encoded, forKey: Keys.oilData)
-        }
-    }
+//    func saveData() {
+//        if let encoded = try? JSONEncoder().encode(chosenOils) {
+//            UserDefaults.standard.set(encoded, forKey: Keys.oilData)
+//        }
+//    }
     
     func changeUnits() {
         switch unit {
@@ -374,13 +374,14 @@ class OilViewModel: ObservableObject {
         
     }
     func changeFavorite(esOil: EssentialOil) {
-        let index = essentialOilStore.essentialOils.firstIndex { o in
+        let index = essentialOilStore.esOils.firstIndex { o in
             return o.id == esOil.id
         }
-        essentialOilStore.essentialOils[index!].isChosen.toggle()
-        essentialOilStore.essentialOils[index!].calculatedWeight = nil
-        essentialOilStore.essentialOils[index!].userPercent = nil
+        essentialOilStore.esOils[index!].isChosen.toggle()
+        essentialOilStore.esOils[index!].calculatedWeight = nil
+        essentialOilStore.esOils[index!].userPercent = nil
         
+        essentialOilStore.saveData()
     }
     func deleteCalculation() {
         
