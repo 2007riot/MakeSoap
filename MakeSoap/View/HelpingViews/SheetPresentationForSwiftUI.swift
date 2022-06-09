@@ -51,7 +51,9 @@ struct SheetPresentationForSwiftUI<Content>: UIViewRepresentable where Content: 
         
         if let sheetController = viewController.presentationController as? UISheetPresentationController {
             sheetController.detents = detents
-            sheetController.prefersGrabberVisible = true
+            sheetController.prefersGrabberVisible = false
+            sheetController.preferredCornerRadius = 10
+            sheetController.prefersEdgeAttachedInCompactHeight = true
             
         }
         
@@ -89,3 +91,7 @@ struct SheetPresentationForSwiftUI<Content>: UIViewRepresentable where Content: 
         
     }
 }
+
+
+
+

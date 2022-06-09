@@ -22,10 +22,6 @@ struct Title2Modifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.title3)
-            //.font(.system(size: size * 20, weight: .medium, design: .rounded))
-//            .font(.system(.title3, design: .rounded))
-////            .font(.title3)
-//            .medium()
     }
 }
 
@@ -33,12 +29,7 @@ struct Title2ModifierSemibold: ViewModifier {
     @ScaledMetric var size: CGFloat = 1
     func body(content: Content) -> some View {
         content
-          //  .font(.system(Font.title3.weight(.semibold)))
             .font(.title3.weight(.semibold))
-            //.font(.system(size: size * 20, weight: .medium, design: .rounded))
-//            .font(.system(.title3, design: .rounded))
-////            .font(.title3)
-//            .medium()
     }
 }
 
@@ -76,5 +67,28 @@ struct TextFieldStyle: ViewModifier {
             .multilineTextAlignment(.trailing)
             .frame(maxWidth: 100)
             .disableAutocorrection(true)
+    }
+}
+
+struct halfSheetViewModifier<SwiftUIContent>: ViewModifier where SwiftUIContent: View {
+    
+    @Binding var isPresented: Bool
+    let onDismiss: (() -> Void)?
+    let swiftUIContent: SwiftUIContent
+    
+    init(isPresented: Binding<Bool>, onDismiss: (() -> Void)? = nil, content: () -> SwiftUIContent) {
+        self._isPresented = isPresented
+        self.onDismiss = onDismiss
+        self.swiftUIContent = content()
+       
+    }
+    
+    func body(content: Content) -> some View {
+        ZStack {
+            SheetPresentationForSwiftUI($isPresented,onDismiss: onDismiss) {
+                swiftUIContent
+            }.fixedSize()
+            content
+        }
     }
 }

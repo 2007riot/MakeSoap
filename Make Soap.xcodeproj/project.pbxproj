@@ -16,7 +16,6 @@
 		5C0100F227E4637400973561 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0100F127E4637400973561 /* Modifiers.swift */; };
 		5C03FAA82823B6E6006E6479 /* EssentialOilRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C03FAA72823B6E6006E6479 /* EssentialOilRow.swift */; };
 		5C03FAB128242769006E6479 /* SheetPresentationForSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C03FAB028242769006E6479 /* SheetPresentationForSwiftUI.swift */; };
-		5C03FAB3282427B2006E6479 /* SheetWithDetentsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C03FAB2282427B2006E6479 /* SheetWithDetentsModifier.swift */; };
 		5C03FAD928294B9F006E6479 /* GreenQuestionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C03FAD828294B9F006E6479 /* GreenQuestionButtonView.swift */; };
 		5C13D4302833A01700C066AC /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C13D42F2833A01700C066AC /* RecipeDetailView.swift */; };
 		5C13D43E2833D72A00C066AC /* SoapPropertyRecipeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C13D43D2833D72A00C066AC /* SoapPropertyRecipeRow.swift */; };
@@ -29,6 +28,8 @@
 		5C517C872829B36B00CABE03 /* OilPropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C517C862829B36B00CABE03 /* OilPropertyView.swift */; };
 		5C517C89282A2D5D00CABE03 /* SoapPropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C517C88282A2D5D00CABE03 /* SoapPropertiesView.swift */; };
 		5C517C8B282AB27C00CABE03 /* SoapPropertyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C517C8A282AB27C00CABE03 /* SoapPropertyRow.swift */; };
+		5C7B02CA284E41630090E89E /* ProcessViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B02C9284E41630090E89E /* ProcessViewInfo.swift */; };
+		5C7B02CD284E5A020090E89E /* WaterInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7B02CC284E5A020090E89E /* WaterInfoView.swift */; };
 		5CB4ED69281980EF00EEA349 /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB4ED68281980EF00EEA349 /* GreenButton.swift */; };
 		5CB52F1727D4F8F70072C9C4 /* CalculatedRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB52F1627D4F8F70072C9C4 /* CalculatedRecipeView.swift */; };
 		5CCBE78D284B69F400E4DB2D /* ParameterValuePercView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCBE78C284B69F400E4DB2D /* ParameterValuePercView.swift */; };
@@ -69,7 +70,6 @@
 		5C0100F127E4637400973561 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		5C03FAA72823B6E6006E6479 /* EssentialOilRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialOilRow.swift; sourceTree = "<group>"; };
 		5C03FAB028242769006E6479 /* SheetPresentationForSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationForSwiftUI.swift; sourceTree = "<group>"; };
-		5C03FAB2282427B2006E6479 /* SheetWithDetentsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetWithDetentsModifier.swift; sourceTree = "<group>"; };
 		5C03FAD828294B9F006E6479 /* GreenQuestionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenQuestionButtonView.swift; sourceTree = "<group>"; };
 		5C13D42F2833A01700C066AC /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		5C13D43D2833D72A00C066AC /* SoapPropertyRecipeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoapPropertyRecipeRow.swift; sourceTree = "<group>"; };
@@ -83,6 +83,8 @@
 		5C517C862829B36B00CABE03 /* OilPropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilPropertyView.swift; sourceTree = "<group>"; };
 		5C517C88282A2D5D00CABE03 /* SoapPropertiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoapPropertiesView.swift; sourceTree = "<group>"; };
 		5C517C8A282AB27C00CABE03 /* SoapPropertyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoapPropertyRow.swift; sourceTree = "<group>"; };
+		5C7B02C9284E41630090E89E /* ProcessViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessViewInfo.swift; sourceTree = "<group>"; };
+		5C7B02CC284E5A020090E89E /* WaterInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterInfoView.swift; sourceTree = "<group>"; };
 		5CB4ED68281980EF00EEA349 /* GreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenButton.swift; sourceTree = "<group>"; };
 		5CB52F1627D4F8F70072C9C4 /* CalculatedRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatedRecipeView.swift; sourceTree = "<group>"; };
 		5CCBE78C284B69F400E4DB2D /* ParameterValuePercView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterValuePercView.swift; sourceTree = "<group>"; };
@@ -130,7 +132,6 @@
 			children = (
 				5C0100E927E232B200973561 /* CalculatorGroupBoxStyle.swift */,
 				5C03FAB028242769006E6479 /* SheetPresentationForSwiftUI.swift */,
-				5C03FAB2282427B2006E6479 /* SheetWithDetentsModifier.swift */,
 				5C0100F127E4637400973561 /* Modifiers.swift */,
 				5CB4ED68281980EF00EEA349 /* GreenButton.swift */,
 				5C03FAD828294B9F006E6479 /* GreenQuestionButtonView.swift */,
@@ -200,9 +201,11 @@
 		5CCBE798284BB58F00E4DB2D /* HalfSheetViews */ = {
 			isa = PBXGroup;
 			children = (
+				5C7B02C9284E41630090E89E /* ProcessViewInfo.swift */,
 				5CCBE791284BB42200E4DB2D /* EsOilInfoView.swift */,
 				5CCBE793284BB4D700E4DB2D /* SoapTypeInfoView.swift */,
 				5CCBE795284BB55F00E4DB2D /* SuperfatInfoView.swift */,
+				5C7B02CC284E5A020090E89E /* WaterInfoView.swift */,
 			);
 			path = HalfSheetViews;
 			sourceTree = "<group>";
@@ -394,7 +397,6 @@
 				5CFDF0AE284A449E001EA482 /* RecipeSoapIngredientsView.swift in Sources */,
 				5C517C872829B36B00CABE03 /* OilPropertyView.swift in Sources */,
 				5C14BC712832819F003E1F9C /* Recipe.swift in Sources */,
-				5C03FAB3282427B2006E6479 /* SheetWithDetentsModifier.swift in Sources */,
 				5CDB09E0282282C500ACD3CB /* EssentialOil.swift in Sources */,
 				5CCBE790284B8B4700E4DB2D /* LyeView.swift in Sources */,
 				5C14BC9728336749003E1F9C /* RecipeManager.swift in Sources */,
@@ -403,6 +405,7 @@
 				5CCC962127D0FA8300DD26C6 /* SoapTypeView.swift in Sources */,
 				5CCC961A27D0E83800DD26C6 /* RecipesListView.swift in Sources */,
 				5CCBE78D284B69F400E4DB2D /* ParameterValuePercView.swift in Sources */,
+				5C7B02CD284E5A020090E89E /* WaterInfoView.swift in Sources */,
 				5CCC962327D200BB00DD26C6 /* WaterParametersView.swift in Sources */,
 				5CDB09E4282284C200ACD3CB /* EssentialOilStore.swift in Sources */,
 				5CE72B69283B4D15003E7976 /* TextFieldAlertViewController.swift in Sources */,
@@ -412,6 +415,7 @@
 				5CCC961327D0E76E00DD26C6 /* DataManager.swift in Sources */,
 				5C0100F027E3A55A00973561 /* OilView.swift in Sources */,
 				5C0100F227E4637400973561 /* Modifiers.swift in Sources */,
+				5C7B02CA284E41630090E89E /* ProcessViewInfo.swift in Sources */,
 				5C0100B327DF4FFE00973561 /* Extensions.swift in Sources */,
 				5C14BC9928336A9A003E1F9C /* RecipePreviewView.swift in Sources */,
 				5CFDF0AC284A441D001EA482 /* RecipeSoapPropertiesView.swift in Sources */,

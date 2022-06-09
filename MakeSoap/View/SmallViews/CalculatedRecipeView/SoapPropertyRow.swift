@@ -16,6 +16,7 @@ struct SoapPropertyRow: View {
     let value: Double
     let color: Color
     let recomendationText: String
+    let propertyExplained : String
     var body: some View {
         HStack {
             Text(name)
@@ -34,8 +35,29 @@ struct SoapPropertyRow: View {
         .halfSheet(isPresented: $showInfoSheet, onDismiss: {
             //nothing
         }, content: {
-            Text(recomendationText)
-                .padding()
+            ScrollView {
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("\(name.capitalized) soap property")
+                        .modifier(Title2Modifier())
+                    Text("Responsible for \(propertyExplained)")
+                    VStack {
+                        HStack {
+                            Text("Recommended value")
+                                .bold()
+                            Spacer()
+                            Text("\(recomendedValue) %")
+                                .bold()
+                        }
+                        HStack {
+                            Text("Your value")
+                            Spacer()
+                            Text("\(value, specifier: "%.0f") %")
+                                .foregroundColor(color)
+                        }
+                    }
+                }
+            }
+            .padding()
         })
     }
 }
@@ -45,9 +67,9 @@ struct SoapPropertyRow_Previews: PreviewProvider {
     static let oilVM = OilViewModel()
     
     static var previews: some View {
-        SoapPropertyRow(name: "Hardness", recomendedValue: "35-45", value: oilVM.hardnessInd, color: oilVM.hardnessColor, recomendationText: oilVM.hardnessSuggestion)
+        SoapPropertyRow(name: "Hardness", recomendedValue: "35-45", value: oilVM.hardnessInd, color: oilVM.hardnessColor, recomendationText: oilVM.hardnessSuggestion, propertyExplained: "Hardness")
             .padding()
-            
+        
     }
 }
 

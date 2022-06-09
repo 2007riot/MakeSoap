@@ -61,6 +61,7 @@ struct ProcessView: View {
             //nothing
         }, content: {
             ProcessViewInfo()
+                .padding()
         })
     }
 }
@@ -70,21 +71,9 @@ struct ProcessView_Previews: PreviewProvider {
     static let oilVM = OilViewModel()
     
     static var previews: some View {
-        ProcessView()            .environmentObject(oilVM)
+        ProcessView()
+            .environmentObject(oilVM)
     }
 }
 
-struct ProcessViewInfo: View {
-    var body: some View {
-        VStack (spacing: 10) {
-            Text("Soap making process")
-            Text("Cold process:")
-                .modifier(TitleModifier())
-            Text("")
-            Text("Hot process")
-                .modifier(TitleModifier())
-            Text("")
-            
-        }
-    }
-}
+

@@ -28,6 +28,7 @@ struct RecipeDetailView: View {
         }
         .navigationBarTitle(recipe.title, displayMode: .inline)
     }
+    
 }
 
 struct RecipeDetailView_Previews: PreviewProvider {

@@ -65,6 +65,13 @@ class OilViewModel: ObservableObject {
     var longevityInd = 0.0
     var stabilityInd = 0.0
     var iodineInd = 0.0
+    let bubblyExplained = "how bubbly, big and fluffy the soap lather is."
+    let cleaningExplained = "how easily the soap dissolves in hard, cold, salty water and in other situations.ers. How well it will clean the skin."
+    let conditionExplained = "how soft, moisturizing the soap is. Good condition skin doesn't dry the skin."
+    let hardnessExplained = "the physical hardness of the soap bar."
+    let longevityExplained = "how long the soap will last in the water."
+    let stabilityExplained = "how long the lather will last and stay bubbly and fluffy."
+    let iodineExplained = "soap shelf life."
     
     
     var bubblyColor: Color = .accentColor

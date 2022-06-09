@@ -14,14 +14,13 @@ struct SoapIngredientsView: View {
     
     var body: some View {
         
-        VStack(spacing: 10) {
+        VStack(spacing: 12) {
             HStack  {
                 Text("Ingredients")
                     .modifier(TitleModifier())
                 Spacer()
             }
-            Spacer()
-                .frame(height: 15)
+            VStack (spacing: 8) {
             HStack(alignment: .top) {
                 Text("Total soap weight")
                     .modifier(Title2ModifierSemibold())
@@ -71,6 +70,7 @@ struct SoapIngredientsView: View {
                     ParameterValuePercView(parameterName: esOil.name, value: esOil.calculatedWeight ?? 0, perc: esOil.userPercent ?? 0, unit: oilVM.si)
                 }
             }
+        }
         }
     }
 }

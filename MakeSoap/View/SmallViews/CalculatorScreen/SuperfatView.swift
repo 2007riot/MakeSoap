@@ -16,11 +16,11 @@ struct SuperfatView: View {
         GroupBox(label:
                     HStack {
             Text("Seperfat")
-            Button {
-                showInfoSheet.toggle()
-            } label: {
-                GreenQuestionButtonView()
-            }
+//            Button {
+//                showInfoSheet.toggle()
+//            } label: {
+//                GreenQuestionButtonView()
+//            }
         })
         {
             
@@ -52,6 +52,7 @@ struct SuperfatView: View {
             //nothing
         }, content: {
             SuperfatInfoView()
+                .padding()
         })
         
         

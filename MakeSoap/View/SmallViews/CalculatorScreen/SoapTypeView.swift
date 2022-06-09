@@ -98,7 +98,8 @@ struct SoapTypeView: View {
         .halfSheet(isPresented: $showInfoSheet, onDismiss: {
             //nothing
         }, content: {
-            ProcessViewInfo()
+            SoapTypeInfoView()
+                .padding()
         })
     }
     

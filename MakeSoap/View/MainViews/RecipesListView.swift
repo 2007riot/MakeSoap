@@ -12,7 +12,17 @@ struct RecipesListView: View {
     var body: some View {
         
         NavigationView {
-           
+            
+            Group {
+            if recipeManager.recipes.isEmpty {
+                
+                VStack (alignment: .center, spacing: 20) {
+                
+                Text("You have no recipes yet! Start by calculating a new soap recipe.")
+                Text("🧼🧼🧼")
+                        .font(.system(size: 60))
+                }
+            } else {
                 List {
                     ForEach(recipeManager.recipes) { r in
                         NavigationLink {
@@ -20,18 +30,25 @@ struct RecipesListView: View {
                         } label: {
                             VStack (alignment: .leading) {
                                 Text(r.title)
-                                    .modifier(TitleModifier())
+                                    .modifier(Title2Modifier())
                                 Text(r.date, format: .dateTime.day().month().year().hour().minute().second())
+                                    .font(.footnote)
                             }
                         }
                         
                     }
                     .onDelete(perform: recipeManager.delete(_:))
                 }
-        
                 
-            .navigationTitle("Recipes")
-            .navigationViewStyle(.columns)
+            }
+            }
+                .navigationTitle("Recipes")
+                .navigationViewStyle(.columns)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
+                }
             
         }
         .navigationViewStyle(.stack)

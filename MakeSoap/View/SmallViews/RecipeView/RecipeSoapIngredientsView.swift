@@ -11,14 +11,13 @@ struct RecipeSoapIngredientsView: View {
     let recipe: Recipe
     var body: some View {
         
-        VStack(spacing: 10) {
+        VStack(spacing: 12) {
             HStack  {
                 Text("Ingredients")
                     .modifier(TitleModifier())
                 Spacer()
             }
-            Spacer()
-                .frame(height: 15)
+            VStack (spacing: 8) {
             if recipe.soapWeight != nil {
                 HStack(alignment: .top) {
                     Text("Total soap weight")
@@ -68,6 +67,7 @@ struct RecipeSoapIngredientsView: View {
                     ParameterValuePercView(parameterName: esOil.name, value: esOil.calculatedWeight ?? 0, perc: esOil.userPercent ?? 0, unit: recipe.unit ?? "")
                 }
             }
+        }
         }
     }
     

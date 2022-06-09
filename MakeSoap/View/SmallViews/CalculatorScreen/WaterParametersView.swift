@@ -16,11 +16,11 @@ struct WaterParametersView: View {
         GroupBox(label:
                     HStack {
             Text("Water")
-            Button {
-                showInfoSheet.toggle()
-            } label: {
-                GreenQuestionButtonView()
-            }
+//            Button {
+//                showInfoSheet.toggle()
+//            } label: {
+//                GreenQuestionButtonView()
+//            }
         }) {
             VStack {
                 HStack {
@@ -72,10 +72,4 @@ struct WaterParametersView_Previews: PreviewProvider {
     }
 }
 
-struct WaterInfoView: View {
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Water")
-        }
-    }
-}
+
