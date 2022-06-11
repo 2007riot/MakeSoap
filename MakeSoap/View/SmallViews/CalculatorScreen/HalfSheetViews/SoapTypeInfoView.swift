@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SoapTypeInfoView: View {
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
         VStack (alignment: .leading, spacing: 10) {
             Text("Soap Type")
                 .modifier(Title2Modifier())

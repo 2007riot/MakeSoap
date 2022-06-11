@@ -15,7 +15,7 @@ struct SuperfatView: View {
     var body: some View {
         GroupBox(label:
                     HStack {
-            Text("Seperfat")
+            Text("Superfat")
 //            Button {
 //                showInfoSheet.toggle()
 //            } label: {

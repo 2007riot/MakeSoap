@@ -57,6 +57,7 @@ struct ProcessView: View {
             
         }
         .groupBoxStyle(CalculatorGroupBoxStyle())
+        
         .halfSheet(isPresented: $showInfoSheet, onDismiss: {
             //nothing
         }, content: {

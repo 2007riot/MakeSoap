@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import PartialSheet
 
 struct SoapPropertyRow: View {
     
-    @State var showInfoSheet = false
+    @Binding var showInfoSheet: Bool
     
     let name: String
     let recomendedValue: String
@@ -17,7 +18,57 @@ struct SoapPropertyRow: View {
     let color: Color
     let recomendationText: String
     let propertyExplained : String
+    let iPhoneStyle = PSIphoneStyle(
+        background: .solid(Color(uiColor: .systemBackground)),
+        handleBarStyle: .none,
+        cover: .enabled(Color.black.opacity(0.2)),
+        cornerRadius: 10
+    )
     var body: some View {
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            
+            rowView
+                .popover(isPresented: $showInfoSheet, arrowEdge: .trailing) {
+                    propertyInfoView
+                }
+        } else {
+            
+            rowView
+                .partialSheet(isPresented: $showInfoSheet,
+                              type: .scrollView(height: 170, showsIndicators: false),
+                              iPhoneStyle: iPhoneStyle,
+                              content: {
+                    propertyInfoView
+                })
+        }
+    }
+    var propertyInfoView: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("\(name.capitalized) soap property")
+                .modifier(Title2Modifier())
+            Text("Responsible for \(propertyExplained)")
+            VStack {
+                HStack {
+                    Text("Recommended value")
+                        .bold()
+                    Spacer()
+                    Text("\(recomendedValue) %")
+                        .bold()
+                }
+                HStack {
+                    Text("Your value")
+                    Spacer()
+                    Text("\(value, specifier: "%.0f") %")
+                        .foregroundColor(color)
+                }
+            }
+        }
+        
+        .padding()
+    }
+    
+    var rowView: some View {
         HStack {
             Text(name)
                 .modifier(Title2Modifier())
@@ -32,33 +83,6 @@ struct SoapPropertyRow: View {
             Text("\(value, specifier: "%.0f") %")
                 .modifier(TextStyleModifier())
         }
-        .halfSheet(isPresented: $showInfoSheet, onDismiss: {
-            //nothing
-        }, content: {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("\(name.capitalized) soap property")
-                        .modifier(Title2Modifier())
-                    Text("Responsible for \(propertyExplained)")
-                    VStack {
-                        HStack {
-                            Text("Recommended value")
-                                .bold()
-                            Spacer()
-                            Text("\(recomendedValue) %")
-                                .bold()
-                        }
-                        HStack {
-                            Text("Your value")
-                            Spacer()
-                            Text("\(value, specifier: "%.0f") %")
-                                .foregroundColor(color)
-                        }
-                    }
-                }
-            }
-            .padding()
-        })
     }
 }
 
@@ -67,7 +91,7 @@ struct SoapPropertyRow_Previews: PreviewProvider {
     static let oilVM = OilViewModel()
     
     static var previews: some View {
-        SoapPropertyRow(name: "Hardness", recomendedValue: "35-45", value: oilVM.hardnessInd, color: oilVM.hardnessColor, recomendationText: oilVM.hardnessSuggestion, propertyExplained: "Hardness")
+        SoapPropertyRow(showInfoSheet: .constant(false), name: "Hardness", recomendedValue: "35-45", value: oilVM.hardnessInd, color: oilVM.hardnessColor, recomendationText: oilVM.hardnessSuggestion, propertyExplained: "Hardness")
             .padding()
         
     }

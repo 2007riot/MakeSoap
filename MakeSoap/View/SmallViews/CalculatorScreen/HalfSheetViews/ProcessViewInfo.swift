@@ -10,7 +10,7 @@ import SwiftUI
 struct ProcessViewInfo: View {
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack (alignment: .leading, spacing: 10) {
                 Text("Soap making process")
                     .modifier(Title2Modifier())

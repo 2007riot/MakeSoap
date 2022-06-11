@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import PartialSheet
 
 
 //to hide search menu
@@ -43,4 +44,12 @@ extension View {
         }
 }
 
-
+//public extension PSIpadMacStyle {
+//    
+//    static var height: CGFloat = 150
+//    
+//    init(height: CGFloat) {
+//        PSIpadMacStyle.height = height
+//    }
+//    
+//}

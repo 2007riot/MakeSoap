@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PartialSheet
 
 struct ContentView: View {
     
@@ -26,6 +27,7 @@ struct ContentView: View {
                     .environmentObject(recipeManager)
                     
             }
+            .attachPartialSheetToRoot()
             
         
     }

@@ -13,11 +13,19 @@ struct CalculatedRecipeView: View {
     @EnvironmentObject var oilVM: OilViewModel
     @State var isAlertShowing = false
     @EnvironmentObject var recipeManager: RecipeManager
+    @State private var showBubbly: Bool = false
+    @State private var showCleansing: Bool = false
+    @State private var showCondition: Bool = false
+    @State private var showHardness: Bool = false
+    @State private var showLongevity: Bool = false
+    @State private var showStability: Bool = false
     var body: some View {
         
+        
+        GeometryReader { geometry in
         ScrollView {
             
-            SoapPropertiesView()
+            SoapPropertiesView(showBubbly: $showBubbly, showCleansing: $showCleansing, showCondition: $showCondition, showHardness: $showHardness, showLongevity: $showLongevity, showStability: $showStability)
                 .padding()
             SoapIngredientsView()
                 .padding()
@@ -69,6 +77,15 @@ struct CalculatedRecipeView: View {
             }
         }
         
+        }
+        .onTapGesture {
+            showBubbly = false
+            showCleansing = false
+            showCondition = false
+            showHardness = false
+            showLongevity = false
+            showStability = false
+        }
     }
 }
 
