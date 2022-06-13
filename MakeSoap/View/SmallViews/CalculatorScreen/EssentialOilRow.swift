@@ -5,35 +5,64 @@
 //  Created by Galina Aleksandrova on 05/05/22.
 //
 
+import PartialSheet
 import SwiftUI
+
 
 struct EssentialOilRow: View {
     
     @EnvironmentObject var esOil: EssentialOil
     @EnvironmentObject var oilVM: OilViewModel
-    @State var showInfoSheet = false
+    @State private var showInfoSheet = false
+    
+    let iPhoneStyle = PSIphoneStyle(
+        background: .solid(Color(uiColor: .systemBackground)),
+        handleBarStyle: .none,
+        cover: .enabled(Color.black.opacity(0.2)),
+        cornerRadius: 10
+    )
     
     var body: some View {
+        
+        VStack {
         HStack {
             Text(esOil.name)
+            if UIDevice.current.userInterfaceIdiom == .phone {
             Button {
                 showInfoSheet.toggle()
             } label: {
-            GreenQuestionButtonView()
+                GreenQuestionButtonView()
             }
-                
+            .partialSheet(isPresented: $showInfoSheet,
+                          type: .scrollView(height: 300, showsIndicators: false),
+                          iPhoneStyle: iPhoneStyle,
+                          content: {
+                EsOilDescriptionView(esOil: esOil)
+                    .padding()
+            })
+            } else {
+                Button {
+                    showInfoSheet.toggle()
+                } label: {
+                    GreenQuestionButtonView()
+                }
+                .popover(isPresented: $showInfoSheet) {
+                    EsOilDescriptionView(esOil: esOil)
+                        .padding()
+                }
+            }
             Spacer()
-                
+            
             TextField("Value", value: $esOil.userPercent, format: .number)
                 .modifier(TextFieldStyle())
-                    .onChange(of: esOil.userPercent, perform: { n in
-                        print("\(String(describing: esOil.userPercent)): \(String(describing: n))")
-                    })
-
-                    .onSubmit {
-                        oilVM.isPerc ? oilVM.check100perc() : oilVM.calculateTotalOilWeight()
-
-                    }
+                .onChange(of: esOil.userPercent, perform: { n in
+                    print("\(String(describing: esOil.userPercent)): \(String(describing: n))")
+                })
+            
+                .onSubmit {
+                    oilVM.isPerc ? oilVM.check100perc() : oilVM.calculateTotalOilWeight()
+                    
+                }
             Text("%")
             Button {
                 withAnimation(.easeOut) {
@@ -46,20 +75,13 @@ struct EssentialOilRow: View {
                     .foregroundColor(.gray)
                     .font(.caption2)
             }
-            
-       
-    }
-        .halfSheet(isPresented: $showInfoSheet) {
-            //nothing
-        } content: {
-            EsOilInfoView(esOil: esOil)
-                .padding()
         }
-
         Divider()
-}
-}
-
+        }
+    }
+        
+    }
+    
 
 struct EssentialOilRow_Previews: PreviewProvider {
     

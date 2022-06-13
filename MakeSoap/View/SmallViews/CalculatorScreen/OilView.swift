@@ -15,7 +15,9 @@ struct OilView: View {
     var body: some View {
         
         GroupBox(label:
-                    Text("Oils")) {
+                    Text("Oils")
+            .modifier(TitleModifier())
+                 ) {
             Picker("Choose unit", selection: $oilVM.unit) {
                 ForEach(oilVM.units, id: \.self) {
                     Text($0)

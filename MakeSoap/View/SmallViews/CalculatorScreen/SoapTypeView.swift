@@ -10,14 +10,35 @@ import SwiftUI
 struct SoapTypeView: View {
     @EnvironmentObject var oilVM: OilViewModel
     @State var showInfoSheet = false
+    
     var body: some View {
         GroupBox(label:
                     HStack {
             Text("Soap Type")
-            Button {
-                showInfoSheet.toggle()
-            } label: {
-                GreenQuestionButtonView()
+                .modifier(TitleModifier())
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                Button {
+                    showInfoSheet.toggle()
+                } label: {
+                    GreenQuestionButtonView()
+                }
+                .halfSheet(isPresented: $showInfoSheet, onDismiss: {
+                    //nothing
+                }, content: {
+                    SoapTypeInfoView()
+                        .padding()
+                })
+                
+            } else {
+                Button {
+                    showInfoSheet.toggle()
+                } label: {
+                    GreenQuestionButtonView()
+                }
+                .popover(isPresented: $showInfoSheet) {
+                    SoapTypeInfoView()
+                        .padding()
+                }
             }
         }) {
             
@@ -95,14 +116,7 @@ struct SoapTypeView: View {
             
         }
         .groupBoxStyle(CalculatorGroupBoxStyle())
-        .halfSheet(isPresented: $showInfoSheet, onDismiss: {
-            //nothing
-        }, content: {
-            SoapTypeInfoView()
-                .padding()
-        })
     }
-    
 }
 
 

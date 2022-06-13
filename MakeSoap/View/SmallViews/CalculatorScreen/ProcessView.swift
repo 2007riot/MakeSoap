@@ -12,16 +12,37 @@ struct ProcessView: View {
     @EnvironmentObject var oilVM: OilViewModel
     @State var showInfoSheet = false
     
+    
+    
     var body: some View {
         GroupBox(label:
                     HStack {
             Text("Process")
-            Button {
-                showInfoSheet.toggle()
-            } label: {
-                GreenQuestionButtonView()
+                .modifier(TitleModifier())
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                Button {
+                    showInfoSheet.toggle()
+                } label: {
+                    GreenQuestionButtonView()
+                }
+                
+                .halfSheet(isPresented: $showInfoSheet, onDismiss: {
+                    //nothing
+                }, content: {
+                    ProcessViewInfo()
+                        .padding()
+                })
+            } else {
+                Button {
+                    showInfoSheet.toggle()
+                } label: {
+                    GreenQuestionButtonView()
+                }
+                .popover(isPresented: $showInfoSheet) {
+                    ProcessViewInfo()
+                        .padding()
+                }
             }
-            
         }
         ) {
             
@@ -57,13 +78,6 @@ struct ProcessView: View {
             
         }
         .groupBoxStyle(CalculatorGroupBoxStyle())
-        
-        .halfSheet(isPresented: $showInfoSheet, onDismiss: {
-            //nothing
-        }, content: {
-            ProcessViewInfo()
-                .padding()
-        })
     }
 }
 

@@ -16,50 +16,57 @@ struct WaterParametersView: View {
         GroupBox(label:
                     HStack {
             Text("Water")
-//            Button {
-//                showInfoSheet.toggle()
-//            } label: {
-//                GreenQuestionButtonView()
-//            }
+                .modifier(TitleModifier())
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                Button {
+                    showInfoSheet.toggle()
+                } label: {
+                    GreenQuestionButtonView()
+                }
+                .halfSheet(isPresented: $showInfoSheet, onDismiss: {
+                    //nothing
+                }, content: {
+                    WaterInfoView()
+                        .padding()
+                })
+            } else {
+                Button {
+                    showInfoSheet.toggle()
+                } label: {
+                    GreenQuestionButtonView()
+                }
+                .popover(isPresented: $showInfoSheet) {
+                    WaterInfoView()
+                        .padding()
+                }
+            }
         }) {
             VStack {
                 HStack {
                     Text("Water to oil")
                     Spacer()
                     TextField("Value", value: $oilVM.waterPercent, format: .number)
-                            .modifier(TextFieldStyle())
-                            
-                    Text("%")
-                            
-                }
-            oilVM.isHotProcess ? (
-                Group {
-                Divider()
-                HStack {
-                    Text("Extra water")
-                    Spacer()
-                    TextField("Value", value: $oilVM.extraWaterPercent, format: .number)
                         .modifier(TextFieldStyle())
-                Text("%")
-                }//.environmentObject(oilVM)
+                    Text("%")
                 }
-                    
-            
-            ) : nil
-        }
-           
+                oilVM.isHotProcess ? (
+                    Group {
+                        Divider()
+                        HStack {
+                            Text("Extra water")
+                            Spacer()
+                            TextField("Value", value: $oilVM.extraWaterPercent, format: .number)
+                                .modifier(TextFieldStyle())
+                            Text("%")
+                        }//.environmentObject(oilVM)
+                    }
+                ) : nil
+            }
         }
         .groupBoxStyle(CalculatorGroupBoxStyle())
-        .halfSheet(isPresented: $showInfoSheet, onDismiss: {
-            //nothing
-        }, content: {
-            WaterInfoView()
-        })
         .environmentObject(OilViewModel())
-        
-        
-}
-       
+    }
+    
 }
 
 struct WaterParametersView_Previews: PreviewProvider {

@@ -11,8 +11,6 @@ struct SoapTypeInfoView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
         VStack (alignment: .leading, spacing: 10) {
-            Text("Soap Type")
-                .modifier(Title2Modifier())
             Text("Solid soap")
                 .italic()
                 .bold()

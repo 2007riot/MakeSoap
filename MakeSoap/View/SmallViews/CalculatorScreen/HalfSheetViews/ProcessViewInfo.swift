@@ -12,20 +12,15 @@ struct ProcessViewInfo: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack (alignment: .leading, spacing: 10) {
-                Text("Soap making process")
-                    .modifier(Title2Modifier())
-                Spacer()
-                    .frame(maxHeight: 0)
-                Text("Soap is made by combing oils and lye, which cause a chemical reaction - saponification. Soap is ready the moment all the lye has been chemically transformed. The result of the reaction - is metallic salt of a fatty acid, known as ") + Text("soap.").italic().bold() + Text(" The soap is ready the moment all the lye has reacted with oil. ")
+                Text("Soap is made by combing oils and lye, which cause a chemical reaction - saponification. Soap is ready the moment all the lye has been chemically transformed. The result of the reaction - is glycerin and metallic salt of a fatty acid, known as ") + Text("soap.").italic().bold() + Text(" The soap is ready the moment all the lye has reacted with oil.")
                 
-                    //.font(.footnote)
+                //.font(.footnote)
                 Text("Cold process:")
                     .font(.headline)
-                Text("Soponification reaction occuring natyrally A cold processed soap is ready the moment all the lye has been chemically transformed and there is none of it left. This processed called soap curing and usually takes 4-6 weeks.")
+                Text("Cold saponification uses the heat generated from saponification reaction itself and the process called soap curing and takes 4-8 weeks, depending on the oil.")
                 Text("Hot process:")
                     .font(.headline)
-                Text("but instead of stick blending until it hits trace (a thick batter) and being poured into a mold, it is mixed and heated in the slow cooker, somewhere between 140 degrees F and 176 degrees F.   That slow cooker helps that batter go through saponification until the soap reaches gel phase (1-2 hours).The hot procedure involves heating the soap using an external heat source until it reaches the gel phase, after which it is poured into the mould.")
-//
+                Text("The hot process soap procedure involves heating using an external heat source like an oven, a slow cooker, etc. The process allows you to choose superfat oil. The fragrance is added to the soap once it's ready and doesn't affect the chemical reaction. Hot process soaps are fully saponified before going into the mold and take time only to harden up, which takes up to two weeks.")
             }
         }
         

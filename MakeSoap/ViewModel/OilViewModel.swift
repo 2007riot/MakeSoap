@@ -310,6 +310,7 @@ class OilViewModel: ObservableObject {
         
         //set colors and suggestions
         
+        // recommendation 15-30
         switch bubblyInd {
             case 0..<10:
                 bubblyColor = .red
@@ -329,12 +330,97 @@ class OilViewModel: ObservableObject {
             default:
                 bubblyColor = .accentColor
         }
+        // recommendation 15-20
         switch cleaningInd {
             case 0..<10:
                 cleaningColor = .red
                 cleaningSuggestion = ""
             default:
                 cleaningColor = .gray
+        }
+        
+        // recommendation 45-70
+        switch conditionInd {
+            case 0..<10:
+                bubblyColor = .red
+                bubblySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
+            case 10..<15:
+                bubblyColor = .yellow
+                bubblySuggestion = "almost perfect"
+            case 15...30:
+                bubblyColor = .accentColor
+                bubblySuggestion = "perfect"
+            case 30...40:
+                bubblyColor = .yellow
+                bubblySuggestion = "almost perfect"
+            case 40..<100:
+                bubblyColor = .red
+                bubblySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
+            default:
+                bubblyColor = .accentColor
+        }
+        
+        // recommendation 35-45
+        switch hardnessInd {
+            case 0..<10:
+                bubblyColor = .red
+                bubblySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
+            case 10..<15:
+                bubblyColor = .yellow
+                bubblySuggestion = "almost perfect"
+            case 15...30:
+                bubblyColor = .accentColor
+                bubblySuggestion = "perfect"
+            case 30...40:
+                bubblyColor = .yellow
+                bubblySuggestion = "almost perfect"
+            case 40..<100:
+                bubblyColor = .red
+                bubblySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
+            default:
+                bubblyColor = .accentColor
+        }
+        
+        // recommendation 25-50
+        switch longevityInd {
+            case ..<20:
+                longevityColor = .red
+                longevitySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
+            case 20..<25:
+                longevityColor = .yellow
+                longevitySuggestion = "almost perfect"
+            case 25...50:
+                longevityColor = .accentColor
+                longevitySuggestion = "perfect"
+            case 30...40:
+                longevityColor = .yellow
+                longevitySuggestion = "almost perfect"
+            case 40..<100:
+                longevityColor = .red
+                longevitySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
+            default:
+                longevityColor = .accentColor
+        }
+        
+        // recommendation 15-50
+        switch stabilityInd {
+            case ..<10:
+                stabilityColor = .red
+                stabilitySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
+            case 10..<15:
+                stabilityColor = .yellow
+                stabilitySuggestion = "almost perfect"
+            case 15..<51:
+                stabilityColor = .accentColor
+                stabilitySuggestion = "perfect"
+            case 51..<55:
+                stabilityColor = .yellow
+                stabilitySuggestion = "almost perfect"
+            case 61...:
+                stabilityColor = .red
+                stabilitySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
+            default:
+                stabilityColor = .accentColor
         }
         
     }

@@ -16,11 +16,30 @@ struct SuperfatView: View {
         GroupBox(label:
                     HStack {
             Text("Superfat")
-//            Button {
-//                showInfoSheet.toggle()
-//            } label: {
-//                GreenQuestionButtonView()
-//            }
+                .modifier(TitleModifier())
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                Button {
+                    showInfoSheet.toggle()
+                } label: {
+                    GreenQuestionButtonView()
+                }
+                .halfSheet(isPresented: $showInfoSheet) {
+                    //nothing
+                } content: {
+                    SuperfatInfoView()
+                        .padding()
+                }
+            } else {
+                Button {
+                    showInfoSheet.toggle()
+                } label: {
+                    GreenQuestionButtonView()
+                }
+                .popover(isPresented: $showInfoSheet) {
+                    SuperfatInfoView()
+                        .padding()
+                }
+            }
         })
         {
             
@@ -48,15 +67,6 @@ struct SuperfatView: View {
             ) : nil
         }
         .groupBoxStyle(CalculatorGroupBoxStyle())
-        .halfSheet(isPresented: $showInfoSheet, onDismiss: {
-            //nothing
-        }, content: {
-            SuperfatInfoView()
-                .padding()
-        })
-        
-        
-        
     }
 }
 

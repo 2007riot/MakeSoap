@@ -25,65 +25,62 @@ struct SoapPropertyRow: View {
         cornerRadius: 10
     )
     var body: some View {
-        
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            
-            rowView
-                .popover(isPresented: $showInfoSheet, arrowEdge: .trailing) {
-                    propertyInfoView
+        HStack {
+            Text(name)
+                .modifier(Title2Modifier())
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                Button {
+                    showInfoSheet.toggle()
+                } label: {
+                    GreenQuestionButtonView()
                 }
-        } else {
-            
-            rowView
                 .partialSheet(isPresented: $showInfoSheet,
                               type: .scrollView(height: 170, showsIndicators: false),
                               iPhoneStyle: iPhoneStyle,
                               content: {
                     propertyInfoView
                 })
-        }
-    }
-    var propertyInfoView: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("\(name.capitalized) soap property")
-                .modifier(Title2Modifier())
-            Text("Responsible for \(propertyExplained)")
-            VStack {
-                HStack {
-                    Text("Recommended value")
-                        .bold()
-                    Spacer()
-                    Text("\(recomendedValue) %")
-                        .bold()
+            } else {
+                Button {
+                    showInfoSheet.toggle()
+                } label: {
+                    GreenQuestionButtonView()
                 }
-                HStack {
-                    Text("Your value")
-                    Spacer()
-                    Text("\(value, specifier: "%.0f") %")
-                        .foregroundColor(color)
+                .popover(isPresented: $showInfoSheet, arrowEdge: .trailing) {
+                    propertyInfoView
                 }
-            }
-        }
-        
-        .padding()
-    }
-    
-    var rowView: some View {
-        HStack {
-            Text(name)
-                .modifier(Title2Modifier())
-            Button {
-                showInfoSheet.toggle()
-            } label: {
-                Image(systemName: "questionmark.circle.fill")
-                    .foregroundColor(.accentColor)
-                    .font(.caption2)
             }
             Spacer()
             Text("\(value, specifier: "%.0f") %")
                 .modifier(TextStyleModifier())
         }
     }
+
+var propertyInfoView: some View {
+    VStack(alignment: .leading, spacing: 10) {
+        Text("\(name.capitalized) soap property")
+            .modifier(Title2Modifier())
+        Text("Responsible for \(propertyExplained)")
+        VStack {
+            HStack {
+                Text("Recommended value")
+                    .bold()
+                Spacer()
+                Text("\(recomendedValue) %")
+                    .bold()
+            }
+            HStack {
+                Text("Your value")
+                Spacer()
+                Text("\(value, specifier: "%.0f") %")
+                    .foregroundColor(color)
+            }
+        }
+    }
+    
+    .padding()
+}
+
 }
 
 struct SoapPropertyRow_Previews: PreviewProvider {

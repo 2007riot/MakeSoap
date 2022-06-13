@@ -14,55 +14,70 @@ struct OilRow: View {
     @State var showInfoSheet = false
     
     var body: some View {
-        
-        HStack {
-            Text(oil.name)
-            Button {
-                showInfoSheet.toggle()
-            } label: {
-            Image(systemName: "questionmark.circle.fill")
-                .foregroundColor(.accentColor)
-                .font(.caption2)
-            }
+        VStack {
+            HStack {
+                Text(oil.name)
+                if UIDevice.current.userInterfaceIdiom == .phone {
+                Button {
+                    showInfoSheet.toggle()
+                } label: {
+                    Image(systemName: "questionmark.circle.fill")
+                        .foregroundColor(.accentColor)
+                        .font(.caption2)
+                }
+                .halfSheet(isPresented: $showInfoSheet, onDismiss: {
+                    //nothing
+                }, content: {
+                    OilPropertyView(oil: oil)
+                        .padding()
+                })
+                } else {
+                    Button {
+                        showInfoSheet.toggle()
+                    } label: {
+                        Image(systemName: "questionmark.circle.fill")
+                            .foregroundColor(.accentColor)
+                            .font(.caption2)
+                    }
+                    .popover(isPresented: $showInfoSheet) {
+                        OilPropertyView(oil: oil)
+                            .padding()
+                    }
+                }
+                Spacer()
                 
-            Spacer()
-            
-            TextField("Value", value: oilVM.isPerc ? $oil.userPercent : $oil.userWeightValue, format: .number)
-                .modifier(TextFieldStyle())
+                TextField("Value", value: oilVM.isPerc ? $oil.userPercent : $oil.userWeightValue, format: .number)
+                    .modifier(TextFieldStyle())
                     .onChange(of: oilVM.isPerc ? oil.userPercent : oil.userWeightValue, perform: { _ in
                         oilVM.isPerc ? oilVM.check100perc() : oilVM.calculateTotalOilWeight()
                         
                     })
-                    
+                
                     .onSubmit {
                         oilVM.isPerc ? oilVM.check100perc() : oilVM.calculateTotalOilWeight()
                         
                     }
-                    
-            Text(oilVM.isPerc ? "%" : oilVM.si)
-            Button {
-                withAnimation(.easeOut) {
-                    oilVM.changeFavorite(oil: oil)
-                    oilVM.isPerc ? oilVM.check100perc() : oilVM.calculateTotalOilWeight()
-                    
-                }
                 
-            } label: {
-                Image(systemName: "xmark.circle.fill")
-                    .foregroundColor(.gray)
-                    .font(.caption2)
+                Text(oilVM.isPerc ? "%" : oilVM.si)
+                Button {
+                    withAnimation(.easeOut) {
+                        oilVM.changeFavorite(oil: oil)
+                        oilVM.isPerc ? oilVM.check100perc() : oilVM.calculateTotalOilWeight()
+                        
+                    }
+                    
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.gray)
+                        .font(.caption2)
+                }
             }
+            
+            Divider()
         }
-        .halfSheet(isPresented: $showInfoSheet, onDismiss: {
-            //nothing
-        }, content: {
-            OilPropertyView(oil: oil)
-                .padding()
-        })
-       
-        Divider()
     }
-}
+    }
+    
 
 
 struct OilRow_Previews: PreviewProvider {
