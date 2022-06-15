@@ -29,27 +29,18 @@ public extension View {
     }
 }
 
-extension View {
-    
-    func halfSheet<Content>(
-        isPresented: Binding<Bool>,
-        onDismiss: (() -> Void)?,
-        content: @escaping () -> Content) -> some View where Content : View {
-            modifier(
-                halfSheetViewModifier(
-                    isPresented: isPresented,
-                    onDismiss: onDismiss,
-                    content: content)
-            )
-        }
-}
-
-//public extension PSIpadMacStyle {
+//extension View {
 //    
-//    static var height: CGFloat = 150
-//    
-//    init(height: CGFloat) {
-//        PSIpadMacStyle.height = height
-//    }
-//    
+//    func halfSheet<Content>(
+//        isPresented: Binding<Bool>,
+//        onDismiss: (() -> Void)?,
+//        content: @escaping () -> Content) -> some View where Content : View {
+//            modifier(
+//                halfSheetViewModifier(
+//                    isPresented: isPresented,
+//                    onDismiss: onDismiss,
+//                    content: content)
+//            )
+//        }
 //}
+

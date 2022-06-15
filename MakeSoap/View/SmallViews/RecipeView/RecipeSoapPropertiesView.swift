@@ -14,6 +14,7 @@ struct RecipeSoapPropertiesView: View {
             HStack  {
                 Text("Soap Properties")
                     .modifier(TitleModifier())
+                Spacer()
             }
             VStack (spacing: 8) {
                 SoapPropertyRecipeRow(name: "Bubbly", value: recipe.bubblyValue ?? 0)

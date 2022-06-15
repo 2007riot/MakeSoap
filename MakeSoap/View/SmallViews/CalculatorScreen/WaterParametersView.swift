@@ -4,7 +4,7 @@
 //
 //  Created by Galina Aleksandrova on 04/03/22.
 //
-import Combine
+import PartialSheet
 import SwiftUI
 
 struct WaterParametersView: View {
@@ -22,10 +22,11 @@ struct WaterParametersView: View {
                     showInfoSheet.toggle()
                 } label: {
                     GreenQuestionButtonView()
-                }
-                .halfSheet(isPresented: $showInfoSheet, onDismiss: {
-                    //nothing
-                }, content: {
+                } //MARK: adjust height of the sheet based on the content
+                .partialSheet(isPresented: $showInfoSheet,
+                              type: .scrollView(height: UIScreen.main.bounds.height * 0.5, showsIndicators: false),
+                              iPhoneStyle: UIConstants.iPhoneStyle,
+                              content: {
                     WaterInfoView()
                         .padding()
                 })
@@ -58,7 +59,7 @@ struct WaterParametersView: View {
                             TextField("Value", value: $oilVM.extraWaterPercent, format: .number)
                                 .modifier(TextFieldStyle())
                             Text("%")
-                        }//.environmentObject(oilVM)
+                        }
                     }
                 ) : nil
             }

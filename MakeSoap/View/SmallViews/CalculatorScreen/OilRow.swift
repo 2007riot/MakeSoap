@@ -5,6 +5,7 @@
 //  Created by Galina Aleksandrova on 07/03/22.
 //
 
+import PartialSheet
 import SwiftUI
 
 struct OilRow: View {
@@ -18,19 +19,20 @@ struct OilRow: View {
             HStack {
                 Text(oil.name)
                 if UIDevice.current.userInterfaceIdiom == .phone {
-                Button {
-                    showInfoSheet.toggle()
-                } label: {
-                    Image(systemName: "questionmark.circle.fill")
-                        .foregroundColor(.accentColor)
-                        .font(.caption2)
-                }
-                .halfSheet(isPresented: $showInfoSheet, onDismiss: {
-                    //nothing
-                }, content: {
-                    OilPropertyView(oil: oil)
-                        .padding()
-                })
+                    Button {
+                        showInfoSheet.toggle()
+                    } label: {
+                        Image(systemName: "questionmark.circle.fill")
+                            .foregroundColor(.accentColor)
+                            .font(.caption2)
+                    }
+                    .partialSheet(isPresented: $showInfoSheet,
+                                  type: .scrollView(height: UIScreen.main.bounds.height * 0.5, showsIndicators: false),
+                                  iPhoneStyle: UIConstants.iPhoneStyle,
+                                  content: {
+                        OilPropertyView(oil: oil)
+                            .padding()
+                    })
                 } else {
                     Button {
                         showInfoSheet.toggle()
@@ -76,8 +78,8 @@ struct OilRow: View {
             Divider()
         }
     }
-    }
-    
+}
+
 
 
 struct OilRow_Previews: PreviewProvider {

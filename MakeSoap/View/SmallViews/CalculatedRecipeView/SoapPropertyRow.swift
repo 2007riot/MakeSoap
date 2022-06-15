@@ -18,12 +18,7 @@ struct SoapPropertyRow: View {
     let color: Color
     let recomendationText: String
     let propertyExplained : String
-    let iPhoneStyle = PSIphoneStyle(
-        background: .solid(Color(uiColor: .systemBackground)),
-        handleBarStyle: .none,
-        cover: .enabled(Color.black.opacity(0.2)),
-        cornerRadius: 10
-    )
+    
     var body: some View {
         HStack {
             Text(name)
@@ -36,7 +31,7 @@ struct SoapPropertyRow: View {
                 }
                 .partialSheet(isPresented: $showInfoSheet,
                               type: .scrollView(height: 170, showsIndicators: false),
-                              iPhoneStyle: iPhoneStyle,
+                              iPhoneStyle: UIConstants.iPhoneStyle,
                               content: {
                     propertyInfoView
                 })

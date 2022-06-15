@@ -15,13 +15,6 @@ struct EssentialOilRow: View {
     @EnvironmentObject var oilVM: OilViewModel
     @State private var showInfoSheet = false
     
-    let iPhoneStyle = PSIphoneStyle(
-        background: .solid(Color(uiColor: .systemBackground)),
-        handleBarStyle: .none,
-        cover: .enabled(Color.black.opacity(0.2)),
-        cornerRadius: 10
-    )
-    
     var body: some View {
         
         VStack {
@@ -34,8 +27,8 @@ struct EssentialOilRow: View {
                 GreenQuestionButtonView()
             }
             .partialSheet(isPresented: $showInfoSheet,
-                          type: .scrollView(height: 300, showsIndicators: false),
-                          iPhoneStyle: iPhoneStyle,
+                          type: .scrollView(height: 250, showsIndicators: false),
+                          iPhoneStyle: UIConstants.iPhoneStyle,
                           content: {
                 EsOilDescriptionView(esOil: esOil)
                     .padding()

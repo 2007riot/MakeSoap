@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import PartialSheet
+import SwiftUI
 
 let oilSearch = "Search oils"
 let essentialOilSearch = "Search Essential oils"
@@ -36,4 +38,13 @@ struct Keys {
     //oilStore key
     static let oilData = "SavedOilData"
     static let esOilData = "SavedEsOilData"
+}
+
+struct UIConstants {
+    static let iPhoneStyle = PSIphoneStyle(
+        background: .solid(Color(uiColor: .systemBackground)),
+        handleBarStyle: .none,
+        cover: .enabled(Color.black.opacity(0.2)),
+        cornerRadius: 10
+    )
 }

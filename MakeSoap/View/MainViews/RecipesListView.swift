@@ -31,7 +31,7 @@ struct RecipesListView: View {
                             VStack (alignment: .leading) {
                                 Text(r.title)
                                     .modifier(Title2Modifier())
-                                Text(r.date, format: .dateTime.day().month().year().hour().minute().second())
+                                Text(r.date, format: .dateTime.day().month().year())
                                     .font(.footnote)
                             }
                         }

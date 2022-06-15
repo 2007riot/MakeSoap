@@ -5,6 +5,7 @@
 //  Created by Galina Aleksandrova on 03/03/22.
 //
 
+import PartialSheet
 import SwiftUI
 
 struct SoapTypeView: View {
@@ -22,11 +23,13 @@ struct SoapTypeView: View {
                 } label: {
                     GreenQuestionButtonView()
                 }
-                .halfSheet(isPresented: $showInfoSheet, onDismiss: {
-                    //nothing
-                }, content: {
+                .partialSheet(isPresented: $showInfoSheet,
+                              type: .scrollView(height: UIScreen.main.bounds.height * 0.4, showsIndicators: false),
+                              iPhoneStyle: UIConstants.iPhoneStyle,
+                              content: {
                     SoapTypeInfoView()
                         .padding()
+                    
                 })
                 
             } else {
@@ -131,3 +134,9 @@ struct SoapTypeView_Previews: PreviewProvider {
 }
 
 
+struct ViewHeightKeyTestScreen: PreferenceKey {
+    static var defaultValue: CGFloat { 0 }
+    static func reduce(value: inout Value, nextValue: () -> Value) {
+        value += nextValue()
+    }
+}

@@ -5,13 +5,13 @@
 //  Created by Galina Aleksandrova on 03/03/22.
 //
 
+import PartialSheet
 import SwiftUI
 
 struct ProcessView: View {
     
     @EnvironmentObject var oilVM: OilViewModel
     @State var showInfoSheet = false
-    
     
     
     var body: some View {
@@ -25,10 +25,10 @@ struct ProcessView: View {
                 } label: {
                     GreenQuestionButtonView()
                 }
-                
-                .halfSheet(isPresented: $showInfoSheet, onDismiss: {
-                    //nothing
-                }, content: {
+                .partialSheet(isPresented: $showInfoSheet,
+                              type: .scrollView(height: UIScreen.main.bounds.height * 0.5, showsIndicators: false),
+                              iPhoneStyle: UIConstants.iPhoneStyle,
+                              content: {
                     ProcessViewInfo()
                         .padding()
                 })

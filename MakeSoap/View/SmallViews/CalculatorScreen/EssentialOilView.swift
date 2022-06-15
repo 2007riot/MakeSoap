@@ -14,13 +14,6 @@ struct EssentialOilView: View {
     @State var editing: Bool = false
     @State private var isShowingEsoilInfo = false
     
-    let iPhoneStyle = PSIphoneStyle(
-        background: .solid(Color(uiColor: .systemBackground)),
-        handleBarStyle: .none,
-        cover: .enabled(Color.black.opacity(0.2)),
-        cornerRadius: 10
-    )
-    
     var body: some View {
         GroupBox(label:
                     HStack {
@@ -33,8 +26,8 @@ struct EssentialOilView: View {
                     GreenQuestionButtonView()
                 }
                 .partialSheet(isPresented: $isShowingEsoilInfo,
-                              type: .scrollView(height: 170, showsIndicators: false),
-                              iPhoneStyle: iPhoneStyle,
+                              type: .scrollView(height: UIScreen.main.bounds.height * 0.2, showsIndicators: false),
+                              iPhoneStyle: UIConstants.iPhoneStyle,
                               content: {
                     EsOilInfoView()
                         .padding()

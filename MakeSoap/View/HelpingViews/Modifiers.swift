@@ -50,14 +50,6 @@ struct BodyTextModifier: ViewModifier {
     }
 }
 
-struct BodyTextSemiboldModifier: ViewModifier {
-    @ScaledMetric var size: CGFloat = 1
-    func body(content: Content) -> some View {
-        content
-            .font(.system(size: 22 * size, weight: .semibold, design: .rounded))
-    }
-}
-
 struct TextFieldStyle: ViewModifier {
     @FocusState var isInputActive: Bool
     func body(content: Content) -> some View {
@@ -67,28 +59,5 @@ struct TextFieldStyle: ViewModifier {
             .multilineTextAlignment(.trailing)
             .frame(maxWidth: 100)
             .disableAutocorrection(true)
-    }
-}
-
-struct halfSheetViewModifier<SwiftUIContent>: ViewModifier where SwiftUIContent: View {
-    
-    @Binding var isPresented: Bool
-    let onDismiss: (() -> Void)?
-    let swiftUIContent: SwiftUIContent
-    
-    init(isPresented: Binding<Bool>, onDismiss: (() -> Void)? = nil, content: () -> SwiftUIContent) {
-        self._isPresented = isPresented
-        self.onDismiss = onDismiss
-        self.swiftUIContent = content()
-       
-    }
-    
-    func body(content: Content) -> some View {
-        ZStack {
-            SheetPresentationForSwiftUI($isPresented,onDismiss: onDismiss) {
-                swiftUIContent
-            }.fixedSize()
-            content
-        }
     }
 }

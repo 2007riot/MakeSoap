@@ -5,6 +5,7 @@
 //  Created by Galina Aleksandrova on 09/03/22.
 //
 
+import PartialSheet
 import SwiftUI
 
 struct SuperfatView: View {
@@ -22,13 +23,14 @@ struct SuperfatView: View {
                     showInfoSheet.toggle()
                 } label: {
                     GreenQuestionButtonView()
-                }
-                .halfSheet(isPresented: $showInfoSheet) {
-                    //nothing
-                } content: {
+                } //MARK: adjust height of the sheet based on the content
+                .partialSheet(isPresented: $showInfoSheet,
+                              type: .scrollView(height: UIScreen.main.bounds.height * 0.4, showsIndicators: false),
+                              iPhoneStyle: UIConstants.iPhoneStyle,
+                              content: {
                     SuperfatInfoView()
                         .padding()
-                }
+                })
             } else {
                 Button {
                     showInfoSheet.toggle()
