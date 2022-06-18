@@ -32,7 +32,7 @@
 		5CB4ED69281980EF00EEA349 /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB4ED68281980EF00EEA349 /* GreenButton.swift */; };
 		5CB52F1727D4F8F70072C9C4 /* CalculatedRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB52F1627D4F8F70072C9C4 /* CalculatedRecipeView.swift */; };
 		5CCBE78D284B69F400E4DB2D /* ParameterValuePercView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCBE78C284B69F400E4DB2D /* ParameterValuePercView.swift */; };
-		5CCBE790284B8B4700E4DB2D /* LyeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCBE78F284B8B4700E4DB2D /* LyeView.swift */; };
+		5CCBE790284B8B4700E4DB2D /* OnlyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCBE78F284B8B4700E4DB2D /* OnlyValueView.swift */; };
 		5CCBE792284BB42200E4DB2D /* EsOilDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCBE791284BB42200E4DB2D /* EsOilDescriptionView.swift */; };
 		5CCBE794284BB4D700E4DB2D /* SoapTypeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCBE793284BB4D700E4DB2D /* SoapTypeInfoView.swift */; };
 		5CCBE796284BB55F00E4DB2D /* SuperfatInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCBE795284BB55F00E4DB2D /* SuperfatInfoView.swift */; };
@@ -86,7 +86,7 @@
 		5CB4ED68281980EF00EEA349 /* GreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenButton.swift; sourceTree = "<group>"; };
 		5CB52F1627D4F8F70072C9C4 /* CalculatedRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatedRecipeView.swift; sourceTree = "<group>"; };
 		5CCBE78C284B69F400E4DB2D /* ParameterValuePercView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterValuePercView.swift; sourceTree = "<group>"; };
-		5CCBE78F284B8B4700E4DB2D /* LyeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyeView.swift; sourceTree = "<group>"; };
+		5CCBE78F284B8B4700E4DB2D /* OnlyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyValueView.swift; sourceTree = "<group>"; };
 		5CCBE791284BB42200E4DB2D /* EsOilDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsOilDescriptionView.swift; sourceTree = "<group>"; };
 		5CCBE793284BB4D700E4DB2D /* SoapTypeInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoapTypeInfoView.swift; sourceTree = "<group>"; };
 		5CCBE795284BB55F00E4DB2D /* SuperfatInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperfatInfoView.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 			children = (
 				5C13D42F2833A01700C066AC /* RecipeDetailView.swift */,
 				5CFDF0AD284A449E001EA482 /* RecipeSoapIngredientsView.swift */,
-				5CCBE78F284B8B4700E4DB2D /* LyeView.swift */,
+				5CCBE78F284B8B4700E4DB2D /* OnlyValueView.swift */,
 				5CFDF0AB284A441D001EA482 /* RecipeSoapPropertiesView.swift */,
 				5C7891162835572400D69B12 /* Helpers */,
 			);
@@ -401,7 +401,7 @@
 				5C517C872829B36B00CABE03 /* OilPropertyView.swift in Sources */,
 				5C14BC712832819F003E1F9C /* Recipe.swift in Sources */,
 				5CDB09E0282282C500ACD3CB /* EssentialOil.swift in Sources */,
-				5CCBE790284B8B4700E4DB2D /* LyeView.swift in Sources */,
+				5CCBE790284B8B4700E4DB2D /* OnlyValueView.swift in Sources */,
 				5C14BC9728336749003E1F9C /* RecipeManager.swift in Sources */,
 				5C03FAA82823B6E6006E6479 /* EssentialOilRow.swift in Sources */,
 				5C0100AF27D8C04D00973561 /* SuperfatView.swift in Sources */,
@@ -560,12 +560,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Make Soap.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"MakeSoap/Preview Content\"";
 				DEVELOPMENT_TEAM = 6N777LA6M4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Make-Soap-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Make Soap";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -593,12 +595,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Make Soap.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"MakeSoap/Preview Content\"";
 				DEVELOPMENT_TEAM = 6N777LA6M4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Make-Soap-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Make Soap";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

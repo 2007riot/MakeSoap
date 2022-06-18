@@ -9,8 +9,12 @@ import Foundation
 import PartialSheet
 import SwiftUI
 
-let oilSearch = "Search oils"
-let essentialOilSearch = "Search Essential oils"
+//let oilSearch = "Search oils"
+//let essentialOilSearch = "Search Essential oils"
+
+enum SearchFor {
+    case oil, essentialOil
+}
 
 //keys for oilModel
 struct Keys {

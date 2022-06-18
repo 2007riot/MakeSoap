@@ -34,11 +34,11 @@ struct SoapIngredientsView: View {
             
             if oilVM.isSolid || oilVM.isHybrid {
                 
-                LyeView(lye: "NaOH", lyeAmount: oilVM.totalAmountNaOH, unit: oilVM.si)
+                OnlyValueView(valueName: "NaOH", valueAmount: oilVM.totalAmountNaOH, unit: oilVM.si)
             }
             if oilVM.isLiquid || oilVM.isHybrid {
                 
-                LyeView(lye: "KOH", lyeAmount: oilVM.totalAmountKOH, unit: oilVM.si)
+                OnlyValueView(valueName: "KOH", valueAmount: oilVM.totalAmountKOH, unit: oilVM.si)
             }
             
             if oilVM.waterPercent != nil {
@@ -51,12 +51,12 @@ struct SoapIngredientsView: View {
             }
             if oilVM.sfPercent != nil {
                 
-                ParameterValuePercView(parameterName: "Superfat", value: oilVM.sfValue, perc: oilVM.sfPercent!, unit: oilVM.si)
+                OnlyValueView(valueName: "Superfat", valueAmount: oilVM.sfPercent!, unit: "%")
             }
             
             if oilVM.isHotProcess && oilVM.extraSFPercent != nil {
                 
-                ParameterValuePercView(parameterName: "Extra superfat", value: oilVM.sfValue, perc: oilVM.sfPercent!, unit: oilVM.si)
+                ParameterValuePercView(parameterName: "Extra superfat", value: oilVM.extraSFValue, perc: oilVM.extraSFPercent!, unit: oilVM.si)
             }
             Group {
                 

@@ -22,7 +22,7 @@ struct ContentView: View {
                     .environmentObject(recipeManager)
                 RecipesListView()
                     .tabItem {
-                        Label("Recipies", systemImage: "archivebox.fill") // archivebox.circle.fill // wand.and.rays.inverse //circle.grid.cross //circle.grid.cross.fill //rectangle.roundedtop.fill //rectangle.roundedbottom.fill //light.min
+                        Label("Recipes", systemImage: "archivebox.fill") // archivebox.circle.fill // wand.and.rays.inverse //circle.grid.cross //circle.grid.cross.fill //rectangle.roundedtop.fill //rectangle.roundedbottom.fill //light.min
                     }
                     .environmentObject(recipeManager)
                     

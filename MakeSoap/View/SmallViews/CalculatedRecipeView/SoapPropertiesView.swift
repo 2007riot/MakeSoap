@@ -27,18 +27,19 @@ struct SoapPropertiesView: View {
             }
             
             VStack (spacing: 8) {
-            //bubbly
-                SoapPropertyRow(showInfoSheet: $showBubbly, name: "Bubbly", recomendedValue: "15-30", value: oilVM.bubblyInd, color: oilVM.bubblyColor, recomendationText: oilVM.bubblySuggestion, propertyExplained: oilVM.bubblyExplained)
-            //cleaning
-                SoapPropertyRow(showInfoSheet: $showCleansing, name: "Cleansing", recomendedValue: "15-20", value: oilVM.cleaningInd, color: oilVM.cleaningColor, recomendationText: oilVM.cleaningSuggestion, propertyExplained: oilVM.cleaningExplained)
-            //condition
-                SoapPropertyRow(showInfoSheet: $showCondition, name: "Condition", recomendedValue: "45-70", value: oilVM.conditionInd, color: oilVM.conditionColor, recomendationText: oilVM.conditionSuggestion, propertyExplained: oilVM.conditionExplained)
             //hardness
                 SoapPropertyRow(showInfoSheet: $showHardness, name: "Hardness", recomendedValue: "35-45", value: oilVM.hardnessInd, color: oilVM.hardnessColor, recomendationText: oilVM.hardnessSuggestion, propertyExplained: oilVM.hardnessExplained)
-            //longevity
-                SoapPropertyRow(showInfoSheet: $showLongevity, name: "Longevity", recomendedValue: "25-50", value: oilVM.longevityInd, color: oilVM.longevityColor, recomendationText: oilVM.longevitySuggestion, propertyExplained: oilVM.longevityExplained)
+            //condition
+                SoapPropertyRow(showInfoSheet: $showCondition, name: "Condition", recomendedValue: "45-70", value: oilVM.conditionInd, color: oilVM.conditionColor, recomendationText: oilVM.conditionSuggestion, propertyExplained: oilVM.conditionExplained)
+            //bubbly
+                SoapPropertyRow(showInfoSheet: $showBubbly, name: "Bubbly", recomendedValue: "15-30", value: oilVM.bubblyInd, color: oilVM.bubblyColor, recomendationText: oilVM.bubblySuggestion, propertyExplained: oilVM.bubblyExplained)
+            //cleansing
+                SoapPropertyRow(showInfoSheet: $showCleansing, name: "Cleansing", recomendedValue: "10-20", value: oilVM.cleaningInd, color: oilVM.cleaningColor, recomendationText: oilVM.cleaningSuggestion, propertyExplained: oilVM.cleaningExplained)
             //stability
                 SoapPropertyRow(showInfoSheet: $showStability, name: "Stability", recomendedValue: "15-50", value: oilVM.stabilityInd, color: oilVM.stabilityColor, recomendationText: oilVM.stabilitySuggestion, propertyExplained: oilVM.stabilityExplained)
+            //longevity
+                SoapPropertyRow(showInfoSheet: $showLongevity, name: "Longevity", recomendedValue: "25-50", value: oilVM.longevityInd, color: oilVM.longevityColor, recomendationText: oilVM.longevitySuggestion, propertyExplained: oilVM.longevityExplained)
+            
             //iodine, for now don't need
 //            SoapPropertyRow(name: "Iodine", recomendedValue: "up to 50", value: oilVM.iodineInd, color: oilVM.iodineColor, recomendationText: oilVM.iodineSuggestion)
             }

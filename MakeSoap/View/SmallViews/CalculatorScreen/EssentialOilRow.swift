@@ -59,7 +59,7 @@ struct EssentialOilRow: View {
             Text("%")
             Button {
                 withAnimation(.easeOut) {
-                    oilVM.changeFavorite(esOil: esOil)
+                    oilVM.remove(esOil: esOil)
                     oilVM.calculateEsOilWeight()
                 }
                 

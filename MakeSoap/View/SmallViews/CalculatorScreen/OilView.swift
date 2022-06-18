@@ -10,6 +10,7 @@ import SwiftUI
 struct OilView: View {
     
     @EnvironmentObject var oilVM: OilViewModel
+    @Environment(\.colorScheme) var colorScheme
     @State var editing: Bool = false
     
     var body: some View {
@@ -36,7 +37,7 @@ struct OilView: View {
             .disableAutocorrection(true)
             .textFieldStyle(.roundedBorder)
             
-            SearchView(editing: $editing, inputText: $oilVM.inputTextOil, searchFor: oilSearch)
+            SearchView(editing: $editing, inputText: $oilVM.inputTextOil, searchFor: .oil)
             
             HStack {
                 Text("Total weight")
@@ -65,8 +66,10 @@ struct OilView: View {
                 
                 HStack {
                     Text ("\(oilVM.percText)")
+                        .foregroundColor(colorScheme == .dark ? oilVM.percColorWhite : oilVM.percColorBlack)
                     Spacer()
                     Text ("\(oilVM.percLeft, specifier: "%.2f") %")
+                        .foregroundColor(colorScheme == .dark ? oilVM.percColorWhite : oilVM.percColorBlack)
                 }
             }
             

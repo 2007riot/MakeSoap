@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct LyeView: View {
+struct OnlyValueView: View {
     
-    let lye: String
-    let lyeAmount: Double
+    let valueName: String
+    let valueAmount: Double
     let unit: String
     var body: some View {
         
         HStack {
-            Text(lye)
+            Text(valueName)
                 .modifier(Title2Modifier())
             Spacer()
-            Text("\(lyeAmount, specifier: "%.2f") \(unit)")
+            Text("\(valueAmount, specifier: "%.2f") \(unit)")
                 .modifier(TextStyleModifier())
             
         }
@@ -27,6 +27,6 @@ struct LyeView: View {
 
 struct LyeView_Previews: PreviewProvider {
     static var previews: some View {
-        LyeView(lye: "NaOH", lyeAmount: 30, unit: "g")
+        OnlyValueView(valueName: "NaOH", valueAmount: 30, unit: "g")
     }
 }

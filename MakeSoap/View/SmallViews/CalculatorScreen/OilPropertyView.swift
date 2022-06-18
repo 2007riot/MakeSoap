@@ -39,14 +39,9 @@ struct OilPropertyView: View {
             Text("Properties")
                 .font(.headline)
             HStack {
-                Text("Bubbly")
+                Text("Hardness")
                 Spacer()
-                Text("\(oil.bubbly, specifier: "%.0f") %").bold()
-            }
-            HStack {
-                Text("Cleaning")
-                Spacer()
-                Text("\(oil.cleaning, specifier: "%.0f") %").bold()
+                Text("\(oil.hardness, specifier: "%.0f") %").bold()
             }
             HStack {
                 Text("Condition")
@@ -54,21 +49,25 @@ struct OilPropertyView: View {
                 Text("\(oil.condition, specifier: "%.0f") %").bold()
             }
             HStack {
-                Text("Hardness")
+                Text("Bubbly")
                 Spacer()
-                Text("\(oil.hardness, specifier: "%.0f") %").bold()
+                Text("\(oil.bubbly, specifier: "%.0f") %").bold()
             }
             HStack {
-                Text("Longevity")
+                Text("Cleansing")
                 Spacer()
-                Text("\(oil.longevity, specifier: "%.0f") %").bold()
+                Text("\(oil.cleaning, specifier: "%.0f") %").bold()
             }
             HStack {
                 Text("Stability")
                 Spacer()
                 Text("\(oil.stability, specifier: "%.0f") %").bold()
             }
-            
+            HStack {
+                Text("Longevity")
+                Spacer()
+                Text("\(oil.longevity, specifier: "%.0f") %").bold()
+            }
         }
     }
     

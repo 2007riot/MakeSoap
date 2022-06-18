@@ -49,7 +49,7 @@ struct Recipe: Codable, Identifiable {
                isSolidSoap: true,
                isLiquidSoap: false,
                isHybridSoap: false,
-               oils: OilStore(isDefaultData: true).oils,
+               oils: [Oil.example()],
                bubblyValue: 50,
                cleaningValue: 50,
                conditionValue: 50,
@@ -68,7 +68,7 @@ struct Recipe: Codable, Identifiable {
                sfPerc: 7,
                extraSFValue: 10,
                extraSFPerc: 2,
-               esOils:EssentialOilStore().esOils,
+               esOils: [EssentialOil.example()],
                date: .now)
     }
     

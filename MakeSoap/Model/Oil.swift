@@ -10,7 +10,7 @@ import SwiftUI
 
 class Oil: Identifiable, Codable, Hashable, ObservableObject {
     
-    internal init(id: Int, name: String, saponificationKOH: Double, saponificationNaOH: Double, bubbly: Double, cleaning: Double, condition: Double, hardness: Double, longevity: Double, isChosen: Bool, userWeightValue: Double? = nil, userPercent: Double? = nil, stability: Double, Lauric: Double, Linoleic: Double, Linolenic: Double, Myristic: Double, Oleic: Double, Palmitic: Double, Ricinoleic: Double, Stearic: Double) {
+    internal init(id: Int, name: String, saponificationKOH: Double, saponificationNaOH: Double, bubbly: Double, cleaning: Double, condition: Double, hardness: Double, longevity: Double, userWeightValue: Double? = nil, userPercent: Double? = nil, stability: Double, Lauric: Double, Linoleic: Double, Linolenic: Double, Myristic: Double, Oleic: Double, Palmitic: Double, Ricinoleic: Double, Stearic: Double) {
         self.id = id
         self.name = name
         self.saponificationKOH = saponificationKOH
@@ -20,7 +20,6 @@ class Oil: Identifiable, Codable, Hashable, ObservableObject {
         self.condition = condition
         self.hardness = hardness
         self.longevity = longevity
-        self.isChosen = isChosen
         self.userWeightValue = userWeightValue
         self.userPercent = userPercent
         self.stability = stability
@@ -45,7 +44,6 @@ class Oil: Identifiable, Codable, Hashable, ObservableObject {
     var condition: Double
     var hardness: Double
     var longevity: Double
-    var isChosen: Bool
     var userWeightValue: Double?
     var userPercent: Double?
     var stability: Double
@@ -58,7 +56,13 @@ class Oil: Identifiable, Codable, Hashable, ObservableObject {
     var Ricinoleic: Double
     var Stearic: Double
    
-    
+    var isInRecipe: Bool {
+        if OilStore(isDefaultData: false).chosenOils.contains(where: {$0.name == name}) {
+            return true
+        } else {
+            return false
+        }
+    }
     
     
     func hash(into hasher: inout Hasher) {
@@ -80,7 +84,6 @@ class Oil: Identifiable, Codable, Hashable, ObservableObject {
             condition: 90,
             hardness: 6,
             longevity: 6,
-            isChosen: false,
             stability: 6,
             Lauric: 0,
             Linoleic: 12,

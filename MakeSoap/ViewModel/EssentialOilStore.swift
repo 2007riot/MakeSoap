@@ -9,10 +9,11 @@ import Foundation
 
 class EssentialOilStore: ObservableObject {
     
-    @Published var esOils: [EssentialOil] = []
+    @Published var esOils = [EssentialOil]()
+    @Published var chosenEsOils = [EssentialOil]()
     
     func saveData() {
-        if let encoded = try? JSONEncoder().encode(esOils) {
+        if let encoded = try? JSONEncoder().encode(chosenEsOils) {
             UserDefaults.standard.set(encoded, forKey: Keys.esOilData)
         }
     }
@@ -23,27 +24,13 @@ class EssentialOilStore: ObservableObject {
         } else {
             if let data = UserDefaults.standard.data(forKey: Keys.esOilData) {
                 if let decoded = try? JSONDecoder().decode([EssentialOil].self, from: data) {
-                    esOils = decoded
-                    return
-                }
-            }
-            self.esOils = DataManager.shared.load("EssentialOilsData.json")
-        }
-        
-    }
-    init () {
-        
-            if let data = UserDefaults.standard.data(forKey: Keys.esOilData) {
-                if let decoded = try? JSONDecoder().decode([EssentialOil].self, from: data) {
-                    esOils = decoded
+                    chosenEsOils = decoded
                     return
                 }
             } else {
-            self.esOils = DataManager.shared.load("EssentialOilsData.json")
+                chosenEsOils = []
             }
+        }
         
     }
-//    init () {
-//        esOils = DataManager.shared.load("EssentialOilsData.json")
-//    }
 }

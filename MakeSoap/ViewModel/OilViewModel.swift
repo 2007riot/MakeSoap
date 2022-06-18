@@ -14,9 +14,9 @@ class OilViewModel: ObservableObject {
     
     
     let oilStore = OilStore(isDefaultData: false)
-    let essentialOilStore = EssentialOilStore()
-    
-    
+    let oilStoreDefaultOils = OilStore(isDefaultData: true)
+    let esOilStore = EssentialOilStore(isDefaultData: false)
+    let esOilStoreDefault = EssentialOilStore(isDefaultData: true)
     
     // process
     @AppStorage(Keys.isHotProcess) var isHotProcess: Bool = false
@@ -96,42 +96,60 @@ class OilViewModel: ObservableObject {
     //units
     @Published var units = ["Grams", "Kilograms", "Pounds", "Ounces"]
     @AppStorage(Keys.unit) var unit: String = "Grams"//need to think about initialization
-    @AppStorage(Keys.si) var si: String = "Grams"//need to think about initialization
+    @AppStorage(Keys.si) var si: String = "g"//need to think about initialization
     
     //percentage
     @AppStorage(Keys.isPerc) var isPerc: Bool = false
-    @Published var isNot100Perc: Bool = false
+    @Published var isNot100Perc: Bool = true
     @Published var percLeft: Double = 100
     @Published var percText = "Remains"
     var percSum: Double = 0
+    var percColorWhite: Color = .white
+    var percColorBlack: Color = .black
     
     @Published var recipeTitle = ""
     
     var searchedOils: [Oil] {
-        oilStore.oils.filter({ $0.name.contains(inputTextOil) })
+        oilStoreDefaultOils.oils.filter({ $0.name.contains(inputTextOil) })
     }
     var searchedEsOils: [EssentialOil] {
-        essentialOilStore.esOils.filter({
+        esOilStoreDefault.esOils.filter({
             $0.name.contains(inputTextEsOil)
         })
     }
+
+    
     
     var chosenOils: [Oil] {
-        oilStore.oils.filter { oil in
-            oil.isChosen
-        }
+        oilStore.chosenOils
+
     }
     var chosenEsOils: [EssentialOil] {
-        essentialOilStore.esOils.filter { esOil in
-            esOil.isChosen
+        esOilStore.chosenEsOils
+    }
+    func choose(oil: Oil) {
+        if !oilStore.chosenOils.contains(where: { $0.name == oil.name }) {
+            oilStore.chosenOils.append(oil)
         }
+        oilStore.saveData()
+        
+    }
+    func remove(oil: Oil) {
+        oilStore.chosenOils = oilStore.chosenOils.filter { $0 !== oil }
+        oilStore.saveData()
+    }
+    func choose(esOil: EssentialOil) {
+        if !esOilStore.chosenEsOils.contains(where: { $0.name == esOil.name }) {
+            esOilStore.chosenEsOils.append(esOil)
+        }
+        
+        esOilStore.saveData()
     }
     
-//    func saveData() {
-//        if let encoded = try? JSONEncoder().encode(chosenOils) {
-//            UserDefaults.standard.set(encoded, forKey: Keys.oilData)
-//        }
-//    }
+    func remove(esOil: EssentialOil) {
+        esOilStore.chosenEsOils = esOilStore.chosenEsOils.filter { $0 !== esOil }
+        esOilStore.saveData()
+    }
     
     func changeUnits() {
         switch unit {
@@ -169,7 +187,6 @@ class OilViewModel: ObservableObject {
             }
         }
         totalOilAmount = weights.reduce(0, +)
-        
     }
     
     func calculateLyeSum () {
@@ -282,7 +299,11 @@ class OilViewModel: ObservableObject {
         if extraSFPercent != nil {
             extraSFValue = totalOilAmount * extraSFPercent! / 100
         }
+        if isHotProcess {
+            totalSoapWeight = totalOilAmount + totalEsOilAmount + totalWaterAmount +   totalAmountNaOH + totalAmountKOH + extraSFValue + extraWaterAmount
+        } else {
         totalSoapWeight = totalOilAmount + totalEsOilAmount + totalWaterAmount +   totalAmountNaOH + totalAmountKOH
+        }
         changeUnits()
         
         calculateProperties()
@@ -310,115 +331,124 @@ class OilViewModel: ObservableObject {
         
         //set colors and suggestions
         
-        // recommendation 15-30
+        // recommendation 15-30 done
         switch bubblyInd {
-            case 0..<10:
+            case ..<10:
                 bubblyColor = .red
-                bubblySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
+                //bubblySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
             case 10..<15:
                 bubblyColor = .yellow
-                bubblySuggestion = "almost perfect"
+                //bubblySuggestion = "almost perfect"
             case 15...30:
                 bubblyColor = .accentColor
-                bubblySuggestion = "perfect"
+                //bubblySuggestion = "perfect"
             case 30...40:
                 bubblyColor = .yellow
-                bubblySuggestion = "almost perfect"
-            case 40..<100:
+                //bubblySuggestion = "almost perfect"
+            case 40...:
                 bubblyColor = .red
-                bubblySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
+                //bubblySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
             default:
-                bubblyColor = .accentColor
+                bubblyColor = .gray
         }
-        // recommendation 15-20
+        // recommendation 10-20 done
         switch cleaningInd {
-            case 0..<10:
+            case ..<5:
                 cleaningColor = .red
-                cleaningSuggestion = ""
+                //cleaningSuggestion = ""
+            case 5..<10:
+                cleaningColor = .yellow
+            case 10..<21:
+                cleaningColor = .accentColor
+            case 21...25:
+                cleaningColor = .yellow
+            case 25...:
+                cleaningColor = .red
+                
             default:
                 cleaningColor = .gray
         }
         
-        // recommendation 45-70
+        // recommendation 45-70 done
         switch conditionInd {
-            case 0..<10:
-                bubblyColor = .red
-                bubblySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
-            case 10..<15:
-                bubblyColor = .yellow
+            case 0..<35:
+                conditionColor = .red
+//                conditionSuggestion = ""
+            case 35..<45:
+                conditionColor = .yellow
+//                conditionSuggestion = "almost perfect"
+            case 45..<71:
+                conditionColor = .accentColor
+//                conditionSuggestion = "perfect"
+            case 71...80:
+                conditionColor = .yellow
                 bubblySuggestion = "almost perfect"
-            case 15...30:
-                bubblyColor = .accentColor
-                bubblySuggestion = "perfect"
-            case 30...40:
-                bubblyColor = .yellow
-                bubblySuggestion = "almost perfect"
-            case 40..<100:
-                bubblyColor = .red
-                bubblySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
+            case 81...:
+                conditionColor = .red
+//                conditionSuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
             default:
-                bubblyColor = .accentColor
+                conditionColor = .accentColor
         }
         
-        // recommendation 35-45
+        // recommendation 35-45 done
         switch hardnessInd {
-            case 0..<10:
-                bubblyColor = .red
-                bubblySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
-            case 10..<15:
-                bubblyColor = .yellow
-                bubblySuggestion = "almost perfect"
-            case 15...30:
-                bubblyColor = .accentColor
-                bubblySuggestion = "perfect"
-            case 30...40:
-                bubblyColor = .yellow
-                bubblySuggestion = "almost perfect"
-            case 40..<100:
-                bubblyColor = .red
-                bubblySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
+            case 0..<30:
+                hardnessColor = .red
+                hardnessSuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
+            case 30..<35:
+                hardnessColor = .yellow
+                hardnessSuggestion = "almost perfect"
+            case 35...45:
+                hardnessColor = .accentColor
+                hardnessSuggestion = "perfect"
+            case 46...50:
+                hardnessColor = .yellow
+                hardnessSuggestion = "almost perfect"
+            case 51...:
+                hardnessColor = .red
+                hardnessSuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
             default:
-                bubblyColor = .accentColor
+                hardnessColor = .accentColor
         }
         
-        // recommendation 25-50
+        // recommendation 25-50 done
         switch longevityInd {
-            case ..<20:
+            case ..<15:
                 longevityColor = .red
-                longevitySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
-            case 20..<25:
+//                longevitySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
+            case 15..<25:
                 longevityColor = .yellow
-                longevitySuggestion = "almost perfect"
+//                longevitySuggestion = "almost perfect"
             case 25...50:
                 longevityColor = .accentColor
-                longevitySuggestion = "perfect"
-            case 30...40:
+//                longevitySuggestion = "perfect"
+            case 51...60:
                 longevityColor = .yellow
-                longevitySuggestion = "almost perfect"
-            case 40..<100:
+//                longevitySuggestion = "almost perfect"
+            case 61...:
                 longevityColor = .red
-                longevitySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
+//                longevitySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
             default:
                 longevityColor = .accentColor
         }
         
-        // recommendation 15-50
+        // recommendation 15-50 done
         switch stabilityInd {
             case ..<10:
                 stabilityColor = .red
-                stabilitySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
+//                stabilitySuggestion = "Add to recipe more hard oils(coconut oil, palm oil, shea butter etc)"
             case 10..<15:
                 stabilityColor = .yellow
-                stabilitySuggestion = "almost perfect"
-            case 15..<51:
+//                stabilitySuggestion = "almost perfect"
+            case 15...50:
                 stabilityColor = .accentColor
-                stabilitySuggestion = "perfect"
+//                stabilitySuggestion = "perfect"
             case 51..<55:
                 stabilityColor = .yellow
-                stabilitySuggestion = "almost perfect"
-            case 61...:
+//                stabilitySuggestion = "almost perfect"
+            case 55...:
                 stabilityColor = .red
-                stabilitySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
+//                stabilitySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
             default:
                 stabilityColor = .accentColor
         }
@@ -439,43 +469,25 @@ class OilViewModel: ObservableObject {
             case 0..<100:
                 isNot100Perc = true
                 percLeft = 100 - percSum
+                percColorWhite = .red
+                percColorBlack = .red
                 
-            case 100:
-                percLeft = 0
-                isNot100Perc = false
-                percText = "Everything's great"
-            case 100...:
+            case 101...:
                 percLeft = percSum - 100
                 isNot100Perc = true
                 percText = "Excess:"
+                percColorWhite = .red
+                percColorBlack = .red
+                
             default:
                 percLeft = 0
+                percColorWhite = .white
+                percColorBlack = .white
         }
         
     }
     
-    func changeFavorite(oil: Oil) {
-        let index = oilStore.oils.firstIndex { o in
-            return o.id == oil.id
-        }
-        oilStore.oils[index!].isChosen.toggle()
-        
-        oilStore.oils[index!].userPercent = nil
-        oilStore.oils[index!].userWeightValue = nil
-        
-        oilStore.saveData()
-        
-    }
-    func changeFavorite(esOil: EssentialOil) {
-        let index = essentialOilStore.esOils.firstIndex { o in
-            return o.id == esOil.id
-        }
-        essentialOilStore.esOils[index!].isChosen.toggle()
-        essentialOilStore.esOils[index!].calculatedWeight = nil
-        essentialOilStore.esOils[index!].userPercent = nil
-        
-        essentialOilStore.saveData()
-    }
+    
     func deleteCalculation() {
         
         

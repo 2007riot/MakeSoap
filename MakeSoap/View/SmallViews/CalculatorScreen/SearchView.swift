@@ -15,12 +15,10 @@ struct SearchView: View {
     @State var verticalOffset: CGFloat
     @State var horizontalOffset: CGFloat
     
-    @StateObject var oilStoreDefaultData = OilStore(isDefaultData: true)
-    @StateObject var essentialOilStore = EssentialOilStore()
     
-    var searchFor: String
+    var searchFor: SearchFor
     
-    public init(editing: Binding<Bool>, inputText: Binding<String>, searchFor: String) {
+    public init(editing: Binding<Bool>, inputText: Binding<String>, searchFor: SearchFor) {
         self._editing = editing
         self._inputText = inputText
         self.verticalOffset = 0
@@ -28,7 +26,7 @@ struct SearchView: View {
         self.searchFor = searchFor
     }
     
-    public init(editing: Binding<Bool>, text: Binding<String>, verticalOffset: CGFloat, horizontalOffset: CGFloat, searchFor: String) {
+    public init(editing: Binding<Bool>, text: Binding<String>, verticalOffset: CGFloat, horizontalOffset: CGFloat, searchFor: SearchFor) {
         self._editing = editing
         self._inputText = text
         self.verticalOffset = verticalOffset
@@ -44,12 +42,12 @@ struct SearchView: View {
             
             LazyVStack(spacing: 0) {
                 
-                if searchFor == oilSearch {
-                    oilSearchView
-                } else {
-                    essentialOilsearchView
+                switch searchFor {
+                    case .oil:
+                        oilSearchView
+                    case .essentialOil:
+                        essentialOilsearchView
                 }
-                
             }
             .background(.ultraThinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -62,9 +60,9 @@ struct SearchView: View {
             
             //            oilVM.searchedOils.isEmpty ? Text("No oils found") : Text(oil.name)
             HStack {
-                oil.isChosen ? Text(oil.name).foregroundColor(.accentColor) : Text(oil.name)
+                oil.isInRecipe ? Text(oil.name).foregroundColor(.accentColor) : Text(oil.name)
                 Spacer()
-                oil.isChosen ? Image(systemName: "checkmark").foregroundColor(.accentColor) : nil
+                oil.isInRecipe ? Image(systemName: "checkmark").foregroundColor(.accentColor) : nil
                 
             }
             .padding()
@@ -79,7 +77,7 @@ struct SearchView: View {
                 withAnimation(.easeIn) {
                     editing = false
                     self.endTextEditing()
-                    oilVM.changeFavorite(oil: oil)
+                    oilVM.choose(oil: oil)
                     oilVM.isPerc ? oilVM.check100perc() : oilVM.calculateTotalOilWeight()
                     
                 }
@@ -94,9 +92,9 @@ struct SearchView: View {
     var essentialOilsearchView: some View {
         ForEach(oilVM.searchedEsOils, id: \.name) { esOil in
             HStack {
-                esOil.isChosen ? Text(esOil.name).foregroundColor(.accentColor) : Text(esOil.name)
+                esOil.isInRecipe ? Text(esOil.name).foregroundColor(.accentColor) : Text(esOil.name)
                 Spacer()
-                esOil.isChosen ? Image(systemName: "checkmark").foregroundColor(.accentColor) : nil
+                esOil.isInRecipe ? Image(systemName: "checkmark").foregroundColor(.accentColor) : nil
                 
             }
             
@@ -112,7 +110,7 @@ struct SearchView: View {
                 withAnimation(.easeIn) {
                     editing = false
                     self.endTextEditing()
-                    oilVM.changeFavorite(esOil: esOil)
+                    oilVM.choose(esOil: esOil)
                     oilVM.calculateEsOilWeight()
                 }
             }
@@ -128,7 +126,7 @@ struct SearchView_Previews: PreviewProvider {
     static let oilVM = OilViewModel()
     
     static var previews: some View {
-        SearchView(editing: .constant(false), inputText: .constant("o"), searchFor: "o")
+        SearchView(editing: .constant(false), inputText: .constant("o"), searchFor: .oil)
             .environmentObject(oilVM)
             .padding()
             

@@ -26,6 +26,7 @@ struct RecipeDetailView: View {
                 .padding()
             
         }
+       // .padding()
         .navigationBarTitle(recipe.title, displayMode: .inline)
     }
     

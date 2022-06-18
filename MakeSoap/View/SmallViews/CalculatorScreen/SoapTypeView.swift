@@ -111,8 +111,11 @@ struct SoapTypeView: View {
                         Text("%")
                     }
                     if oilVM.sumOfLyesErroMessage != nil {
+                        HStack {
                         Text(oilVM.sumOfLyesErroMessage!)
                             .foregroundColor(.red)
+                            Spacer()
+                        }
                     }
                 }
             ) : nil

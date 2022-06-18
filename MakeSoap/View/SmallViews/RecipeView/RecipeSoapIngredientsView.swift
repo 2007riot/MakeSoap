@@ -10,14 +10,8 @@ import SwiftUI
 struct RecipeSoapIngredientsView: View {
     let recipe: Recipe
     var body: some View {
-        
-        VStack(spacing: 12) {
-            HStack  {
-                Text("Ingredients")
-                    .modifier(TitleModifier())
-                Spacer()
-            }
-            VStack (spacing: 8) {
+        GroupBox {
+            VStack(spacing: 12){
             if recipe.soapWeight != nil {
                 HStack(alignment: .top) {
                     Text("Total soap weight")
@@ -29,32 +23,30 @@ struct RecipeSoapIngredientsView: View {
             }
             
             if recipe.isSolidSoap ?? false {
-                LyeView(lye: "NaOH", lyeAmount: recipe.NaOHvalue ?? 0, unit: recipe.unit ?? "")
+                OnlyValueView(valueName: "NaOH", valueAmount: recipe.NaOHvalue ?? 0, unit: recipe.unit ?? "")
             } else if recipe.isLiquidSoap ?? false {
-                LyeView(lye: "KOH", lyeAmount: recipe.KOHValue ?? 0, unit: recipe.unit ?? "")
+                OnlyValueView(valueName: "KOH", valueAmount: recipe.KOHValue ?? 0, unit: recipe.unit ?? "")
             } else {
-                LyeView(lye: "NaOH", lyeAmount: recipe.NaOHvalue ?? 0, unit: recipe.unit ?? "")
-                LyeView(lye: "KOH", lyeAmount: recipe.KOHValue ?? 0, unit: recipe.unit ?? "")
+                OnlyValueView(valueName: "NaOH", valueAmount: recipe.NaOHvalue ?? 0, unit: recipe.unit ?? "")
+                OnlyValueView(valueName: "KOH", valueAmount: recipe.KOHValue ?? 0, unit: recipe.unit ?? "")
             }
             
             if recipe.waterValue != nil && recipe.waterPerc != nil {
                 
-                ParameterValuePercView(parameterName: "Water", value: recipe.waterValue!, perc: recipe.extraWaterPerc!, unit: recipe.unit ?? "")
+                ParameterValuePercView(parameterName: "Water", value: recipe.waterValue!, perc: recipe.waterPerc!, unit: recipe.unit ?? "")
             }
             if  recipe.isHotProcess ?? false && recipe.extraWater != nil && recipe.extraWaterPerc != nil {
                 ParameterValuePercView(parameterName: "Extra water", value: recipe.extraWater!, perc: recipe.extraWaterPerc!, unit: recipe.unit ?? "")
                 
             }
-            if recipe.sfValue != nil && recipe.sfPerc != nil {
+                if recipe.sfPerc != nil {
                 
-                ParameterValuePercView(parameterName: "Superfat", value: recipe.sfValue!, perc: recipe.sfPerc!, unit: recipe.unit ?? "")
+                OnlyValueView(valueName: "Superfat", valueAmount: recipe.sfPerc!, unit: "%")
                 
             }
             if recipe.isHotProcess ?? false && recipe.extraSFValue != nil && recipe.extraSFPerc != nil {
                 
                 ParameterValuePercView(parameterName: "Extra superfat", value: recipe.extraSFValue!, perc: recipe.extraSFPerc!, unit: recipe.unit ?? "")
-                
-                
                 
             }
             if recipe.oils != nil {
@@ -68,7 +60,14 @@ struct RecipeSoapIngredientsView: View {
                 }
             }
         }
+        } label: {
+            HStack  {
+                Text("Ingredients")
+                    .modifier(TitleModifier())
+                Spacer()
+            }
         }
+        .groupBoxStyle(CalculatorGroupBoxStyle())
     }
     
 }

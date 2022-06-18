@@ -54,7 +54,7 @@ struct EssentialOilView: View {
                 .disableAutocorrection(true)
                 .textFieldStyle(.roundedBorder)
                 
-                SearchView(editing: $editing, inputText: $oilVM.inputTextEsOil, searchFor: essentialOilSearch)
+                SearchView(editing: $editing, inputText: $oilVM.inputTextEsOil, searchFor: .essentialOil)
                 
                 ForEach(oilVM.chosenEsOils, id: \.id) { esOil in
                     

@@ -63,7 +63,7 @@ struct OilRow: View {
                 Text(oilVM.isPerc ? "%" : oilVM.si)
                 Button {
                     withAnimation(.easeOut) {
-                        oilVM.changeFavorite(oil: oil)
+                        oilVM.remove(oil: oil)
                         oilVM.isPerc ? oilVM.check100perc() : oilVM.calculateTotalOilWeight()
                         
                     }
