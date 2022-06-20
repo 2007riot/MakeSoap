@@ -15,7 +15,7 @@ struct EsOilDescriptionView: View {
         ScrollView(showsIndicators: false) {
             HStack {
         VStack(alignment: .leading, spacing: 10) {
-            Text(esOil.latinName)
+            Text(esOil.latinName.capitalized)
                 .italic()
             Text("Recommended value:")
                 .italic()
