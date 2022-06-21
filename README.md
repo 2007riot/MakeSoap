@@ -4,4 +4,4 @@ Soap-making calculator for iPhone and iPad, written in SwiftUI and a little bit 
 
 
 Do you wanna try it? 👇
-#### https://testflight.apple.com/join/zrOXFlqI
+### Available on the [App Store](https://apps.apple.com/app/make-soap/id1627081052)
