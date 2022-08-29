@@ -20,8 +20,9 @@ struct SoapPropertyRow: View {
     let propertyExplained : String
     
     var body: some View {
+        // MARK: think about localized string key and string interpolation, because HStack is not a solution!!!
         HStack {
-            Text(name)
+            Text(NSLocalizedString(name, comment: "name of property row"))
                 .modifier(Title2Modifier())
             if UIDevice.current.userInterfaceIdiom == .phone {
                 Button {
@@ -53,9 +54,12 @@ struct SoapPropertyRow: View {
 
 var propertyInfoView: some View {
     VStack(alignment: .leading, spacing: 10) {
-        Text("\(name.capitalized) soap property")
+            Text("\(NSLocalizedString(name.capitalized, comment: "soap property name")) soap property")
+           
             .modifier(Title2Modifier())
-        Text("Responsible for \(propertyExplained)")
+       
+            Text("Responsible for \(NSLocalizedString(propertyExplained, comment: "explanation of soap property"))")
+        
         VStack {
             HStack {
                 Text("Recommended value")

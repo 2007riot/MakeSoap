@@ -1,0 +1,520 @@
+/* No comment provided by engineer. */
+" The soap is ready the moment all the lye has reacted with oil." = " The soap is ready the moment all the lye has reacted with oil.";
+
+"Cold saponification uses the heat generated from saponification reaction itself and the process called soap curing and takes 4-8 weeks, depending on the oil." = "Cold saponification uses the heat generated from saponification reaction itself and the process called soap curing and takes 4-8 weeks, depending on the oil.";
+
+/* No comment provided by engineer. */
+"%" = "%";
+
+/* No comment provided by engineer. */
+"%.0f %%" = "%.0f %%";
+
+/* No comment provided by engineer. */
+"%.1f %%" = "%.1f %%";
+
+/* No comment provided by engineer. */
+"%.2f %@" = "%.2f %@";
+
+/* No comment provided by engineer. */
+"%.2f %%" = "%.2f %%";
+
+/* No comment provided by engineer. */
+"%@" = "%@";
+
+/* No comment provided by engineer. */
+"%@ %%" = "%@ %%";
+
+/* No comment provided by engineer. */
+"%@ soap property" = "%@ soap property";
+
+/* No comment provided by engineer. */
+"%@, %@" = "%@, %@";
+
+/* No comment provided by engineer. */
+"As the soap cures, some of the water evaporates, making a harder, longer-lasting bar of soap." = "As the soap cures, some of the water evaporates, making a harder, longer-lasting bar of soap.";
+
+/* No comment provided by engineer. */
+"Blends well with essential oils:" = "Blends well with essential oils:";
+
+/* No comment provided by engineer. */
+"Bubbly" = "Bubbly";
+
+/* No comment provided by engineer. */
+"Calculator" = "Calculadora";
+
+/* No comment provided by engineer. */
+"Choose unit" = "Choose unit";
+
+/* No comment provided by engineer. */
+"Cleansing" = "Cleansing";
+
+/* No comment provided by engineer. */
+"Cold Process" = "Cold Process";
+
+/* No comment provided by engineer. */
+"Cold process:" = "Cold process:";
+
+/* No comment provided by engineer. */
+"Condition" = "Condition";
+
+/* No comment provided by engineer. */
+"Essential Oils" = "Essential Oils";
+
+/* No comment provided by engineer. */
+"Extra superfat" = "Extra superfat";
+
+/* No comment provided by engineer. */
+"Extra water" = "Extra water";
+
+/* No comment provided by engineer. */
+"Fatty Acids:" = "Fatty Acids:";
+
+/* No comment provided by engineer. */
+"Find Essential Oil" = "Find Essential Oil";
+
+/* No comment provided by engineer. */
+"Find oil" = "Find oil";
+
+/* No comment provided by engineer. */
+"from %@" = "from %@";
+
+/* No comment provided by engineer. */
+"from 5% to 20%" = " from 5% to 20%";
+
+/* No comment provided by engineer. */
+"General recommended superfat: " = "General recommended superfat: ";
+
+/* No comment provided by engineer. */
+"Got it!" = "Got it!";
+
+/* No comment provided by engineer. */
+"Hardness" = "Hardness";
+
+/* No comment provided by engineer. */
+"Hot Process" = "Hot Process";
+
+/* No comment provided by engineer. */
+"Hot process:" = "Hot process:";
+
+/* No comment provided by engineer. */
+"Hybrid" = "Hybrid";
+
+/* No comment provided by engineer. */
+"Hybrid  soap is made by combining both NaOH and KOH." = "Hybrid  soap is made by combining both NaOH and KOH.";
+
+/* No comment provided by engineer. */
+"Hybrid soap" = "Hybrid soap";
+
+/* No comment provided by engineer. */
+"If your skin comes in contact with lye flush it immediately with water and seek help from a doctor." = "If your skin comes in contact with lye flush it immediately with water and seek help from a doctor.";
+
+/* No comment provided by engineer. */
+"In hot process soap you can add extra oils after the soap has cooked. These oils won’t react with the lye, because the saponification is finished, so you can choose different oils to enrich the soap." = "In hot process soap you can add extra oils after the soap has cooked. These oils won’t react with the lye, because the saponification is finished, so you can choose different oils to enrich the soap.";
+
+/* No comment provided by engineer. */
+"In the hot process, you can add extra (discounted) water after the soap has cooked. The benefit of it is that instead of water you can add other liquids like milk, wine, beer, etc to enrich the soap." = "In the hot process, you can add extra (discounted) water after the soap has cooked. The benefit of it is that instead of water you can add other liquids like milk, wine, beer, etc to enrich the soap.";
+
+/* No comment provided by engineer. */
+"Ingredients" = "Ingredients";
+
+/* No comment provided by engineer. */
+"KOH" = "KOH";
+
+/* No comment provided by engineer. */
+"Lauric" = "Lauric";
+
+/* No comment provided by engineer. */
+"Linoleic" = "Linoleic";
+
+/* No comment provided by engineer. */
+"Liquid  soap is made by combining oils with potassium hydroxide (KOH), also known as potash. It's not very liquid soap, it looks more like gel or paste." = "Liquid  soap is made by combining oils with potassium hydroxide (KOH), also known as potash. It's not very liquid soap, it looks more like gel or paste.";
+
+/* No comment provided by engineer. */
+"Liquid soap" = "Liquid soap";
+
+/* No comment provided by engineer. */
+"Liquid Soap" = "Liquid soap";
+
+/* No comment provided by engineer. */
+"Longevity" = "Longevity";
+
+/* No comment provided by engineer. */
+"Myristic" = "Myristic";
+
+/* No comment provided by engineer. */
+"NaOH" = "NaOH";
+
+/* No comment provided by engineer. */
+"Not all info provided" = "Not all info provided";
+
+/* No comment provided by engineer. */
+"Oils" = "Oils";
+
+/* No comment provided by engineer. */
+"Oleic" = "Oleic";
+
+/* No comment provided by engineer. */
+"Palmitic" = "Palmitic";
+
+/* No comment provided by engineer. */
+"Process" = "Process";
+
+/* No comment provided by engineer. */
+"Properties" = "Properties";
+
+/* No comment provided by engineer. */
+"Recipe" = "Recipe";
+
+/* No comment provided by engineer. */
+"Recipes" = "Recipes";
+
+/* No comment provided by engineer. */
+"Recommended value" = "Recommended value";
+
+/* No comment provided by engineer. */
+"Recommended value:" = "Recommended value:";
+
+/* No comment provided by engineer. */
+"Responsible for %@" = "Responsible for %@";
+
+/* No comment provided by engineer. */
+"Scent:" = "Scent:";
+
+/* No comment provided by engineer. */
+"Soap is made by combing oils and lye, which cause a chemical reaction - saponification. Soap is ready the moment all the lye has been chemically transformed. The result of the reaction - is glycerin and metallic salt of a fatty acid, known as " = "Soap is made by combing oils and lye, which cause a chemical reaction - saponification. Soap is ready the moment all the lye has been chemically transformed. The result of the reaction - is glycerin and metallic salt of a fatty acid, known as ";
+
+/* No comment provided by engineer. */
+"Soap Properties" = "Soap Properties";
+
+/* No comment provided by engineer. */
+"Soap Type" = "Soap Type";
+
+/* No comment provided by engineer. */
+"soap." = "soap.";
+
+/* No comment provided by engineer. */
+"Solid soap" = "Solid soap";
+
+/* No comment provided by engineer. */
+"Solid Soap" = "Solid Soap";
+
+/* No comment provided by engineer. */
+"Solid soap (also bar soap) is made by combing oils with sodium hydroxide (NaOH), which is also known as lye." = "Solid soap (also bar soap) is made by combing oils with sodium hydroxide (NaOH), which is also known as lye.";
+
+/* No comment provided by engineer. */
+"Stability" = "Stability";
+
+/* No comment provided by engineer. */
+"Superfat" = "Superfat";
+
+/* No comment provided by engineer. */
+"Superfat in the soap means having a little bit more oils in the batch. It creates a more moisturized, soft soap bar. If you use 0 % superfat you have a big chance to have lye leftovers in the soap, because individual plants and oils can vary with their saponification values. Adding too much superfat can leave a greasy feel on the skin." = "Superfat in the soap means having a little bit more oils in the batch. It creates a more moisturized, soft soap bar. If you use 0 % superfat you have a big chance to have lye leftovers in the soap, because individual plants and oils can vary with their saponification values. Adding too much superfat can leave a greasy feel on the skin.";
+
+/* No comment provided by engineer. */
+"The amount of essential oil is calculated based on the total amount of oils used in the recipe, not the soap weight." = "The amount of essential oil is calculated based on the total amount of oils used in the recipe, not the soap weight.";
+
+/* No comment provided by engineer. */
+"The hot process soap procedure involves heating using an external heat source like an oven, a slow cooker, etc. The process allows you to choose superfat oil. The fragrance is added to the soap once it's ready and doesn't affect the chemical reaction. Hot process soaps are fully saponified before going into the mold and take time only to harden up, which takes up to two weeks." = "The hot process soap procedure involves heating using an external heat source like an oven, a slow cooker, etc. The process allows you to choose superfat oil. The fragrance is added to the soap once it's ready and doesn't affect the chemical reaction. Hot process soaps are fully saponified before going into the mold and take time only to harden up, which takes up to two weeks.";
+
+/* No comment provided by engineer. */
+"The IFRA Standards (The International Fragrance Association) recommend adding up to 5 % of essential oils in rinse-off products like soap." = "The IFRA Standards (The International Fragrance Association) recommend adding up to 5 % of essential oils in rinse-off products like soap.";
+
+/* No comment provided by engineer. */
+"Total soap weight" = "Total soap weight";
+
+/* No comment provided by engineer. */
+"Total weight" = "Total weight";
+
+/* No comment provided by engineer. */
+"Use percentages" = "Use percentages";
+
+/* No comment provided by engineer. */
+"Value" = "Value";
+
+/* No comment provided by engineer. */
+"Water" = "Water";
+
+/* No comment provided by engineer. */
+"Water is used to dissolve lye and create a lye solution. Making lye solution, always add the lye to the water, not otherwise, because you can get a caustic volcano. Dissolving lye into the water releases extra energy and the solution can get very hot (or even start boiling), so make sure that the water you are using is cold or even frozen." = "Water is used to dissolve lye and create a lye solution. Making lye solution, always add the lye to the water, not otherwise, because you can get a caustic volcano. Dissolving lye into the water releases extra energy and the solution can get very hot (or even start boiling), so make sure that the water you are using is cold or even frozen.";
+
+/* No comment provided by engineer. */
+"Water to oil" = "Water to oil";
+
+/* No comment provided by engineer. */
+"When mixing a lye solution with oils, you can use a sieve to avoid getting undissolved grains of lye into the soap." = "When mixing a lye solution with oils, you can use a sieve to avoid getting undissolved grains of lye into the soap.";
+
+/* No comment provided by engineer. */
+"You have no recipes yet! Start by calculating a new soap recipe." = "You have no recipes yet! Start by calculating a new soap recipe.";
+
+/* No comment provided by engineer. */
+"Your value" = "Your value";
+
+//from here starts oil list
+"Abyssinian Oil" = "Abyssinian Oil";
+"Almond Butter" = "Almond Butter";
+"Sweet Almond Oil" = "Sweet Almond Oil";
+"Aloe Butter" = "Aloe Butter";
+"Andiroba Oil, (Karaba,Crabwood)" = "Andiroba Oil, (Karaba,Crabwood)";
+"Apricot Kernal Oil" = "Apricot Kernal Oil";
+"Argan Oil" = "Argan Oil";
+"Avocado Oil" = "Avocado Oil";
+"Avocado butter" = "Avocado butter";
+"Babassu Oil" = "Babassu Oil";
+"Baobab Oil" = "Baobab Oil";
+"Beeswax" = "Beeswax";
+"Black Cumin Seed Oil" = "Black Cumin Seed Oil";
+"Blackcurrant seed oil" = "Blackcurrant seed oil";
+"Borage Oil" = "Borage Oil";
+"Brazil Nut Oil" = "Brazil Nut Oil";
+"Broccoli Seed Oil" = "Broccoli Seed Oil";
+"Buriti Oil" = "Buriti Oil";
+"Camelina Seed Oil" = "Camelina Seed Oil";
+"Camellia Oil, Tea Seed" = "Camellia Oil, Tea Seed";
+"Candelilla Wax" = "Candelilla Wax";
+"Canola Oil" = "Canola Oil";
+"Carrot Seed Oil" = "Carrot Seed Oil";
+"Castor Oil" = "Castor Oil";
+"Cherry Kernel Oil" = "Cherry Kernel Oil";
+"Cocoa Butter" = "Cocoa Butter";
+"Coconut Oil" = "Coconut Oil";
+"Coconut Oil, fractionated" = "Coconut Oil, fractionated";
+"Green Coffee Bean Oil" = "Green Coffee Bean Oil";
+"Corn Oil" = "Corn Oil";
+"Cottonseed Oil" = "Cottonseed Oil";
+"Cranberry Seed Oil" = "Cranberry Seed Oil";
+"Cupuacu Butter" = "Cupuacu Butter";
+"Evening Primrose Oil" = "Evening Primrose Oil";
+"Flax Seed Oil (linseed)" = "Flax Seed Oil (linseed)";
+"Grapeseed Oil" = "Grapeseed Oil";
+"Hazelnut Oil" = "Hazelnut Oil";
+"Hemp Oil" = "Hemp Oil";
+"Illipe Butter" = "Illipe Butter";
+"Jojoba Oil" = "Jojoba Oil";
+"Karanja Oil (Pongamia)" =  "Karanja Oil (Pongamia)";
+"Kokum Butter" = "Kokum Butter";
+"Kpangnan Butter" = "Kpangnan Butter";
+"Kukui nut Oil" = "Kukui nut Oil";
+"Laurel Fruit Oil" = "Laurel Fruit Oil";
+"Lauric Acid" = "Lauric Acid";
+"Macadamia Nut Butter" = "Macadamia Nut Butter";
+"Macadamia Nut Oil" = "Macadamia Nut Oil";
+"Mafura Butter" = "Mafura Butter";
+"Mango Seed Butter" = "Mango Seed Butter";
+"Mango Seed Oil" = "Mango Seed Oil";
+"Marula Oil" = "Marula Oil";
+"Meadowfoam Oil" = "Meadowfoam Oil";
+"Monoi de Tahiti Oil" = "Monoi de Tahiti Oil";
+"Moringa Oil" = "Moringa Oil";
+"Mowrah Butter" = "Mowrah Butter";
+"Murumuru Butter" = "Murumuru Butter";
+"Mustard Oil" = "Mustard Oil";
+"Myristic Acid" = "Myristic Acid";
+"Neem Seed Oil" = "Neem Seed Oil";
+"Nutmeg Butter" = "Nutmeg Butter";
+"Oat Oil" = "Oat Oil";
+"Oleic Acid" = "Oleic Acid";
+"Olive Oil" = "Olive Oil";
+"Olive Oil pomace" = "Olive Oil pomace";
+"Olive Oil Extra Virgin" = "Olive Oil Extra Virgin";
+"Palm Kernel Oil" = "Palm Kernel Oil";
+"Palm Kernel Oil, flakes, hydrogenated" = "Palm Kernel Oil, flakes, hydrogenated";
+"Palm Oil" = "Palm Oil";
+"Palm Stearin" = "Palm Stearin";
+"Palmitic Acid" = "Palmitic Acid";
+"Palmolein" = "Palmolein";
+"Papaya seed oil" = "Papaya seed oil";
+"Passion Fruit Seed Oil" = "Passion Fruit Seed Oil";
+"Patawa Oil" = "Patawa Oil";
+"Peach Kernel Oil" = "Peach Kernel Oil";
+"Peanut Oil" = "Peanut Oil";
+"Pecan Oil" = "Pecan Oil";
+"Perilla Seed Oil" = "Perilla Seed Oil";
+"Pistachio Oil" = "Pistachio Oil";
+"Plum Kernel Oil" = "Plum Kernel Oil";
+"Pomegranate Seed Oil" = "Pomegranate Seed Oil";
+"Poppyseed Oil" = "Poppyseed Oil";
+"Pracaxi Seed Oil (Pracachy)" = "Pracaxi Seed Oil (Pracachy)";
+"Pumpkin Seed Oil" = "Pumpkin Seed Oil";
+"Rapeseed Oil, (Canola)" = "Rapeseed Oil, (Canola)";
+"Raspberry Seed Oil" = "Raspberry Seed Oil";
+"Red Palm Butter" = "Red Palm Butter";
+"Rice Bran Oil" = "Rice Bran Oil";
+"Rosehip Oil" = "Rosehip Oil";
+"Safflower Oil" = "Safflower Oil";
+"Safflower Oil, high oleic" = "Safflower Oil, high oleic";
+"Sal Butter" = "Sal Butter";
+"Sea Buckthorn Oil" = "Sea Buckthorn Oil";
+"Sesame Oil" = "Sesame Oil";
+"Shea Butter" = "Shea Butter";
+"Shea Oil, fractionated" = "Shea Oil, fractionated";
+"Soybean Oil" = "Soybean Oil";
+"Soy Wax" = "Soy Wax";
+"Stearic Acid" = "Stearic Acid";
+"Sunflower Oil" = "Sunflower Oil";
+"Sunflower Oil, high oleic" = "Sunflower Oil, high oleic";
+"Tamanu Oil, (Kamani)" = "Tamanu Oil, (Kamani)";
+"Tucuma Seed Butter" = "Tucuma Seed Butter";
+"Ucuuba Butter" = "Ucuuba Butter";
+"Walnut Oil" = "Walnut Oil";
+"Watermelon Seed Oil" = "Watermelon Seed Oil";
+"Wheat Germ Oil" = "Wheat Germ Oil";
+"Yangu, cape chestnut oil" = "Yangu, cape chestnut oil";
+"Zapote Seed Oil, (Mamey)" = "Zapote Seed Oil, (Mamey)";
+
+//missing localizations
+
+"Grams" = "Grams";
+"Kilograms" = "Kilograms";
+"Pounds" = "Pounds";
+"Ounces" = "Ounces";
+
+"g" = "g";
+"kg" = "kg";
+"lb" = "lb";
+"oz" = "oz";
+
+
+//essential oil list
+
+"Amyris" = "Amyris";
+"Basil (Sweet)" =   "Basil (Sweet)";
+"Bay" =  "Bay";
+"Bergamot" =   "Bergamot";
+"Cardamom" =   "Cardamom";
+"Cedarwood" =   "Cedarwood";
+"Chamomile German (Nepal)" =   "Chamomile Germa (Nepal)";
+"Cinnamon Leaf" =   "Cinnamon Leaf";
+"Clary Sage" =   "Clary Sage";
+"Clove" =   "Clove";
+"Cypress" =   "Cypress";
+"Eucalyptus" =   "Eucalyptus";
+"Geranium" =   "Geranium";
+"Ginger Root" =   "Ginger Root";
+"Grapefruit" =   "Grapefruit";
+"Jasmine" =   "Jasmine";
+"Juniper Berry" =   "Juniper Berry";
+"Lavender" =   "Lavender";
+"Lemon" =   "Lemon";
+"Lemongrass" =   "Lemongrass";
+"Lime" =   "Lime";
+"Litsea Cubeba (May Chang)" =   "Litsea Cubeba (May Chang)";
+"Mandarin" =   "Mandarin";
+"Marjoram (Sweet)" =   "Marjoram (Sweet)";
+"Melissa" =   "Melissa";
+"Neroli" =   "Neroli";
+"Orange" =   "Orange Essential Oil";
+"Palmarosa" =   "Palmarosa Essential Oil";
+"Patchouli" =   "Patchouli Essential Oil ";
+"Pepper Black" =  "Pepper Black Essential Oil";
+"Peppermint" =   "Peppermint Essential Oil";
+"Peru Balsam" =   "Peru Balsam Essential Oil";
+"Petitgrain" =   "Petitgrain Essential Oil";
+"Pine Scotch" =   "Pine Scotch Essential Oil";
+"Pure Coffee" =   "Pure Coffee Essential Oil";
+"Rose Absolute" =   "Rose Essential Oil Absolute";
+"Rosemary" =   "Rosemary";
+"Sandalwood" =   "Sandalwood";
+"Siberian (needle) fir" =   "Siberian (needle) fir";
+"Spearmint" =   "Spearmint";
+"Spruce, Black" =   "Spruce, Black";
+"Tea Tree" =   "Tea Tree";
+"Thyme" =   "Thyme";
+"Vetiver" =   "Vetiver";
+"Ylang Ylang" =   "Ylang Ylang";
+
+"soft, woody, warming, musty" = "soft, woody, warming, musty";
+"sweet, spicy, mint" =   "sweet, spicy, mint";
+"strong, spicy" =   "strong, spicy";
+"citrus, floral, spicy, sweet" =   "citrus, floral, spicy, sweet";
+"sweet, spicy, balsamic" =   "sweet, spicy, balsamic";
+"woody, sweet" =   "woody, sweet";
+"floral, sweet" =   "floral, sweet";
+"spicy, warm" =   "spicy, warm";
+"fruity, earthy, floral" =   "fruity, earthy, floral";
+"spicy, woody" =   "spicy, woody";
+"herbaceous, warming, woodsy, spicy" = "herbaceous, warming, woodsy, spicy";
+"fresh" =   "fresh";
+"floral, fresh" =   "floral, fresh";
+"warming, spicy, woody" =   "warming, spicy, woody";
+"citrus, fresh" =   "citrus, fresh";
+"fruity, floral" =   "fruity, floral";
+"warm, woodsy, fresh, balsamic" =   "warm, woodsy, fresh, balsamic";
+"floral, herbal, fresh" =   "floral, herbal, fresh";
+"citrus, fresh" =   "citrus, fresh";
+"citrus, fresh" =   "citrus, fresh";
+"citrus, fresh, fruity" =   "citrus, fresh, fruity";
+"sweet, citrus, fresh" =   "sweet, citrus, fresh";
+"sweet, fresh, citrus" =   "sweet, fresh, citrus";
+"warming, spicy" =   "warming, spicy";
+"warming, citrus" =   "warming, citrus";
+"sweet, floral, citrus" =   "sweet, floral, citrus";
+"citrus, fruity" =   "citrus, fruity";
+"earthy, floral" =   "earthy, floral";
+"warming, earthy, fresh, fruity, exotic" =   "warming, earthy, fresh, fruity, exotic";
+"sharp, spicy" =   "sharp, spicy";
+"minty, herbal, fresh" =   "minty, herbal, fresh";
+"balsamic, vanilla" =   "balsamic, vanilla";
+"floral, citrus, herbaceous" =   "floral, citrus, herbaceous";
+"fresh, sweet, forest, earthy" =   "fresh, sweet, forest, earthy";
+"fresh, warming" =    "fresh, warming";
+"sweet, floral" =    "sweet, floral";
+"herbaceous, camphor " = "herbaceous, camphor ";
+"rich, sweet, woody, exotic" = "rich, sweet, woody, exotic";
+"woody, fresh, warming, earthy, sweet " = "woody, fresh, warming, earthy, sweet ";
+"fresh, minty, sweet" =    "fresh, minty, sweet";
+"woody, warming, fresh, sweet, earthy" = "woody, warming, fresh, sweet, earthy";
+"fresh, antiseptic, mint, spicy, camphorous" =   "fresh, antiseptic, mint, spicy, camphorous";
+"fresh, herbaceous" =    "fresh, herbaceous";
+"earthy, rich, woody, sweet" =   "earthy, rich, woody, sweet";
+"floral, exotic" =   "floral, exotic";
+
+"cedarwood, geranium, lavender, rose, sandalwood" = "cedarwood, geranium, lavender, rose, sandalwood";
+"peppermint, spearmint, lavender, Pepper Black, Lemongrass, Melissa, Mandarin" = "peppermint, spearmint, lavender, Pepper Black, Lemongrass, Melissa, Mandarin";
+"vetiver, clove, cinnamon" = "vetiver, clove, cinnamon";
+"rosemary, grapefruit, lavender, litsea, pepper black, cardamom, chamomile, marjoram, jasmine, thyme" = "rosemary, grapefruit, lavender, litsea, pepper black, cardamom, chamomile, marjoram, jasmine, thyme";
+"bergamot, cedarwood, cinnamon, orange, ylang ylang" = "bergamot, cedarwood, cinnamon, orange, ylang ylang";
+"lavender, clove, vetiver, pepper black, cardamom, petitgrain, pine scotch, thyme" = "lavender, clove, vetiver, pepper black, cardamom, petitgrain, pine scotch, thyme";
+"bergamot, clary sage, lavender, geranium, jasmine, neroli, patchouli, tea tree, rose, lemon, ylang-ylang, grapefruit, thyme, melissa" = "bergamot, clary sage, lavender, geranium, jasmine, neroli, patchouli, tea tree, rose, lemon, ylang-ylang, grapefruit, thyme, melissa";
+"clove, citrus, patchouli, cardamom" = "clove, citrus, patchouli, cardamom";
+"litsea, lavender, cedarwood, pepper black, chamomile, sandalwood, lime, lemongrass, rose" = "litsea, lavender, cedarwood, pepper black, chamomile, sandalwood, lime, lemongrass, rose";
+"cinnamon, vetiver, citrus" = "cinnamon, vetiver, citrus";
+"fir needle, cedarwood, lavender" = "fir needle, cedarwood, lavender";
+"peppermint, lavender, rosemary, ginger root, pine scotch" = "peppermint, lavender, rosemary, ginger root, pine scotch";
+"lavender, clary sage, litsea, chamomile, ginger root, grapefruit, neroli, petitgrain, rose, sandalwood, jasmine, melissa" = "lavender, clary sage, litsea, chamomile, ginger root, grapefruit, neroli, petitgrain, rose, sandalwood, jasmine, melissa";
+"eucalyptus, geranium, rosemary, vetiver" = "eucalyptus, geranium, rosemary, vetiver";
+"litsea (may chang,), lemongrass, orange, bergamot, chamomile, geranium, lavender" = "litsea (may chang,), lemongrass, orange, bergamot, chamomile, geranium, lavender";
+"sandalwood, geranium, bergamot, patchouli, lemongrass, orange, chamomile" = "sandalwood, geranium, bergamot, patchouli, lemongrass, orange, chamomile";
+"orange, cedarwood, fir needle, bergamot, thyme" = "orange, cedarwood, fir needle, bergamot, thyme";
+"litsea, cedarwood, geranium, tea tree, vetiver, pepper black, chamomile, grapefruit, neroli, petitgrain, rose, sandalwood, melissa, mandarin" = "litsea, cedarwood, geranium, tea tree, vetiver, pepper black, chamomile, grapefruit, neroli, petitgrain, rose, sandalwood, melissa, mandarin";
+"orange, rosemary, lime, chamomile, sandalwood, thyme" = "orange, rosemary, lime, chamomile, sandalwood, thyme";
+"grapefruit, orange, lime, basil, black pepper, clary sage, Lavender, patchouli, thyme, pine scotch, jasmine" = "grapefruit, orange, lime, basil, black pepper, clary sage, Lavender, patchouli, thyme, pine scotch, jasmine";
+"lemon, litsea, lemongrass, neroli" = "lemon, litsea, lemongrass, neroli";
+"lavender, orange, grapefruit" = "lavender, orange, grapefruit";
+"basil, sandalwood, lavender, spearmint" = "basil, sandalwood, lavender, spearmint";
+"bergamot, chamomile, rosemary, vetiver, ylang ylang" = "bergamot, chamomile, rosemary, vetiver, ylang ylang";
+"basil, chamomile, rose, geranium, lavender, ylang ylang" = "basil, chamomile, rose, geranium, lavender, ylang ylang";
+"geranium, lavender, lime, palmarosa, rose, ylang ylang" = "geranium, lavender, lime, palmarosa, rose, ylang ylang";
+"grapefruit, litsea, lemon, cardamom, petitgrain, jasmine" = "grapefruit, litsea, lemon, cardamom, petitgrain, jasmine";
+"lavender, litsea, bergamot, neroli, petitgrain, sandalwood " = "lavender, litsea, bergamot, neroli, petitgrain, sandalwood ";
+"cedarwood, lavender, orange, chamomile, lemongrass, neroli, rose, jasmine" = "cedarwood, lavender, orange, chamomile, lemongrass, neroli, rose, jasmine";
+"basil, bergamot, cedarwood, clary Sage, lavender, peppermint" = "basil, bergamot, cedarwood, clary Sage, lavender, peppermint";
+"lavender, rosemary, tea tree, pepper black" = "lavender, rosemary, tea tree, pepper black";
+"patchouli, lavender, orange" = "patchouli, lavender, orange";
+"cedarwood, geranium, lavender, orange, palmarosa, ylang ylang" = "cedarwood, geranium, lavender, orange, palmarosa, ylang ylang";
+"cedarwood, eucalyptus, lemongrass, rosemary, tea tree" = "cedarwood, eucalyptus, lemongrass, rosemary, tea tree";
+"peppermint, clove, cinnamon" = "peppermint, clove, cinnamon";
+"clary sage, geranium, lavender, neroli, patchouli, sandalwood, melissa" = "clary sage, geranium, lavender, neroli, patchouli, sandalwood, melissa";
+"peppermint, lavender, bergamot, ginger root, pine scotch, marjoram" = "peppermint, lavender, bergamot, ginger root, pine scotch, marjoram";
+"geranium, lavender, lemon, palmarosa, rose, ylang ylang, jasmine, mandarin" = "geranium, lavender, lemon, palmarosa, rose, ylang ylang, jasmine, mandarin";
+"cedarwood, peppermint, clove" = "cedarwood, peppermint, clove";
+"peppermint, rosemary, lavender, mandarin" = "peppermint, rosemary, lavender, mandarin";
+"cedarwood, fir, peppermint" = "cedarwood, fir, peppermint";
+"lavender, peppermint, clary sage, pine scotch, thyme" = "lavender, peppermint, clary sage, pine scotch, thyme";
+"bergamot, cedarwood, chamomile, juniper, lemon, mandarin, melissa, rosemary, tea tree" = "bergamot, cedarwood, chamomile, juniper, lemon, mandarin, melissa, rosemary, tea tree";
+"lavender, cedarwood, clove, ginger root, marjoram" = "lavender, cedarwood, clove, ginger root, marjoram";
+"geranium, lavender, citrus, cardamom, chamomile, neroli, petitgrain, sandalwood, marjoram, melissa" = "geranium, lavender, citrus, cardamom, chamomile, neroli, petitgrain, sandalwood, marjoram, melissa";
+
+
+//percText
+"Excess:" = "Excess:";
+"Remains:" = "Remains:";

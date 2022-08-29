@@ -17,7 +17,7 @@ struct OilRow: View {
     var body: some View {
         VStack {
             HStack {
-                Text(oil.name)
+                Text(NSLocalizedString(oil.name, comment: "oil").capitalized)
                 if UIDevice.current.userInterfaceIdiom == .phone {
                     Button {
                         showInfoSheet.toggle()

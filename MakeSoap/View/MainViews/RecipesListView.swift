@@ -19,6 +19,7 @@ struct RecipesListView: View {
                 VStack (alignment: .center, spacing: 20) {
                 
                 Text("You have no recipes yet! Start by calculating a new soap recipe.")
+                        .padding()
                 Text("🧼🧼🧼")
                         .font(.system(size: 60))
                 }

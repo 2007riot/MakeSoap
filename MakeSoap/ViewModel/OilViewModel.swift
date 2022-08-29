@@ -91,7 +91,7 @@ class OilViewModel: ObservableObject {
     var iodineSuggestion = "iodineSuggestion"
     
     //searching for oils
-    @Published var inputTextOil: String = ""
+    @Published var inputTextOil:  String = ""
     @Published var inputTextEsOil: String = ""
     //units
     @Published var units = ["Grams", "Kilograms", "Pounds", "Ounces"]
@@ -102,7 +102,7 @@ class OilViewModel: ObservableObject {
     @AppStorage(Keys.isPerc) var isPerc: Bool = false
     @Published var isNot100Perc: Bool = true
     @Published var percLeft: Double = 100
-    @Published var percText = "Remains"
+    @Published var percText = "Remains:"
     var percSum: Double = 0
     var percColorWhite: Color = .white
     var percColorBlack: Color = .black
@@ -110,14 +110,15 @@ class OilViewModel: ObservableObject {
     @Published var recipeTitle = ""
     
     var searchedOils: [Oil] {
-        oilStoreDefaultOils.oils.filter({ $0.name.contains(inputTextOil) })
+ //MARK: Localizng search and sorting alphabetically
+        let sortedOils = oilStoreDefaultOils.oils.sorted { NSLocalizedString($1.name, comment: "oils") > NSLocalizedString($0.name, comment: "oils") }
+        return sortedOils.filter({NSLocalizedString($0.name, comment: "searching for oils").contains(inputTextOil)})
     }
     var searchedEsOils: [EssentialOil] {
-        esOilStoreDefault.esOils.filter({
-            $0.name.contains(inputTextEsOil)
-        })
+        let sortedEsOils = esOilStoreDefault.esOils.sorted { NSLocalizedString($1.name, comment: "es oils") > NSLocalizedString($0.name, comment: "es oils") }
+        
+        return sortedEsOils.filter ({ NSLocalizedString($0.name, comment: "searching for es oils").contains(inputTextEsOil) })
     }
-
     
     
     var chosenOils: [Oil] {
@@ -330,8 +331,6 @@ class OilViewModel: ObservableObject {
         }
         
         //set colors and suggestions
-        
-        // recommendation 15-30 done
         switch bubblyInd {
             case ..<10:
                 bubblyColor = .red
@@ -503,27 +502,6 @@ class OilViewModel: ObservableObject {
         
         
     }
-    
-    
-    //     init() {
-    
-    //        self.isLiquid = UserDefaults.standard.object(forKey: isLiquidKey) as? Bool ?? true
-    //        self.isSolid = UserDefaults.standard.object(forKey: isSolidKey) as? Bool ?? false
-    //        self.isHybrid = UserDefaults.standard.object(forKey: isHybridKey) as? Bool ?? false
-    //        self.isColdProcess = UserDefaults.standard.object(forKey: isColdProcessKey) as? Bool ?? false
-    //        self.hybridNaOHPercent = UserDefaults.standard.object(forKey: naohHybridPercentKey) as? Double ?? 0.0
-    //        self.hybridKOHPercent = UserDefaults.standard.object(forKey: kohHybridPercentKey) as? Double ?? 0.0
-    //        self.isHotProcess = UserDefaults.standard.object(forKey: isHotProcessKey) as? Bool ?? false
-    //        self.unit = UserDefaults.standard.object(forKey: unitKey) as? String ?? "Grams"
-    //        self.si = UserDefaults.standard.object(forKey: siKey) as? String ?? "g"
-    //        self.totalOilAmount = UserDefaults.standard.object(forKey: totalOilAmountKey) as? Double ?? 0.0
-    //        self.sfPercent = UserDefaults.standard.object(forKey: sfKey) as? Double ?? 0.0
-    //        self.extraSFPercent = UserDefaults.standard.object(forKey: extraSFKey) as? Double //?? 0.0
-    //        self.waterPercent = UserDefaults.standard.object(forKey: waterPercentKey) as? Double //?? 0.0
-    //        self.extraWaterPercent = UserDefaults.standard.object(forKey: extraWaterPercentKey) as? Double ?? 0.0
-    //        self.isPerc = UserDefaults.standard.object(forKey: percKey) as? Bool ?? false
-    
-    //    }
 }
 
 

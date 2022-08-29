@@ -62,12 +62,12 @@ struct SoapIngredientsView: View {
                 
                 ForEach(oilVM.chosenOils, id: \.id) { oil in
                     
-                    ParameterValuePercView(parameterName: oil.name, value: oil.userWeightValue ?? 0, perc: oil.userPercent ?? 0, unit: oilVM.si)
+                    ParameterValuePercView(parameterName: NSLocalizedString(oil.name, comment: "oil name"), value: oil.userWeightValue ?? 0, perc: oil.userPercent ?? 0, unit: oilVM.si)
                 }
                 
                 ForEach(oilVM.chosenEsOils, id: \.id) { esOil in
                     
-                    ParameterValuePercView(parameterName: esOil.name, value: esOil.calculatedWeight ?? 0, perc: esOil.userPercent ?? 0, unit: oilVM.si)
+                    ParameterValuePercView(parameterName: NSLocalizedString(esOil.name, comment: "es oil name"), value: esOil.calculatedWeight ?? 0, perc: esOil.userPercent ?? 0, unit: oilVM.si)
                 }
             }
         }

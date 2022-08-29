@@ -21,7 +21,7 @@ struct OilView: View {
                  ) {
             Picker("Choose unit", selection: $oilVM.unit) {
                 ForEach(oilVM.units, id: \.self) {
-                    Text($0)
+                    Text(LocalizedStringKey($0))
                 }
             }
             .pickerStyle(.segmented)
@@ -47,7 +47,7 @@ struct OilView: View {
                 if oilVM.isPerc {
                     TextField("Value", value: $oilVM.totalOilAmount, format: .number)
                         .modifier(TextFieldStyle())
-                    Text(oilVM.si)
+                    Text(LocalizedStringKey(oilVM.si))
                 } else {
                     Text("\(oilVM.totalOilAmount, specifier: "%.2f") \(oilVM.si)")
                         .modifier(BodyTextModifier())
@@ -65,7 +65,7 @@ struct OilView: View {
             if oilVM.isPerc && oilVM.percLeft != 0  {
                 
                 HStack {
-                    Text ("\(oilVM.percText)")
+                    Text(NSLocalizedString(oilVM.percText, comment: "comment on exceeding/remaining perc"))
                         .foregroundColor(colorScheme == .dark ? oilVM.percColorWhite : oilVM.percColorBlack)
                     Spacer()
                     Text ("\(oilVM.percLeft, specifier: "%.2f") %")

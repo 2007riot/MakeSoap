@@ -1,0 +1,521 @@
+/* No comment provided by engineer. */
+"%" = "%";
+
+/* No comment provided by engineer. */
+"%.0f %%" = "%.0f %%";
+
+/* No comment provided by engineer. */
+"%.1f %%" = "%.1f %%";
+
+/* No comment provided by engineer. */
+"%.2f %@" = "%.2f %@";
+
+/* No comment provided by engineer. */
+"%.2f %%" = "%.2f %%";
+
+/* No comment provided by engineer. */
+"%@ %%" = "%@ %%";
+
+/* No comment provided by engineer. */
+"%@, %@" = "%@, %@";
+
+" The soap is ready the moment all the lye has reacted with oil." = " Мыло готово в момент когда вся щелочь прореагировала с маслами.";
+
+"Cold saponification uses the heat generated from saponification reaction itself and the process called soap curing and takes 4-8 weeks, depending on the oil." = "Холодное мыловарение бла бла";
+
+/* No comment provided by engineer. */
+"As the soap cures, some of the water evaporates, making a harder, longer-lasting bar of soap." = "Во время созревания мыла часть воды испаряется, делая мыло более твердым и долговечным.";
+
+/* No comment provided by engineer. */
+"Blends well with essential oils:" = "Хорошо сочетается с эфирными маслами ";
+
+/* No comment provided by engineer. */
+"Bubbly" = "Пена";
+
+/* No comment provided by engineer. */
+"Calculator" = "Калькулятор";
+
+/* No comment provided by engineer. */
+"Choose unit" = "Выберете единицу измерения";
+
+/* No comment provided by engineer. */
+"Cleansing" = "Очищение";
+
+/* No comment provided by engineer. */
+"Cold Process" = "Холодный процесс";
+
+/* No comment provided by engineer. */
+"Cold process:" = "Холодный процесс";
+
+/* No comment provided by engineer. */
+"Condition" = "Смягчение";
+
+/* No comment provided by engineer. */
+"Essential Oils" = "Эфирные масла";
+
+/* No comment provided by engineer. */
+"Extra superfat" = "Дополнительный пережир";
+
+/* No comment provided by engineer. */
+"Extra water" = "Дополнительная вода";
+
+/* No comment provided by engineer. */
+"Fatty Acids:" = "Жирные кислоты";
+
+/* No comment provided by engineer. */
+"Find Essential Oil" = "Искать Эфирные Масла";
+
+/* No comment provided by engineer. */
+"Find oil" = "Искать масло";
+
+/* No comment provided by engineer. */
+"from %@" = "от %@";
+
+/* No comment provided by engineer. */
+"from 5% to 20%" = " от 5 % до 20 %";
+
+/* No comment provided by engineer. */
+"General recommended superfat: " = "Рекомендуемый пережир";
+
+/* No comment provided by engineer. */
+"Got it!" = "Понятно";
+
+/* No comment provided by engineer. */
+"Hardness" = "Твердость";
+
+/* No comment provided by engineer. */
+"Hot Process" = "Горячий процесс";
+
+/* No comment provided by engineer. */
+"Hot process:" = "Горячий процесс";
+
+/* No comment provided by engineer. */
+"Hybrid" = "Смешанное мыло";
+
+/* No comment provided by engineer. */
+"Hybrid  soap is made by combining both NaOH and KOH." = "Смешанное мыло готовится на смеси двух щёлочей NaOH и KOH.";
+
+/* No comment provided by engineer. */
+"Hybrid soap" = "Смешанное мыло";
+
+/* No comment provided by engineer. */
+"If your skin comes in contact with lye flush it immediately with water and seek help from a doctor." = "Если щёлочь попала на кожу немедленно промойте её обильным количеством воды и обратитесь за медицинской помощью.";
+
+/* No comment provided by engineer. */
+"In hot process soap you can add extra oils after the soap has cooked. These oils won’t react with the lye, because the saponification is finished, so you can choose different oils to enrich the soap." = "В мыло горячего процесса вы можете добавить дополнительные масла после того, как мыло сварится. Эти масла не вступают в реакцию с щелочью, так как реакция омыления завершилась. Что позволяет выбрать различные ухаживающие масла для обогащения рецепта мыла.";
+
+/* No comment provided by engineer. */
+"In the hot process, you can add extra (discounted) water after the soap has cooked. The benefit of it is that instead of water you can add other liquids like milk, wine, beer, etc to enrich the soap." = "Варя мыло горячим способом вы можете добавить дополнительную воду после того как мыло приготовилось. Преимуществом является то, что вместо воды можно добавить другие жидкости, такие как молоко, вино, пиво и т. д., для обогащения мыла.";
+
+/* No comment provided by engineer. */
+"Ingredients" = "Ингредиенты";
+
+/* No comment provided by engineer. */
+"KOH" = "KOH";
+
+/* No comment provided by engineer. */
+"Lauric" = "Лауриновая";
+
+/* No comment provided by engineer. */
+"Linoleic" = "Линолевая";
+
+/* No comment provided by engineer. */
+"Liquid  soap is made by combining oils with potassium hydroxide (KOH), also known as potash. It's not very liquid soap, it looks more like gel or paste." = "Жидкое мыло получается путем смешивания масел с гидроксидом калия (KOH). Мыло только называется жидким, на самом деле больше похоже на желе или пасту.";
+
+/* No comment provided by engineer. */
+"Liquid soap" = "Жидкое мыло";
+
+/* No comment provided by engineer. */
+"Liquid Soap" = "Жидкое мыло";
+
+
+/* No comment provided by engineer. */
+"Longevity" = "Долговечность ";
+
+/* No comment provided by engineer. */
+"Myristic" = "Миристиновая";
+
+/* No comment provided by engineer. */
+"NaOH" = "NaOH";
+
+/* No comment provided by engineer. */
+"Not all info provided" = "Не вся информация предоставлена";
+
+/* No comment provided by engineer. */
+"Oils" = "Масла";
+
+/* No comment provided by engineer. */
+"Oleic" = "Олеиновая";
+
+/* No comment provided by engineer. */
+"Palmitic" = "Пальмитиновая";
+
+/* No comment provided by engineer. */
+"Process" = "Процесс";
+
+/* No comment provided by engineer. */
+"Properties" = "Показатели";
+
+/* No comment provided by engineer. */
+"Recipe" = "Рецепт";
+
+/* No comment provided by engineer. */
+"Recipes" = "Рецепты";
+
+/* No comment provided by engineer. */
+"Recommended value" = "Рекомендуемое значение";
+
+/* No comment provided by engineer. */
+"Recommended value:" = "Рекомендуемое значение";
+
+/* No comment provided by engineer. */
+"Responsible for %@" = "Отвечает за %@";
+
+/* No comment provided by engineer. */
+"Scent:" = "Запах:";
+
+/* No comment provided by engineer. */
+"Soap is made by combing oils and lye, which cause a chemical reaction - saponification. Soap is ready the moment all the lye has been chemically transformed. The result of the reaction - is glycerin and metallic salt of a fatty acid, known as " = "Мыло получается путем смешивания масел и щёлочи, что вызывает химическую реакцию омыления. Мыло готово когда вся щёлочь прореагировала  с маслом. Результат этой реакции - глицерин и металлическая соль жирной кислоты, более известная как ";
+
+/* No comment provided by engineer. */
+"Soap Properties" = "Показатели мыла";
+
+/* No comment provided by engineer. */
+"Soap Type" = "Тип мыла";
+
+/* No comment provided by engineer. */
+"soap." = "мыло.";
+
+/* No comment provided by engineer. */
+"Solid soap" = "Твердое мыло";
+
+/* No comment provided by engineer. */
+"Solid Soap" = "Твердое мыло";
+
+/* No comment provided by engineer. */
+"Solid soap (also bar soap) is made by combing oils with sodium hydroxide (NaOH), which is also known as lye." = "Твердое мыло получается путем смешивания масел и щёлочи гидроксида натрия (NaOH).";
+
+/* No comment provided by engineer. */
+"Stability" = "Стабильность";
+
+/* No comment provided by engineer. */
+"Superfat" = "Пережир";
+
+/* No comment provided by engineer. */
+"Superfat in the soap means having a little bit more oils in the batch. It creates a more moisturized, soft soap bar. If you use 0 % superfat you have a big chance to have lye leftovers in the soap, because individual plants and oils can vary with their saponification values. Adding too much superfat can leave a greasy feel on the skin." = "Пережир в мыле означает небольшой избыток масел. Благодаря этому, мыло более мягкое и увлажняющее. Если не использовать пережир, появляется вероятность того, что в мыле останутся остатки щелочи. Так как отдельные растения и масла могут немного различаться по степени омыления. Большое количество пережира в мыле может оставлять жирную пленку на коже.";
+
+/* No comment provided by engineer. */
+"The amount of essential oil is calculated based on the total amount of oils used in the recipe, not the soap weight." = "Количество эфирного масла рассчитывается на основе общего количества масел, используемых в рецепте, а не веса мыла.";
+
+/* No comment provided by engineer. */
+"The hot process soap procedure involves heating using an external heat source like an oven, a slow cooker, etc. The process allows you to choose superfat oil. The fragrance is added to the soap once it's ready and doesn't affect the chemical reaction. Hot process soaps are fully saponified before going into the mold and take time only to harden up, which takes up to two weeks." = "Горячее мыло готовится путем нагревания мыла внешними источниками тепла такими как духовка или водяная баня. Этот процесс позволяет выбрать какое масло пойдёт в пережир. Пережир, эфирные масла и другие добавки добавляются когда мыло готово и не влияют на химическую реакцию. Мыло полностью омыляется перед тем, как попасть в форму, и требуется время только для затвердевания, что занимает до двух недель.";
+
+/* No comment provided by engineer. */
+"The IFRA Standards (The International Fragrance Association) recommend adding up to 5 % of essential oils in rinse-off products like soap." = "Стандарты IFRA (The International Fragrance Association) рекомендуют добавлять до 5 % эфирных масел в смываемые продукты, такие как мыло.";
+
+/* No comment provided by engineer. */
+"Total soap weight" = "Общий вес мыла";
+
+/* No comment provided by engineer. */
+"Total weight" = "Общий вес";
+
+/* No comment provided by engineer. */
+"Use percentages" = "В процентах";
+
+/* No comment provided by engineer. */
+"Value" = "Значение";
+
+/* No comment provided by engineer. */
+"Water" = "Вода";
+
+/* No comment provided by engineer. */
+"Water is used to dissolve lye and create a lye solution. Making lye solution, always add the lye to the water, not otherwise, because you can get a caustic volcano. Dissolving lye into the water releases extra energy and the solution can get very hot (or even start boiling), so make sure that the water you are using is cold or even frozen." = "Вода используется для приготовления раствора щёлочи. Готовя раствор щёлочи, всегда добавляйте щёлочь в воду, а не наоборот, чтобы избежать каустического вулкана. Реакция растворения щёлочи в воде сопровождается выбросом энергии, поэтому используйте холодную воду или даже замороженную.";
+
+/* No comment provided by engineer. */
+"Water to oil" = "Вода к маслам";
+
+/* No comment provided by engineer. */
+"When mixing a lye solution with oils, you can use a sieve to avoid getting undissolved grains of lye into the soap." = "При смешивание раствора щёлочи с маслами используйте сито, чтобы избежать попадания нерастворённых частичек в мыло.";
+
+/* No comment provided by engineer. */
+"You have no recipes yet! Start by calculating a new soap recipe." = "У вас пока нет рецептов! Рассчитайте рецепт мыла с помощью калькулятора.";
+
+/* No comment provided by engineer. */
+"Your value" = "Ваше значение";
+
+//from here starts oil list
+"Abyssinian Oil"  = "Aбиссинское Mасло";
+"Almond Butter" = "Миндальное Масло (Баттер)";
+"Sweet Almond Oil" = "Сладкого Миндаля Масло";
+"Aloe Butter" = "Алоэ Вера Баттер";
+"Andiroba Oil, (Karaba,Crabwood)" = "Андироба Масло, (Карапа Гвианская)";
+"Apricot Kernal Oil" = "Абрикосовой Косточки Масло";
+"Argan Oil" = "Арганы масло";
+"Avocado Oil" = "Авокадо Масло";
+"Avocado butter" = "Авокадо Баттер";
+"Babassu Oil" = "Баббасу Масло";
+"Baobab Oil" = "Баобаба Масло";
+"Beeswax" = "Пчелиный Воск";
+"Black Cumin Seed Oil" = "Черного тмина семян масло";
+"Blackcurrant seed oil" = "Черной смородины масло";
+"Borage Oil" = "Огуречника масло";
+"Brazil Nut Oil" = "Бразильского ореха масло";
+"Broccoli Seed Oil" = "Брокколи семян масло";
+"Buriti Oil" = "Бурути масло (Мавриция извилистая)";
+"Camelina Seed Oil" = "Рыжиковое масло";
+"Camellia Oil, Tea Seed" = "Камелии масло";
+"Candelilla Wax" = "Канделильский Воск";
+"Canola Oil" = "Канолы масло";
+"Carrot Seed Oil" = "Моркови Семян Масло";
+"Castor Oil" = "Касторовое Масло";
+"Cherry Kernel Oil" = "Вишневых косточек масло";
+"Cocoa Butter" = "Какао Баттер";
+"Coconut Oil" = "Кокосовое Масло";
+"Coconut Oil, fractionated" = "Кокосовое масло Фракционированное";
+"Green Coffee Bean Oil" = "Кофейных зеленых зерен масло";
+"Corn Oil" = "Кукурузное Масло";
+"Cottonseed Oil" = "Хлопковое масор";
+"Cranberry Seed Oil" = "Клюквенных семян масло";
+"Cupuacu Butter" = "Купуасу баттер";
+"Evening Primrose Oil" = "Примулы вечерней масло";
+"Flax Seed Oil (linseed)" = "Льняное масло";
+"Grapeseed Oil" = "виноградной косточки масло";
+"Hazelnut Oil" = "Фундука масло";
+"Hemp Oil" = "Конопляное масло";
+"Illipe Butter" = "Иллипе баттер";
+"Jojoba Oil" = "Жожоба масло";
+"Karanja Oil" =  "Каранджи масло";
+"Kokum Butter" = "Кокум баттер";
+"Kpangnan Butter" = "Кпанган баттер (Панья)";
+"Kukui nut Oil" = "Кукуй масло";
+"Laurel Fruit Oil" = "Лавра благородного масло";
+"Lauric Acid" = "Лауриновая кислота";
+"Macadamia Nut Butter" = "Макадамии баттер";
+"Macadamia Nut Oil" = "Макадамии масло";
+"Mafura Butter" = "Мафура Баттер";
+"Mango Seed Butter" = "Манго баттер";
+"Mango Seed Oil" = "Манго масло";
+"Marula Oil" = "Марула масло";
+"Meadowfoam Oil" = "Пенника лугового масло";
+"Monoi de Tahiti Oil" = "Моной де Таити Масло";
+"Moringa Oil" = "Моринги маслоо";
+"Mowrah Butter" = "Мовра баттер";
+"Murumuru Butter" = "Мурумуру баттер";
+"Mustard Oil" = "Горчичное масло";
+"Myristic Acid" = "Миристиновая кислота";
+"Neem Seed Oil" = "Ним Масло";
+"Nutmeg Butter" = "Мускатного ореха масло";
+"Oat Oil" = "Овсяное масло";
+"Oleic Acid" = "Олеиновая кислота";
+"Olive Oil" = "Оливковое масло";
+"Olive Oil pomace" = "Оливковое масло, Pomace";
+"Olive Oil Extra Virgin" = "Оливковое масло, Extra Virgin";
+"Palm Kernel Oil" = "Пальмоядровое масло";
+"Palm Kernel Oil, flakes, hydrogenated" = "Пальмоядровое масло, гидрогенизированное, хлопья";
+"Palm Oil" = "Пальмовое масло";
+"Palm Stearin" = "Пальмовый стеарин";
+"Palmitic Acid" = "Пальмитоновая кислота";
+"Palmolein" = "пальмолеин";
+"Papaya seed oil" = "Папайя масло";
+"Passion Fruit Seed Oil" = "Питахайя масло (Питайя, Драгонфрут)";
+"Patawa Oil" = "Патава Масло";
+"Peach Kernel Oil" = "Персиковых косточек масло";
+"Peanut Oil" = "Арахисовое масло";
+"Pecan Oil" = "Пекан масло";
+"Perilla Seed Oil" = "Периллы масло";
+"Pistachio Oil" = "Фисташковое масло";
+"Plum Kernel Oil" = "Сливовых косточек масло";
+"Pomegranate Seed Oil" = "Гранатовых семян масло";
+"Poppyseed Oil" = "Маковое масло";
+"Pracaxi Seed Oil (Pracachy)" = "Пракакси семян масло";
+"Pumpkin Seed Oil" = "Тыквенное масло";
+"Rapeseed Oil" = "Рапсовое масло";
+"Raspberry Seed Oil" = "Малиновых семян масло";
+"Red Palm Butter" = "Пальмовое красное масло";
+"Rice Bran Oil" = "Рисовое масло";
+"Rosehip Oil" = "Шиповника масло";
+"Safflower Oil" = "Сафлоровое масло";
+"Safflower Oil, high oleic" = "Сафлоровое масло, высокоолеиновое";
+"Sal Butter" = "Салового дерево (сал) баттер";
+"Sea Buckthorn Oil" = "Облепиховое масло";
+"Sesame Oil" = "Кунжутное масло";
+"Shea Butter" = "Ши баттер (карите)";
+"Shea Oil, fractionated" = "Ши масло (карите), фракционированное";
+"Soybean Oil" = "Соевое масло";
+"Soy Wax" = "Соевый Воск";
+"Stearic Acid" = "Стеариновая кислота";
+"Sunflower Oil" = "Подсолнечное масло";
+"Sunflower Oil, high oleic" = "Подсолнечное маслоб высокоолеиновое";
+"Tamanu Oil, (Kamani)" = "Таману масло";
+"Tucuma Seed Butter" = "Тукума баттер";
+"Ucuuba Butter" = "Укууба баттер";
+"Walnut Oil" = "Грецкого ореха масло";
+"Watermelon Seed Oil" = "Арбузных семечек масло";
+"Wheat Germ Oil" = "Зародышей пшеницы Масло ";
+"Yangu, cape chestnut oil" = "Янгу масло";
+"Zapote Seed Oil, (Mamey)" = "Сапоте семян масло";
+
+
+//missing localizations
+
+"Grams" = "Граммы";
+"Kilograms" = "Килограммы";
+"Pounds" = "Фунты";
+"Ounces" = "Унции";
+
+"g" = "г";
+"kg" = "кг";
+"lb" = "lb";
+"oz" = "oz";
+
+
+//essential oil list
+
+"Amyris" = "Амирис";
+"Basil (Sweet)" = "Базилик";
+"Bay" =   "Бей";
+"Bergamot" =   "Бергамот";
+"Cardamom" =   "Кардамон";
+"Cedarwood" =   "Кедр";
+"Chamomile German (Nepal)" =   "Ромашка Немецкая";
+"Cinnamon Leaf" =   "Корица";
+"Clary Sage" =   "Шалфей Мускатный";
+"Clove" =   "Гвоздика";
+"Cypress" =   "Кипарис";
+"Eucalyptus" =   "Эвкалипт";
+"Geranium" =   "Герань";
+"Ginger Root" =   "Корень Имбиря";
+"Grapefruit" =   "Грейпфрут";
+"Jasmine" =   "Жасмин";
+"Juniper Berry" =   "Можжевельник";
+"Lavender" =   "Лаванда";
+"Lemon" =   "Лимон";
+"Lemongrass" =   "Лемонграсс";
+"Lime" =   "Лайм";
+"Litsea Cubeba (May Chang)" =   "Литцея Лимонная (Вербена, May Chang)";
+"Mandarin" =   "Мандарин";
+"Marjoram (Sweet)" =   "Майоран сладкий";
+"Melissa" =   "Мелисса";
+"Neroli" =   "Нероли";
+"Orange" =   "Апельсин";
+"Palmarosa" =   "Пальмороза";
+"Patchouli" =   "Пачули";
+"Pepper Black" =   "Черный Перец";
+"Peppermint" =   "Мята перечная";
+"Peru Balsam" =   "Перуанский бальзам";
+"Petitgrain" =   "Петитгрейн";
+"Pine Scotch" =   "Сосна";
+"Pure Coffee" =   "Кофе";
+"Rose Absolute" =   "Роза";
+"Rosemary" =   "розмарин";
+"Sandalwood" =   "Сандаловое дерево";
+"Siberian (needle) fir" =   "Пихта";
+"Spearmint" =   "Мята сладкая";
+"Spruce, Black" =   "Ель";
+"Tea Tree" =   "Чайное Дерево";
+"Thyme" =   "Тимьян";
+"Vetiver" =   "Ветивер";
+"Ylang Ylang" =   "Иланг Иланг";
+
+
+"soft, woody, warming, musty" = "мягкий, древесный, согревающий, пряный";
+"sweet, spicy, mint" =   "сладковатый, пряный, мятный";
+"strong, spicy" =   "сильный, пряный";
+"citrus, floral, spicy, sweet" =   "цитрусовый, цветочный, пряный, сладковатый";
+"sweet, spicy, balsamic" =   "сладковатый, пряный, с бальзамическим оттенком";
+"woody, sweet" =   "древесный, сладковатый";
+"floral, sweet" =   "цветочный, сладковатый";
+"spicy, warm" =   "пряный, теплый";
+"fruity, earthy, floral" =   "фруктовый, землистый, цветочный";
+"spicy, woody" =   "пряный, древесный";
+"herbaceous, warming, woodsy, spicy" = "травянистый, согревающий, лесной, пряный";
+"fresh" =   "освежающий";
+"floral, fresh" =   "цветочный, освежающий";
+"warming, spicy, woody" =   "согревающий, пряный, древесный";
+"citrus, fresh" =   "цитрусовый, освежающий";
+"fruity, floral" =   "фруктовый, цветочный";
+"warm, woodsy, fresh, balsamic" =   "теплый, лесной, освежающий, с бальзамическим оттенком";
+"floral, herbal, fresh" =   "цветочный, травяной, освежающий";
+"citrus, fresh" =   "цитрусовый, освежающий";
+"citrus, fresh" =   "цитрусовый, освежающий";
+"citrus, fresh, fruity" =   "цитрусовый, освежающий, фруктовый";
+"sweet, citrus, fresh" =   "сладковатый, цитрусовый, освежающий";
+"sweet, fresh, citrus" =   "сладковатый, освежающий, цитрусовый";
+"warming, spicy" =   "согревающий, пряный";
+"warming, citrus" =   "согревающий, цитрусовый";
+"sweet, floral, citrus" =   "сладковатый, цветочный, цитрусовый";
+"citrus, fruity" =   "цитрусовый, фруктовый";
+"earthy, floral" =   "землистый, цветочный";
+"warming, earthy, fresh, fruity, exotic" =   "согревающий, землистый, освежающий, фруктовый, экзотический";
+"sharp, spicy" =   "резкий, пряный";
+"minty, herbal, fresh" =   "мятный, травяной, освежающий";
+"balsamic, vanilla" =   "с бальзамическим оттенком, ванильный";
+"floral, citrus, herbaceous" =   "цветочный, цитрусовый, травянистый";
+"fresh, sweet, forest, earthy" =   "освежающий, сладковатый, лесной, землистый";
+"fresh, warming" =    "освежающий, согревающий";
+"sweet, floral" =    "сладковатый, цветочный";
+"herbaceous, camphor " = "травянистый, камфоровый";
+"rich, sweet, woody, exotic" = "насыщенный, сладковатый, древесный, экзотический";
+"woody, fresh, warming, earthy, sweet " = "древесный, освежающий, согревающий, землистый, сладковатый";
+"fresh, minty, sweet" =    "освежающий, мятный, сладковатый";
+"woody, warming, fresh, sweet, earthy" = "древесный, согревающий, освежающий, сладковатый, землистый";
+"fresh, antiseptic, mint, spicy, camphorous" =   "освежающий, антисептический, мятный, пряный, камфорный";
+"fresh, herbaceous" =    "освежающий, травянистый";
+"earthy, rich, woody, sweet" =   "землянистый, насыщенный, древесный, сладковатый";
+"floral, exotic" =   "цветочный, экзотический";
+
+
+
+"cedarwood, geranium, lavender, rose, sandalwood" = "кедр, Герань, лаванда, роза, сандаловое дерево";
+"peppermint, spearmint, lavender, Pepper Black, Lemongrass, Melissa, Mandarin" = "перечная мята, Мята сладкая, лаванда, Черный Перец, Лемонграсс, мелисса, мандарин";
+"vetiver, clove, cinnamon" = "Ветивер, корица";
+"rosemary, grapefruit, lavender, litsea, pepper black, cardamom, chamomile, marjoram, jasmine, thyme" = "розмарин, Грейпфрут, лаванда, Литцея Лимонная (Вербена), Черный Перец, Кардамон, ромашка, Майоран, жасмин, Тимьян";
+"bergamot, cedarwood, cinnamon, orange, ylang ylang" = "бергамот, кедр, корица, апельсин, иланг-иланг";
+"lavender, clove, vetiver, Черный Перец, cardamom, petitgrain, pine scotch, thyme" = "лаванда, Гвоздика, Ветивер, Черный Перец, Кардамон, Петитгрейн, сосна, тимьян";
+"bergamot, clary sage, lavender, geranium, jasmine, neroli, patchouli, tea tree, rose, lemon, ylang-ylang, grapefruit, thyme, melissa" = "bergamot, шалфей мускатный, лаванда, герань, жасмин, нероли, пачули, чайное дерево, роза, лимон, иланг-иланг, грейпфрут, тимьян, мелисса";
+"clove, citrus, patchouli, cardamom" = "гвоздика, цитрусовые, пачули, кардамон";
+"litsea, lavender, cedarwood, pepper black, chamomile, sandalwood, lime, lemongrass, rose" = "Литцея Лимонная (Вербена), лаванда, кедр, Черный Перец, ромашка, сандаловое дерево, лайм, Лемонграсс, роза";
+"cinnamon, vetiver, citrus" = "корица, Ветивер, цитрусовые";
+"fir needle, cedarwood, lavender" = "пихта, кедр, лаванда";
+"peppermint, lavender, rosemary, ginger root, pine scotch" = "перечная мята, лаванда, розмарин, Корень Имбиря, Сосна";
+"lavender, clary sage, litsea, chamomile, ginger root, grapefruit, neroli, petitgrain, rose, sandalwood, jasmine, melissa" = "лаванда, шалфей мускатный, Литцея Лимонная (Вербена), ромашка, корень имбиря, грейпфрут, нероли, Петитгрейн, роза, сандаловое дерево, жасмин, мелисса";
+"eucalyptus, geranium, rosemary, vetiver" = "эвкалипт, герань, розмарин, Ветивер";
+"litsea (may chang,), lemongrass, orange, bergamot, chamomile, geranium, lavender" = "Литцея Лимонная (Вербена), Лемонграсс, апельсин, бергамот, ромашка, герань, лаванда";
+"sandalwood, geranium, bergamot, patchouli, lemongrass, orange, chamomile" = "сандаловое дерево, герань, бергамот, пачули, Лемонграсс, апельсин, ромашка";
+"orange, cedarwood, fir needle, bergamot, thyme" = "апельсин, кедр, пихта, бергамот, тимьян";
+"litsea, cedarwood, герань, tea tree, vetiver, pepper black, chamomile, grapefruit, neroli, petitgrain, rose, sandalwood, melissa, mandarin" = "Литцея Лимонная (Вербена), кедр, герань, чайное дерево, Ветивер, Черный Перец, ромашка, грейпфрут, нероли, Петитгрейн, роза, сандаловое дерево, мелисса, мандарин";
+"orange, rosemary, lime, chamomile, sandalwood, thyme" = "апельсин, розмарин, лайм, ромашка, сандаловое дерево, тимьян";
+"grapefruit, orange, lime, basil, black pepper, clary sage, Lavender, patchouli, thyme, pine scotch, jasmine" = "грейпфрут, апельсин, лайм, базилик, черный перец, Шалфей Мускатный, лаванда, пачули, тимьян, Сосна, жасмин";
+"lemon, litsea, lemongrass, neroli" = "лимон, Литцея Лимонная (Вербена), лемонграсс, нероли";
+"lavender, orange, grapefruit" = "лаванда, апельсин, грейпфрут";
+"basil, sandalwood, lavender, spearmint" = "базилик, сандаловое дерево, лаванда, Мята сладкая";
+"bergamot, chamomile, rosemary, vetiver, ylang ylang" = "бергамот, ромашка, розмарин, Ветивер, иланг-иланг";
+"basil, chamomile, rose, герань, lavender, ylang ylang" = "базилик, ромашка, роза, герань, лаванда, иланг-иланг";
+"geranium, lavender, lime, palmarosa, rose, ylang ylang" = "герань, лаванда, лайм, Пальмороза, роза, иланг-иланг";
+"grapefruit, litsea, lemon, cardamom, petitgrain, jasmine" = "грейпфрут, Литцея Лимонная (Вербена), лимон, cardamom, Петитгрейн, жасмин";
+"lavender, litsea, bergamot, neroli, petitgrain, sandalwood " = "лаванда, Литцея Лимонная (Вербена), бергамот, нероли, Петитгрейн, сандаловое дерево";
+"cedarwood, lavender, orange, chamomile, lemongrass, neroli, rose, jasmine" = "кедр, лаванда, апельсин, ромашка, лемонграсс, нероли, роза, жасмин";
+"basil, bergamot, cedarwood, clary Sage, lavender, peppermint" = "базилик, бергамот, кедр, Шалфей Мускатный, лаванда, перечная мята";
+"lavender, rosemary, tea tree, pepper black" = "лаванда, розмарин, чайное дерево, Черный Перец";
+"patchouli, lavender, orange" = "пачули, лаванда, апельсин";
+"cedarwood, geranium, lavender, orange, palmarosa, ylang ylang" = "кедр, герань, лаванда, апельсин, пальмороза, иланг-иланг";
+"cedarwood, eucalyptus, lemongrass, rosemary, tea tree" = "кедр, эвкалипт, лемонграсс, розмарин, чайное дерево";
+"peppermint, clove, cinnamon" = "перечная мята, гвоздика, корица";
+"clary sage, geranium, lavender, neroli, patchouli, sandalwood, melissa" = "Шалфей Мускатный, герань, лаванда, нероли, пачули, сандаловое дерево, мелисса";
+"peppermint, lavender, bergamot, ginger root, pine scotch, marjoram" = "перечная мята, лаванда, бергамот, корень имбиря, сосна, Майоран";
+"geranium, lavender, lemon, palmarosa, rose, ylang ylang, jasmine, mandarin" = "герань, лаванда, лимон, пальмароза, роза, иланг-иланг, жасмин, мандарин";
+"cedarwood, peppermint, clove" = "кедр, перечная мята, гвоздика";
+"peppermint, rosemary, lavender, mandarin" = "перечная мята, розмарин, лаванда, мандарин";
+"cedarwood, fir, peppermint" = "кедр, пихта, перечная мята";
+"lavender, peppermint, clary sage, pine scotch, thyme" = "лаванда, перечная мята, Шалфей Мускатный, Сосна, тимьян";
+"bergamot, cedarwood, chamomile, juniper, lemon, mandarin, melissa, rosemary, tea tree" = "бергамот, кедр, ромашка, Можжевельник, лимон, мандарин, мелисса, розмарин, чайное дерево";
+"lavender, cedarwood, clove, ginger root, marjoram" = "лаванда, кедр, гвоздика, корень имбиря, Майоран";
+"geranium, lavender, citrus, cardamom, chamomile, neroli, petitgrain, sandalwood, marjoram, melissa" = "герань, лаванда, цитрусовые, кардамон, ромашка, нероли, Петитгрейн, сандаловое дерево, Майоран, мелисса";
+
+
+//percText
+"Excess:" = "Избыток:";
+"Remains:" = "Осталось:";
+
+
+"%@ soap property" = "%@";

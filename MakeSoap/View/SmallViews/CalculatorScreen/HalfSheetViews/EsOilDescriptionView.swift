@@ -24,11 +24,11 @@ struct EsOilDescriptionView: View {
             Text("Scent:")
                 .italic()
                 .bold()
-            Text(esOil.scent)
+            Text(LocalizedStringKey(esOil.scent))
             Text("Blends well with essential oils:")
                 .italic()
                 .bold()
-            Text(esOil.blendsWith.capitalized)
+            Text(NSLocalizedString(esOil.blendsWith, comment: "es oil blending").capitalized)
             
         }
                 Spacer()

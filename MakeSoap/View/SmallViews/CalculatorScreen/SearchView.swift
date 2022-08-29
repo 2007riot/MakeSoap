@@ -58,9 +58,10 @@ struct SearchView: View {
     var oilSearchView: some View {
         ForEach(oilVM.searchedOils, id: \.id) { oil in
             
-            //            oilVM.searchedOils.isEmpty ? Text("No oils found") : Text(oil.name)
             HStack {
-                oil.isInRecipe ? Text(oil.name).foregroundColor(.accentColor) : Text(oil.name)
+                //MARK: Think how to capitalize with localization
+                
+                oil.isInRecipe ? Text(NSLocalizedString(oil.name, comment: "oil name").capitalized).foregroundColor(.accentColor) : Text(NSLocalizedString(oil.name, comment: "oil name").capitalized)
                 Spacer()
                 oil.isInRecipe ? Image(systemName: "checkmark").foregroundColor(.accentColor) : nil
                 
@@ -92,7 +93,7 @@ struct SearchView: View {
     var essentialOilsearchView: some View {
         ForEach(oilVM.searchedEsOils, id: \.name) { esOil in
             HStack {
-                esOil.isInRecipe ? Text(esOil.name).foregroundColor(.accentColor) : Text(esOil.name)
+                esOil.isInRecipe ? Text(NSLocalizedString(esOil.name, comment: "es oil").capitalized).foregroundColor(.accentColor) : Text(NSLocalizedString(esOil.name, comment: "es oil").capitalized)
                 Spacer()
                 esOil.isInRecipe ? Image(systemName: "checkmark").foregroundColor(.accentColor) : nil
                 
