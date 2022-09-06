@@ -13,7 +13,7 @@ struct CalculatorScreen: View {
     @State var selection: Int? = nil
     @StateObject var oilVM =  OilViewModel()
     @State private var showErrorAlert = false
-    @State private var alertMessage = "It's not possible to calculate the soap recipe, if not info have been provided. Please, make sure that you choose soap type, "
+    @State private var alertMessage = ""
     
     var gesture: _EndedGesture<TapGesture> {  TapGesture().onEnded {
         
@@ -46,7 +46,7 @@ struct CalculatorScreen: View {
                 .disabled(isAllInfoNotProvided())
                 .onTapGesture {
                     showErrorAlert = isAllInfoNotProvided()
-                    alertMessage = alertErrorMessage()
+                    alertMessage = NSLocalizedString(alertErrorMessage(), comment: "error messages")
                     !showErrorAlert ? oilVM.calculate() : nil
                 }
                 
@@ -66,7 +66,7 @@ struct CalculatorScreen: View {
     }
     
     func isAllInfoNotProvided() -> Bool {
-        if !(oilVM.isColdProcess || oilVM.isHotProcess) || !(oilVM.isSolid || oilVM.isLiquid || oilVM.isHybrid) || oilVM.totalOilAmount == 0 {
+        if !(oilVM.isColdProcess || oilVM.isHotProcess) || !(oilVM.isSolid || oilVM.isLiquid || oilVM.isHybrid) || oilVM.totalOilAmount == 0 || oilVM.isNot100Perc {
             return true
          } else {
              return false
@@ -77,7 +77,7 @@ struct CalculatorScreen: View {
         switch isAllInfoNotProvided() {
             case !(oilVM.isColdProcess || oilVM.isHotProcess):
                 return "Choose the soap making process."
-            case !(oilVM.isColdProcess || oilVM.isHotProcess):
+            case !(oilVM.isSolid || oilVM.isHotProcess || oilVM.isHybrid):
                 return "Choose the soap type."
             case !(oilVM.isSolid || oilVM.isLiquid || oilVM.isHybrid)  && !(oilVM.isColdProcess || oilVM.isHotProcess):
                 return "The soap making process and the soap type are not chosen."
@@ -87,6 +87,8 @@ struct CalculatorScreen: View {
                 return "Choose the soap type and provide oil amount."
             case !(oilVM.isColdProcess || oilVM.isHotProcess)  && oilVM.totalOilAmount == 0:
                 return "Choose the soap making process and provide oil amount."
+            case oilVM.isNot100Perc:
+                return "Make sure that your percentage ratio is equal to 100%."
             default:
                 return "Make sure, that you provided all necessery info to calculate soap recipe."
         }

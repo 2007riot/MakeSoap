@@ -12,12 +12,12 @@ struct RecipeSoapPropertiesView: View {
     var body: some View {
         GroupBox {
             VStack (spacing: 12) {
-                SoapPropertyRecipeRow(name: "Hardness", value: recipe.hardnessValue ?? 0)
-                SoapPropertyRecipeRow(name: "Condition", value: recipe.conditionValue ?? 0)
-                SoapPropertyRecipeRow(name: "Bubbly", value: recipe.bubblyValue ?? 0)
-                SoapPropertyRecipeRow(name: "Cleansing", value: recipe.conditionValue ?? 0)
-                SoapPropertyRecipeRow(name: "Stability", value: recipe.stabilityValue ?? 0)
-                SoapPropertyRecipeRow(name: "Longevity", value: recipe.longevityValue ?? 0)
+                SoapPropertyRecipeRow(name: NSLocalizedString("Hardness", comment: "Hardness"), value: recipe.hardnessValue ?? 0)
+                SoapPropertyRecipeRow(name: NSLocalizedString("Condition", comment: "Condition"), value: recipe.conditionValue ?? 0)
+                SoapPropertyRecipeRow(name: NSLocalizedString("Bubbly", comment: "Bubbly"), value: recipe.bubblyValue ?? 0)
+                SoapPropertyRecipeRow(name: NSLocalizedString("Cleansing", comment: "Cleansing"), value: recipe.conditionValue ?? 0)
+                SoapPropertyRecipeRow(name: NSLocalizedString("Stability", comment: "Stability"), value: recipe.stabilityValue ?? 0)
+                SoapPropertyRecipeRow(name: NSLocalizedString("Longevity", comment: "Longevity"), value: recipe.longevityValue ?? 0)
                 
             }
         } label: {

@@ -112,7 +112,7 @@ struct SoapTypeView: View {
                     }
                     if oilVM.sumOfLyesErroMessage != nil {
                         HStack {
-                        Text(oilVM.sumOfLyesErroMessage!)
+                            Text(NSLocalizedString(oilVM.sumOfLyesErroMessage!, comment: "lye error message"))
                             .foregroundColor(.red)
                             Spacer()
                         }

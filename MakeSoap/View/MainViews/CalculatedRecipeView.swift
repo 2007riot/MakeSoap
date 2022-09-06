@@ -33,7 +33,7 @@ struct CalculatedRecipeView: View {
                 isAlertShowing.toggle()
                 
             } label: {
-                GreenButton(title: "Save Recipe")
+                GreenButton(title: String(localized: "Save Recipe"))
             }
         }
         .environmentObject(oilVM)
@@ -42,7 +42,7 @@ struct CalculatedRecipeView: View {
         })
         .navigationBarTitle("Recipe", displayMode: .inline)
         .textFieldAlert(isPresented: $isAlertShowing) {
-            TextFieldAlert(title: "Recipe name", message: "", recipeName: $oilVM.recipeTitle) { textFieldTitle in
+            TextFieldAlert(title: String(localized: "Recipe name"), message: "", recipeName: $oilVM.recipeTitle) { textFieldTitle in
                 recipeManager.create(
                     recipe: Recipe(title: textFieldTitle,
                                    soapMakingProcess: oilVM.soapMakingProcess,

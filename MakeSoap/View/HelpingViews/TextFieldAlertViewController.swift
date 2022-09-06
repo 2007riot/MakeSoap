@@ -43,15 +43,15 @@ class TextFieldAlertViewController: UIViewController {
         let ac = UIAlertController(title: alertTitle, message: message, preferredStyle: .alert)
         
         ac.addTextField()
-        ac.textFields![0].placeholder = "Enter soap recipe name"
+        ac.textFields![0].placeholder = NSLocalizedString("Enter soap recipe name", comment: "placeholder recipe name")
         ac.view.tintColor = UIColor(red: 75/255, green: 122/255, blue: 113/255, alpha: 1)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { [weak self] _ in
             self?.isPresented?.wrappedValue = false
         }
         
-        let saveAlertAction = UIAlertAction(title: "Create", style: .default) { [weak self] _ in
-            self?.saveAction(ac.textFields![0].text ?? "No name")
+        let saveAlertAction = UIAlertAction(title: NSLocalizedString("Save", comment: ""), style: .default) { [weak self] _ in
+            self?.saveAction(ac.textFields![0].text ?? NSLocalizedString("No name", comment: ""))
             self?.isPresented?.wrappedValue = false
         }
         

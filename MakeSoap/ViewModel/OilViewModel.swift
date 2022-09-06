@@ -66,7 +66,7 @@ class OilViewModel: ObservableObject {
     var stabilityInd = 0.0
     var iodineInd = 0.0
     let bubblyExplained = "how bubbly, big and fluffy the soap lather is."
-    let cleaningExplained = "how easily the soap dissolves in hard, cold, salty water and in other situations.ers. How well it will clean the skin."
+    let cleaningExplained = "how easily the soap dissolves in hard, cold, salty water and in other situations. How well it will clean the skin."
     let conditionExplained = "how soft, moisturizing the soap is. Good condition skin doesn't dry the skin."
     let hardnessExplained = "the physical hardness of the soap bar."
     let longevityExplained = "how long the soap will last in the water."
@@ -200,16 +200,16 @@ class OilViewModel: ObservableObject {
         switch sumOfLyes {
                 
             case ...0:
-                sumOfLyesErroMessage = "The sum of NaOH and KOH can't be a negative number."
+                sumOfLyesErroMessage = String(localized: ("The sum of NaOH and KOH can't be a negative number."))
             case 0..<100:
                 excessLye = 100 - sumOfLyes
-                sumOfLyesErroMessage = "The sum of NaOh and KOH should be 100 %, add \(excessLye) %."
+                sumOfLyesErroMessage = String(localized: ("The sum of NaOh and KOH should be 100 %, add \(excessLye, specifier: "%.2f") %."))
             case 100:
                 sumOfLyesErroMessage = nil
             case 100...:
                 
                 excessLye = sumOfLyes - 100
-                sumOfLyesErroMessage = "The sum of NaOH and KOH can't exceed 100%, reduce the amount of lye by \(excessLye) %."
+                sumOfLyesErroMessage = String(localized: ("The sum of NaOH and KOH can't exceed 100%, reduce the amount of lye by \(excessLye, specifier: "%.2f") %."))
                 
                 
             default:
@@ -480,6 +480,7 @@ class OilViewModel: ObservableObject {
                 
             default:
                 percLeft = 0
+                isNot100Perc = false
                 percColorWhite = .white
                 percColorBlack = .white
         }

@@ -99,6 +99,11 @@
 /* No comment provided by engineer. */
 "Hybrid" = "Hybrid";
 
+"Liquid" = "Liquid";
+"Solid" = "Solid";
+
+"cold process soap" = "cold process soap";
+"hot process soap" = "hot process soap";
 /* No comment provided by engineer. */
 "Hybrid  soap is made by combining both NaOH and KOH." = "Hybrid  soap is made by combining both NaOH and KOH.";
 
@@ -375,7 +380,7 @@
 
 
 //essential oil list
-
+"essential oil" = "essential oil";
 "Amyris" = "Amyris";
 "Basil (Sweet)" =   "Basil (Sweet)";
 "Bay" =  "Bay";
@@ -518,3 +523,25 @@
 //percText
 "Excess:" = "Excess:";
 "Remains:" = "Remains:";
+
+
+//soap property
+"how bubbly, big and fluffy the soap lather is." = "how bubbly, big and fluffy the soap lather is.";
+"how easily the soap dissolves in hard, cold, salty water and in other situations. How well it will clean the skin." = "how easily the soap dissolves in hard, cold, salty water and in other situations. How well it will clean the skin.";
+"how soft, moisturizing the soap is. Good condition skin doesn't dry the skin." = "how soft, moisturizing the soap is. Good condition skin doesn't dry the skin.";
+"the physical hardness of the soap bar." = "the physical hardness of the soap bar.";
+"how long the soap will last in the water." = "how long the soap will last in the water.";
+"how long the lather will last and stay bubbly and fluffy." = "how long the lather will last and stay bubbly and fluffy.";
+
+
+//alert error messages
+
+"Choose the soap making process." = "Choose the soap making process.";
+"Choose the soap type." = "Choose the soap type.";
+"The soap making process and the soap type are not chosen." = "The soap making process and the soap type are not chosen.";
+"Oil amount is not provided." = "Oil amount is not provided.";
+"Choose the soap type and provide oil amount." = "Choose the soap type and provide oil amount.";
+"Choose the soap making process and provide oil amount." = "Choose the soap making process and provide oil amount.";
+"Make sure, that you provided all necessery info to calculate soap recipe." = "Make sure, that you provided all necessery info to calculate soap recipe.";
+"Make sure that your percentage ratio is equal to 100%." = "Make sure that your percentage ratio is equal to 100%.";
+

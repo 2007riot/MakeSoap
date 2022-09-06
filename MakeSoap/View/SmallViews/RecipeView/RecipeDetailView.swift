@@ -13,7 +13,7 @@ struct RecipeDetailView: View {
         ScrollView {
             if let soapType = recipe.soapType, let soapMakingProcess = recipe.soapMakingProcess {
                 VStack {
-                    Text("\(soapType), \(soapMakingProcess)")
+                    Text("\(NSLocalizedString(soapType, comment: "soapType")), \(NSLocalizedString(soapMakingProcess, comment: "soapMakingProcess"))")
                     Text("from \(recipe.date, format: .dateTime.day().month().year())")
                     
                 }
