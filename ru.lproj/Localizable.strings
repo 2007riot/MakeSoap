@@ -308,7 +308,7 @@
 "Find Essential Oil" = "Искать Эфирные Масла";
 
 /* No comment provided by engineer. */
-"Find oil" = "Искать масло";
+"Find Oil" = "Искать Масла";
 
 /* (No Comment) */
 "fir needle, cedarwood, lavender" = "пихта, кедр, лаванда";
@@ -362,7 +362,7 @@
 "fruity, floral" = "фруктовый, цветочный";
 
 /* (No Comment) */
-"g" = "г";
+"g" = "гр";
 
 /* No comment provided by engineer. */
 "General recommended superfat: " = "Рекомендуемый пережир";
@@ -383,7 +383,7 @@
 "Ginger Root" = "Корень Имбиря";
 
 /* No comment provided by engineer. */
-"Got it!" = "Понятно.";
+"Got it!" = "Понятно";
 
 /* missing localizations */
 "Grams" = "Граммы";

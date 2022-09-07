@@ -9,6 +9,12 @@ import SwiftUI
 
 struct OilView: View {
     
+    init () {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+        UISegmentedControl.appearance().setWidth(100, forSegmentAt: 1)
+        }
+    }
+    
     @EnvironmentObject var oilVM: OilViewModel
     @Environment(\.colorScheme) var colorScheme
     @State var editing: Bool = false
@@ -21,15 +27,15 @@ struct OilView: View {
                  ) {
             Picker("Choose unit", selection: $oilVM.unit) {
                 ForEach(oilVM.units, id: \.self) {
+                    
                     Text(LocalizedStringKey($0))
-                        .fixedSize()
                 }
             }
             .pickerStyle(.segmented)
             .onChange(of: oilVM.unit) { _ in
                 oilVM.changeUnits()
             }
-            TextField("Find oil", text: $oilVM.inputTextOil, onEditingChanged: { edit in
+            TextField("Find Oil", text: $oilVM.inputTextOil, onEditingChanged: { edit in
                 
                 self.editing = edit
                 
