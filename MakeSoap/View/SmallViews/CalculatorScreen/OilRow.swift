@@ -60,7 +60,7 @@ struct OilRow: View {
                         
                     }
                 
-                Text(oilVM.isPerc ? "%" : oilVM.si)
+                Text(oilVM.isPerc ? "%" : (NSLocalizedString(oilVM.si, comment: "")))
                 Button {
                     withAnimation(.easeOut) {
                         oilVM.remove(oil: oil)

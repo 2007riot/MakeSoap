@@ -125,6 +125,9 @@
 "Buriti Oil" = "Бурути масло (Мавриция извилистая)";
 
 /* No comment provided by engineer. */
+"Calculate" = "Рассчитать";
+
+/* No comment provided by engineer. */
 "Calculator" = "Калькулятор";
 
 /* (No Comment) */
@@ -579,6 +582,9 @@
 
 /* (No Comment) */
 "Mafura Butter" = "Мафура Баттер";
+
+/* (No Comment) */
+"Make sure that the sum of NaOh and KOH is equal to 100%." = "Убедитесь, что сумма щелочей равняется 100%.";
 
 /* (No Comment) */
 "Make sure that your percentage ratio is equal to 100%." = "Убедитесь, что процентное соотношение равняется 100%.";

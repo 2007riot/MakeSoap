@@ -40,7 +40,7 @@
 "Bubbly" = "Bubbly";
 
 /* No comment provided by engineer. */
-"Calculator" = "Calculadora";
+"Calculator" = "Calculator";
 
 /* No comment provided by engineer. */
 "Choose unit" = "Choose unit";
@@ -544,4 +544,6 @@
 "Choose the soap making process and provide oil amount." = "Choose the soap making process and provide oil amount.";
 "Make sure, that you provided all necessery info to calculate soap recipe." = "Make sure, that you provided all necessery info to calculate soap recipe.";
 "Make sure that your percentage ratio is equal to 100%." = "Make sure that your percentage ratio is equal to 100%.";
+
+"Make sure that the sum of NaOh and KOH is equal to 100%." = "Make sure that the sum of NaOh and KOH is equal to 100%.";
 

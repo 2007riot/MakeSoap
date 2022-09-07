@@ -40,7 +40,7 @@ struct CalculatorScreen: View {
                 
                 
                 NavigationLink(destination: CalculatedRecipeView().environmentObject(oilVM)) {
-                    GreenButton(title: "Calculate")
+                    GreenButton(title: String(localized: "Calculate"))
                 }
                 .simultaneousGesture(gesture)
                 .disabled(isAllInfoNotProvided())
@@ -66,9 +66,9 @@ struct CalculatorScreen: View {
     }
     
     func isAllInfoNotProvided() -> Bool {
-        if !(oilVM.isColdProcess || oilVM.isHotProcess) || !(oilVM.isSolid || oilVM.isLiquid || oilVM.isHybrid) || oilVM.totalOilAmount == 0 || oilVM.isNot100Perc {
+        if !(oilVM.isColdProcess || oilVM.isHotProcess) || !(oilVM.isSolid || oilVM.isLiquid || oilVM.isHybrid) || oilVM.totalOilAmount.isZero || oilVM.sumOfLyesErroMessage != nil || (oilVM.isPerc && oilVM.percLeft != 0) {
             return true
-         } else {
+        } else {
              return false
          }
     }
@@ -81,14 +81,16 @@ struct CalculatorScreen: View {
                 return "Choose the soap type."
             case !(oilVM.isSolid || oilVM.isLiquid || oilVM.isHybrid)  && !(oilVM.isColdProcess || oilVM.isHotProcess):
                 return "The soap making process and the soap type are not chosen."
-            case oilVM.totalOilAmount == 0:
+            case oilVM.totalOilAmount.isZero:
                 return "Oil amount is not provided."
             case !(oilVM.isSolid || oilVM.isLiquid || oilVM.isHybrid)  && oilVM.totalOilAmount == 0:
                 return "Choose the soap type and provide oil amount."
             case !(oilVM.isColdProcess || oilVM.isHotProcess)  && oilVM.totalOilAmount == 0:
                 return "Choose the soap making process and provide oil amount."
-            case oilVM.isNot100Perc:
+            case (oilVM.isPerc && oilVM.percLeft != 0):
                 return "Make sure that your percentage ratio is equal to 100%."
+            case oilVM.sumOfLyesErroMessage != nil:
+                return "Make sure that the sum of NaOh and KOH is equal to 100%."
             default:
                 return "Make sure, that you provided all necessery info to calculate soap recipe."
         }

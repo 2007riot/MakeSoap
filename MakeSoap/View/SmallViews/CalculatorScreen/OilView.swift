@@ -22,6 +22,7 @@ struct OilView: View {
             Picker("Choose unit", selection: $oilVM.unit) {
                 ForEach(oilVM.units, id: \.self) {
                     Text(LocalizedStringKey($0))
+                        .fixedSize()
                 }
             }
             .pickerStyle(.segmented)
@@ -49,7 +50,7 @@ struct OilView: View {
                         .modifier(TextFieldStyle())
                     Text(LocalizedStringKey(oilVM.si))
                 } else {
-                    Text("\(oilVM.totalOilAmount, specifier: "%.2f") \(oilVM.si)")
+                    Text("\(oilVM.totalOilAmount, specifier: "%.2f") \(NSLocalizedString(oilVM.si, comment: ""))")
                         .modifier(BodyTextModifier())
                 }
             }
