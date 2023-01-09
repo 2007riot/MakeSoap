@@ -25,61 +25,62 @@ struct SoapPropertyRow: View {
             Text(NSLocalizedString(name, comment: "name of property row"))
                 .modifier(Title2Modifier())
             if UIDevice.current.userInterfaceIdiom == .phone {
-                Button {
-                    showInfoSheet.toggle()
-                } label: {
-                    GreenQuestionButtonView()
+                
+                if #available(iOS 16, *) {
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
+                        .sheet(isPresented: $showInfoSheet) {
+                            propertyInfoView
+                                .presentationDetents([.height(UIScreen.main.bounds.height * 0.2 )])
+                        }
+                } else {
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
+                        .partialSheet(isPresented: $showInfoSheet,
+                                      type: .scrollView(height: (UIScreen.main.bounds.height * 0.2 ), showsIndicators: false),
+                                      iPhoneStyle: UIConstants.iPhoneStyle,
+                                      content: {
+                            propertyInfoView
+                        })
                 }
-                .partialSheet(isPresented: $showInfoSheet,
-                              type: .scrollView(height: 170, showsIndicators: false),
-                              iPhoneStyle: UIConstants.iPhoneStyle,
-                              content: {
-                    propertyInfoView
-                })
             } else {
-                Button {
-                    showInfoSheet.toggle()
-                } label: {
-                    GreenQuestionButtonView()
-                }
-                .popover(isPresented: $showInfoSheet, arrowEdge: .trailing) {
-                    propertyInfoView
-                }
+                GreenQuestionButtonView(isToggled: $showInfoSheet)
+                    .popover(isPresented: $showInfoSheet, arrowEdge: .trailing) {
+                        propertyInfoView
+                    }
             }
             Spacer()
             Text("\(value, specifier: "%.0f") %")
                 .modifier(TextStyleModifier())
         }
     }
-
-var propertyInfoView: some View {
-    VStack(alignment: .leading, spacing: 10) {
+    
+    var propertyInfoView: some View {
+        VStack(alignment: .leading, spacing: 10) {
             Text("\(NSLocalizedString(name.capitalized, comment: "soap property name")) soap property")
-           
-            .modifier(Title2Modifier())
-       
+            
+                .modifier(Title2Modifier())
+            
             Text("Responsible for \(NSLocalizedString(propertyExplained, comment: "explanation of soap property"))")
-        
-        VStack {
-            HStack {
-                Text("Recommended value")
-                    .bold()
-                Spacer()
-                Text("\(recomendedValue) %")
-                    .bold()
-            }
-            HStack {
-                Text("Your value")
-                Spacer()
-                Text("\(value, specifier: "%.0f") %")
-                    .foregroundColor(color)
+            
+            VStack {
+                HStack {
+                    Text("Recommended value")
+                        .bold()
+                    Spacer()
+                    Text("\(recomendedValue) %")
+                        .bold()
+                }
+                HStack {
+                    Text("Your value")
+                    Spacer()
+                    Text("\(value, specifier: "%.0f") %")
+                        .foregroundColor(color)
+                }
             }
         }
+        
+        .padding()
     }
     
-    .padding()
-}
-
 }
 
 struct SoapPropertyRow_Previews: PreviewProvider {

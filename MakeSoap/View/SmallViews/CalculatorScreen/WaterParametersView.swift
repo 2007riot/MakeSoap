@@ -18,24 +18,31 @@ struct WaterParametersView: View {
             Text("Water")
                 .modifier(TitleModifier())
             if UIDevice.current.userInterfaceIdiom == .phone {
-                Button {
-                    showInfoSheet.toggle()
-                } label: {
-                    GreenQuestionButtonView()
-                } //MARK: adjust height of the sheet based on the content
-                .partialSheet(isPresented: $showInfoSheet,
-                              type: .scrollView(height: UIScreen.main.bounds.height * 0.5, showsIndicators: false),
-                              iPhoneStyle: UIConstants.iPhoneStyle,
-                              content: {
-                    WaterInfoView()
-                        .padding()
-                })
-            } else {
-                Button {
-                    showInfoSheet.toggle()
-                } label: {
-                    GreenQuestionButtonView()
+                
+                
+                if #available(iOS 16, *) {
+                    
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
+                    
+                        .sheet(isPresented: $showInfoSheet) {
+                            
+                            WaterInfoView()
+                                .presentationDetents([.medium])
+                                .padding()
+                        }
+                } else {
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
+                        .partialSheet(isPresented: $showInfoSheet,
+                                      type: .scrollView(height: UIScreen.main.bounds.height * 0.5, showsIndicators: false),
+                                      iPhoneStyle: UIConstants.iPhoneStyle,
+                                      content: {
+                            WaterInfoView()
+                                .padding()
+                        })
                 }
+
+            } else {
+                GreenQuestionButtonView(isToggled: $showInfoSheet)
                 .popover(isPresented: $showInfoSheet) {
                     WaterInfoView()
                         .padding()

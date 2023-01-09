@@ -20,37 +20,40 @@ struct ProcessView: View {
             Text("Process")
                 .modifier(TitleModifier())
             if UIDevice.current.userInterfaceIdiom == .phone {
-                Button {
-                    showInfoSheet.toggle()
-                } label: {
-                    GreenQuestionButtonView()
+                
+                if #available(iOS 16, *) {
+                    
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
+                    
+                        .sheet(isPresented: $showInfoSheet) {
+                            
+                            ProcessViewInfo()
+                                .presentationDetents([.medium])
+                                .padding()
+                        }
+                } else {
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
+                        .partialSheet(isPresented: $showInfoSheet,
+                                      type: .scrollView(height: UIScreen.main.bounds.height * 0.5, showsIndicators: false),
+                                      iPhoneStyle: UIConstants.iPhoneStyle,
+                                      content: {
+                            ProcessViewInfo()
+                                .padding()
+                        })
                 }
-                .partialSheet(isPresented: $showInfoSheet,
-                              type: .scrollView(height: UIScreen.main.bounds.height * 0.5, showsIndicators: false),
-                              iPhoneStyle: UIConstants.iPhoneStyle,
-                              content: {
-                    ProcessViewInfo()
-                        .padding()
-                })
+                
             } else {
-                Button {
-                    showInfoSheet.toggle()
-                } label: {
-                    GreenQuestionButtonView()
-                }
-                .popover(isPresented: $showInfoSheet) {
-                    ProcessViewInfo()
-                        .padding()
-                }
+                GreenQuestionButtonView(isToggled: $showInfoSheet)
+                    .popover(isPresented: $showInfoSheet) {
+                        ProcessViewInfo()
+                            .padding()
+                    }
             }
-        }
-        ) {
+        }) {
             
             HStack {
                 Text("Cold Process")
                 Spacer()
-                
-                
                 oilVM.isColdProcess ?  Image(systemName: "checkmark").foregroundColor(.accentColor) : nil
                 
             }

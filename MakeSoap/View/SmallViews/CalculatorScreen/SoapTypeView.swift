@@ -18,30 +18,33 @@ struct SoapTypeView: View {
             Text("Soap Type")
                 .modifier(TitleModifier())
             if UIDevice.current.userInterfaceIdiom == .phone {
-                Button {
-                    showInfoSheet.toggle()
-                } label: {
-                    GreenQuestionButtonView()
-                }
-                .partialSheet(isPresented: $showInfoSheet,
-                              type: .scrollView(height: UIScreen.main.bounds.height * 0.4, showsIndicators: false),
-                              iPhoneStyle: UIConstants.iPhoneStyle,
-                              content: {
-                    SoapTypeInfoView()
-                        .padding()
+                if #available(iOS 16, *) {
                     
-                })
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
+                    
+                        .sheet(isPresented: $showInfoSheet) {
+                            
+                            SoapTypeInfoView()
+                                .presentationDetents([.height(UIScreen.main.bounds.height * 0.4)])
+                                .padding()
+                        }
+                } else {
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
+                        .partialSheet(isPresented: $showInfoSheet,
+                                      type: .scrollView(height: UIScreen.main.bounds.height * 0.4, showsIndicators: false),
+                                      iPhoneStyle: UIConstants.iPhoneStyle,
+                                      content: {
+                            SoapTypeInfoView()
+                                .padding()
+                        })
+                }
                 
             } else {
-                Button {
-                    showInfoSheet.toggle()
-                } label: {
-                    GreenQuestionButtonView()
-                }
-                .popover(isPresented: $showInfoSheet) {
-                    SoapTypeInfoView()
-                        .padding()
-                }
+                GreenQuestionButtonView(isToggled: $showInfoSheet)
+                    .popover(isPresented: $showInfoSheet) {
+                        SoapTypeInfoView()
+                            .padding()
+                    }
             }
         }) {
             
@@ -113,7 +116,7 @@ struct SoapTypeView: View {
                     if oilVM.sumOfLyesErroMessage != nil {
                         HStack {
                             Text(NSLocalizedString(oilVM.sumOfLyesErroMessage!, comment: "lye error message"))
-                            .foregroundColor(.red)
+                                .foregroundColor(.red)
                             Spacer()
                         }
                     }

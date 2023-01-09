@@ -20,28 +20,30 @@ struct EssentialOilView: View {
             Text("Essential Oils")
                 .modifier(TitleModifier())
             if UIDevice.current.userInterfaceIdiom == .phone {
-                Button {
-                    isShowingEsoilInfo.toggle()
-                } label: {
-                    GreenQuestionButtonView()
+                
+                if #available(iOS 16, *) {
+                    GreenQuestionButtonView(isToggled: $isShowingEsoilInfo)
+                        .sheet(isPresented: $isShowingEsoilInfo) {
+                            EsOilInfoView()
+                                .presentationDetents([.height(UIScreen.main.bounds.height * 0.2)])
+                                .padding()
+                        }
+                } else {
+                    GreenQuestionButtonView(isToggled: $isShowingEsoilInfo)
+                        .partialSheet(isPresented: $isShowingEsoilInfo,
+                                      type: .scrollView(height: UIScreen.main.bounds.height * 0.2, showsIndicators: false),
+                                      iPhoneStyle: UIConstants.iPhoneStyle,
+                                      content: {
+                            EsOilInfoView()
+                                .padding()
+                        })
                 }
-                .partialSheet(isPresented: $isShowingEsoilInfo,
-                              type: .scrollView(height: UIScreen.main.bounds.height * 0.2, showsIndicators: false),
-                              iPhoneStyle: UIConstants.iPhoneStyle,
-                              content: {
-                    EsOilInfoView()
-                        .padding()
-                })
             } else {
-                Button {
-                    isShowingEsoilInfo.toggle()
-                } label: {
-                    GreenQuestionButtonView()
-                }
-                .popover(isPresented: $isShowingEsoilInfo) {
-                    EsOilInfoView()
-                        .padding()
-                }
+                GreenQuestionButtonView(isToggled: $isShowingEsoilInfo)
+                    .popover(isPresented: $isShowingEsoilInfo) {
+                        EsOilInfoView()
+                            .padding()
+                    }
             }
         }
         ) {

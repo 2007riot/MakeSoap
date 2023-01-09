@@ -10,7 +10,7 @@ import SwiftUI
 struct OilView: View {
     
     init () {
-        if UIDevice.current.userInterfaceIdiom == .phone {
+        if UIDevice.current.userInterfaceIdiom == .phone && UIDevice.current.orientation == .portrait {
         UISegmentedControl.appearance().setWidth(100, forSegmentAt: 1)
         }
     }

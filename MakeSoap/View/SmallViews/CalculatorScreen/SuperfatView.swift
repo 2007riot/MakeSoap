@@ -19,28 +19,31 @@ struct SuperfatView: View {
             Text("Superfat")
                 .modifier(TitleModifier())
             if UIDevice.current.userInterfaceIdiom == .phone {
-                Button {
-                    showInfoSheet.toggle()
-                } label: {
-                    GreenQuestionButtonView()
-                } //MARK: adjust height of the sheet based on the content
-                .partialSheet(isPresented: $showInfoSheet,
-                              type: .scrollView(height: UIScreen.main.bounds.height * 0.4, showsIndicators: false),
-                              iPhoneStyle: UIConstants.iPhoneStyle,
-                              content: {
-                    SuperfatInfoView()
-                        .padding()
-                })
+                
+                
+                if #available(iOS 16, *) {
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
+                        .sheet(isPresented: $showInfoSheet) {
+                            SuperfatInfoView()
+                                .presentationDetents([.height(UIScreen.main.bounds.height * 0.4)])
+                                .padding()
+                        }
+                } else {
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
+                        .partialSheet(isPresented: $showInfoSheet,
+                                      type: .scrollView(height: UIScreen.main.bounds.height * 0.4, showsIndicators: false),
+                                      iPhoneStyle: UIConstants.iPhoneStyle,
+                                      content: {
+                            SuperfatInfoView()
+                                .padding()
+                        })
+                }
             } else {
-                Button {
-                    showInfoSheet.toggle()
-                } label: {
-                    GreenQuestionButtonView()
-                }
-                .popover(isPresented: $showInfoSheet) {
-                    SuperfatInfoView()
-                        .padding()
-                }
+                GreenQuestionButtonView(isToggled: $showInfoSheet)
+                    .popover(isPresented: $showInfoSheet) {
+                        SuperfatInfoView()
+                            .padding()
+                    }
             }
         })
         {

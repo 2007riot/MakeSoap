@@ -19,28 +19,28 @@ struct OilRow: View {
             HStack {
                 Text(NSLocalizedString(oil.name, comment: "oil").capitalized)
                 if UIDevice.current.userInterfaceIdiom == .phone {
-                    Button {
-                        showInfoSheet.toggle()
-                    } label: {
-                        Image(systemName: "questionmark.circle.fill")
-                            .foregroundColor(.accentColor)
-                            .font(.caption2)
+                    
+                    if #available(iOS 16, *) {
+                        
+                        GreenQuestionButtonView(isToggled: $showInfoSheet)
+                            .sheet(isPresented: $showInfoSheet) {
+                                OilPropertyView(oil: oil)
+                                    .presentationDetents([.medium])
+                                    .padding()
+                            }
+                    } else {
+                        GreenQuestionButtonView(isToggled: $showInfoSheet)
+                            .partialSheet(isPresented: $showInfoSheet,
+                                          type: .scrollView(height: UIScreen.main.bounds.height * 0.5, showsIndicators: false),
+                                          iPhoneStyle: UIConstants.iPhoneStyle,
+                                          content: {
+                                OilPropertyView(oil: oil)
+                                    .padding()
+                            })
                     }
-                    .partialSheet(isPresented: $showInfoSheet,
-                                  type: .scrollView(height: UIScreen.main.bounds.height * 0.5, showsIndicators: false),
-                                  iPhoneStyle: UIConstants.iPhoneStyle,
-                                  content: {
-                        OilPropertyView(oil: oil)
-                            .padding()
-                    })
+                    
                 } else {
-                    Button {
-                        showInfoSheet.toggle()
-                    } label: {
-                        Image(systemName: "questionmark.circle.fill")
-                            .foregroundColor(.accentColor)
-                            .font(.caption2)
-                    }
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
                     .popover(isPresented: $showInfoSheet) {
                         OilPropertyView(oil: oil)
                             .padding()

@@ -21,24 +21,25 @@ struct EssentialOilRow: View {
         HStack {
             Text(NSLocalizedString(esOil.name, comment: "es oil").capitalized)
             if UIDevice.current.userInterfaceIdiom == .phone {
-            Button {
-                showInfoSheet.toggle()
-            } label: {
-                GreenQuestionButtonView()
-            }
-            .partialSheet(isPresented: $showInfoSheet,
-                          type: .scrollView(height: 250, showsIndicators: false),
-                          iPhoneStyle: UIConstants.iPhoneStyle,
-                          content: {
-                EsOilDescriptionView(esOil: esOil)
-                    .padding()
-            })
-            } else {
-                Button {
-                    showInfoSheet.toggle()
-                } label: {
-                    GreenQuestionButtonView()
-                }
+                
+                if #available(iOS 16, *) {
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
+                        .sheet(isPresented: $showInfoSheet) {
+                            EsOilDescriptionView(esOil: esOil)
+                                .presentationDetents([.height(UIScreen.main.bounds.height * 0.3)])
+                                .padding()
+                        }
+                } else {
+                    GreenQuestionButtonView(isToggled: $showInfoSheet)
+                        .partialSheet(isPresented: $showInfoSheet,
+                                                  type: .scrollView(height: UIScreen.main.bounds.height * 0.3, showsIndicators: false),
+                                                  iPhoneStyle: UIConstants.iPhoneStyle,
+                                                  content: {
+                                        EsOilDescriptionView(esOil: esOil)
+                                            .padding()
+                                    })
+                }            } else {
+                GreenQuestionButtonView(isToggled: $showInfoSheet)
                 .popover(isPresented: $showInfoSheet) {
                     EsOilDescriptionView(esOil: esOil)
                         .padding()
