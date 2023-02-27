@@ -58,13 +58,13 @@ class OilViewModel: ObservableObject {
     @Published var extraWaterAmount = 0.0
     
     //MARK: - soap properties
-    var bubblyInd = 0.0
-    var cleaningInd = 0.0
-    var conditionInd = 0.0
-    var hardnessInd = 0.0
-    var longevityInd = 0.0
-    var stabilityInd = 0.0
-    var iodineInd = 0.0
+    var bubblyInd = 50.0
+    var cleaningInd = 50.0
+    var conditionInd = 50.0
+    var hardnessInd = 50.0
+    var longevityInd = 50.0
+    var stabilityInd = 50.0
+    var iodineInd = 50.0
     let bubblyExplained = "how bubbly, big and fluffy the soap lather is."
     let cleaningExplained = "how easily the soap dissolves in hard, cold, salty water and in other situations. How well it will clean the skin."
     let conditionExplained = "how soft, moisturizing the soap is. Good condition skin doesn't dry the skin."
@@ -317,10 +317,6 @@ class OilViewModel: ObservableObject {
             if let percent = oil.userPercent {
                 
                 bubblyInd += oil.bubbly * percent / 100
-                
-                print("bubly: \(bubblyInd)")
-                print(oil.name)
-                print(percent)
                 cleaningInd += oil.cleaning * percent / 100
                 conditionInd += oil.condition * percent / 100
                 hardnessInd += oil.hardness * percent / 100
@@ -339,7 +335,7 @@ class OilViewModel: ObservableObject {
                 bubblyColor = .yellow
                 //bubblySuggestion = "almost perfect"
             case 15...30:
-                bubblyColor = .accentColor
+                bubblyColor = .green
                 //bubblySuggestion = "perfect"
             case 30...40:
                 bubblyColor = .yellow
@@ -358,7 +354,7 @@ class OilViewModel: ObservableObject {
             case 5..<10:
                 cleaningColor = .yellow
             case 10..<21:
-                cleaningColor = .accentColor
+                cleaningColor = .green
             case 21...25:
                 cleaningColor = .yellow
             case 25...:
@@ -377,7 +373,7 @@ class OilViewModel: ObservableObject {
                 conditionColor = .yellow
 //                conditionSuggestion = "almost perfect"
             case 45..<71:
-                conditionColor = .accentColor
+                conditionColor = .green
 //                conditionSuggestion = "perfect"
             case 71...80:
                 conditionColor = .yellow
@@ -386,7 +382,7 @@ class OilViewModel: ObservableObject {
                 conditionColor = .red
 //                conditionSuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
             default:
-                conditionColor = .accentColor
+                conditionColor = .gray
         }
         
         // recommendation 35-45 done
@@ -398,7 +394,7 @@ class OilViewModel: ObservableObject {
                 hardnessColor = .yellow
                 hardnessSuggestion = "almost perfect"
             case 35...45:
-                hardnessColor = .accentColor
+                hardnessColor = .green
                 hardnessSuggestion = "perfect"
             case 46...50:
                 hardnessColor = .yellow
@@ -407,7 +403,7 @@ class OilViewModel: ObservableObject {
                 hardnessColor = .red
                 hardnessSuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
             default:
-                hardnessColor = .accentColor
+                hardnessColor = .gray
         }
         
         // recommendation 25-50 done
@@ -419,7 +415,7 @@ class OilViewModel: ObservableObject {
                 longevityColor = .yellow
 //                longevitySuggestion = "almost perfect"
             case 25...50:
-                longevityColor = .accentColor
+                longevityColor = .green
 //                longevitySuggestion = "perfect"
             case 51...60:
                 longevityColor = .yellow
@@ -428,7 +424,7 @@ class OilViewModel: ObservableObject {
                 longevityColor = .red
 //                longevitySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
             default:
-                longevityColor = .accentColor
+                longevityColor = .gray
         }
         
         // recommendation 15-50 done
@@ -440,7 +436,7 @@ class OilViewModel: ObservableObject {
                 stabilityColor = .yellow
 //                stabilitySuggestion = "almost perfect"
             case 15...50:
-                stabilityColor = .accentColor
+                stabilityColor = .green
 //                stabilitySuggestion = "perfect"
             case 51..<55:
                 stabilityColor = .yellow
@@ -449,7 +445,7 @@ class OilViewModel: ObservableObject {
                 stabilityColor = .red
 //                stabilitySuggestion = "Reduce the amount of hard oils(coconut oil, palm oil, shea butter etc)"
             default:
-                stabilityColor = .accentColor
+                stabilityColor = .gray
         }
         
     }

@@ -20,7 +20,7 @@ struct SoapIngredientsView: View {
                     .modifier(TitleModifier())
                 Spacer()
             }
-            VStack (spacing: 8) {
+            VStack (spacing: 12) {
             HStack(alignment: .top) {
                 Text("Total soap weight")
                     .modifier(Title2ModifierSemibold())

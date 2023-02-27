@@ -25,8 +25,10 @@ struct CalculatedRecipeView: View {
         GeometryReader { geometry in
         ScrollView {
             
-            SoapPropertiesView(showBubbly: $showBubbly, showCleansing: $showCleansing, showCondition: $showCondition, showHardness: $showHardness, showLongevity: $showLongevity, showStability: $showStability)
-                .padding()
+            
+                SoapPropertiesView(showBubbly: $showBubbly, showCleansing: $showCleansing, showCondition: $showCondition, showHardness: $showHardness, showLongevity: $showLongevity, showStability: $showStability)
+                    .padding()
+            
             SoapIngredientsView()
                 .padding()
             Button  {
